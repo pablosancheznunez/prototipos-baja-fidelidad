@@ -1,0 +1,211 @@
+---
+engine: markdown
+---
+
+# Tema 5. Flujos de usuario: modelado y representación {#sec-tema5}
+
+::: {.callout-note appearance="default"}
+## Objetivos
+- Modelar las tareas de las personas usuarias antes de diseñar pantallas.
+- Representar flujos principales, alternativos y de error con una notación clara.
+- Diseñar flujos coherentes, eficientes y sin barreras, y detectar dónde se pierden los usuarios.
+:::
+
+::: {.callout-note appearance="simple" icon="false"}
+## Glosario del tema
+[Flujo de usuario](92-glosario.qmd#gl-flujo) · [Análisis de tareas](92-glosario.qmd#gl-analisis-tareas) · [Mapa de tareas](92-glosario.qmd#gl-mapa-tareas) · [*Wireflow*](92-glosario.qmd#gl-wireflow) · [Flujo de error](92-glosario.qmd#gl-flujo-error) · [Callejón sin salida](92-glosario.qmd#gl-callejon) · [Embudo](92-glosario.qmd#gl-embudo)
+:::
+
+::: {.callout-tip appearance="simple" icon="false"}
+## Descargas
+[Script R del capítulo](plantillas/05_flujos.R){.btn .btn-outline-primary .btn-sm download="05_flujos.R"}
+[Plantilla de entrega del reto (.qmd)](plantillas/entrega_reto.qmd){.btn .btn-outline-primary .btn-sm download="entrega_reto.qmd"}
+[Tema de estilo (.scss)](plantillas/informe.scss){.btn .btn-outline-primary .btn-sm download="informe.scss"}
+:::
+
+## Lectura obligatoria
+
+::: {.lectura}
+Kalbach, J. (2021). *Mapping experiences: A complete guide to customer alignment through journeys, blueprints, and diagrams* (2.ª ed.). O'Reilly. Capítulos sobre los diagramas de alineamiento y los mapas de tareas.
+:::
+
+### Lecturas complementarias {.unnumbered}
+
+- Nielsen Norman Group. [User journeys vs. user flows](https://www.nngroup.com/articles/user-journeys-vs-user-flows/). Diferencia entre el viaje completo y el flujo de una tarea.
+- Nielsen Norman Group. [Wireflows: A UX deliverable for workflows and apps](https://www.nngroup.com/articles/wireflows/). Flujos dibujados con esquemas de página.
+- Nielsen Norman Group. [Task analysis: Support users in achieving their goals](https://www.nngroup.com/articles/task-analysis/). Cómo descomponer una tarea.
+
+## 1. De la tarea al flujo
+
+Antes de dibujar pantallas hay que entender la **tarea**: qué quiere conseguir la persona y qué pasos sigue. El **análisis de tareas** descompone un objetivo en subtareas y pasos. Por ejemplo, «reservar una sala de trabajo en grupo» se descompone en: elegir fecha y franja, ver salas libres, elegir una, identificarse, confirmar y recibir la confirmación.
+
+Un **flujo de usuario** representa el recorrido por el sistema para completar una tarea: qué ve la persona, qué decide y adónde la lleva cada decisión. No es lo mismo que un **viaje de usuario** (*user journey*), que cubre toda la experiencia, dentro y fuera del producto (enterarse de que existe la sala, desplazarse, usarla), ni que un **mapa de tareas**, que ordena todas las tareas del servicio sin entrar en pantallas.
+
+## 2. Flujos principal, alternativo y de error
+
+Cada tarea tiene varios caminos:
+
+- **Flujo principal** (o «camino feliz»): el recorrido más directo cuando todo va bien.
+- **Flujos alternativos**: caminos válidos distintos (reservar desde el calendario o desde la ficha de la sala; reservar sin haber iniciado sesión).
+- **Flujos de error**: qué pasa cuando algo falla (la sala se ocupa mientras se reserva, la sesión caduca, falta un dato).
+
+Los flujos de error son los que más se olvidan y los que más frustran. Un buen flujo de error explica qué ha pasado, conserva lo que la persona ya había hecho y le ofrece un camino para continuar (heurísticas 3, 5 y 9 de Nielsen, Tema 2).
+
+## 3. Notación
+
+No hay una notación única, pero la más extendida, heredada de los diagramas de flujo, usa:
+
+| Forma | Significa |
+|---|---|
+| Óvalo | Inicio o fin del flujo |
+| Rectángulo | Pantalla o estado que ve la persona |
+| Rombo | Decisión (de la persona o del sistema) |
+| Flecha | Paso de un punto a otro, con la acción que lo provoca |
+
+![Flujo de reserva de una sala con su camino principal, una alternativa (iniciar sesión) y un flujo de error (la sala se ocupa durante la reserva) que devuelve a la lista sin perder la fecha elegida.](figuras/tema5_flujo.svg){#fig-flujo fig-alt="Diagrama de flujo. Inicio, elegir fecha y franja, lista de salas libres, elegir sala. Rombo: ¿ha iniciado sesión? Si no, pantalla de inicio de sesión que vuelve al flujo. Si sí, confirmar reserva. Rombo: ¿sigue libre? Si no, mensaje de error que vuelve a la lista de salas manteniendo la fecha. Si sí, confirmación y fin."}
+
+Los ***wireflows*** combinan el flujo con miniaturas de los esquemas de cada pantalla, y son útiles cuando el contenido de la pantalla cambia según la decisión. Se trabajan en los temas 7 y 8.
+
+## 4. Flujos coherentes, eficientes y sin barreras
+
+Al revisar un flujo conviene comprobar:
+
+- **Sin callejones sin salida**: desde cualquier punto se puede continuar, volver o salir.
+- **Pocos pasos**: cada paso debe aportar algo a la persona, no solo a la organización. Pedir datos que no se necesitan para la tarea añade abandono.
+- **Coherencia**: la misma acción produce el mismo resultado en todo el flujo.
+- **Sin barreras**: el flujo se puede completar con teclado, con lector de pantalla y sin depender de la memoria (por ejemplo, sin códigos que haya que copiar de otra pantalla); el Tema 12 lo desarrolla.
+- **Retroceso seguro**: volver atrás no destruye lo que la persona ya había escrito.
+
+## 5. ¿Dónde se pierden los usuarios?
+
+Cuando un flujo ya existe, la analítica muestra cuántas personas llegan a cada paso. Ese recorrido se representa como un **embudo**: para cada paso, cuántos continúan respecto al paso anterior y respecto al inicio. El paso con menos continuidad señala dónde hay que mirar primero, aunque no explica por qué: para eso se necesita investigación cualitativa (Tema 2).
+
+## Práctica en R: el embudo de un flujo de registro
+
+`flujo_registro` contiene los usuarios que llegan a cada paso del registro en una aplicación de biblioteca (datos simulados). La función `embudo()` calcula la continuidad:
+
+```{webr}
+#| autorun: true
+source("datos/uxlearn.R")
+e <- embudo(flujo_registro$paso, flujo_registro$usuarios)
+e
+```
+
+### Ejercicio 5.1 {.unnumbered}
+
+¿En qué paso continúan **menos** personas respecto al paso anterior? Completa el código con la columna adecuada.
+
+```{webr}
+#| exercise: t5_peor
+#| setup: true
+source("datos/uxlearn.R")
+e <- embudo(flujo_registro$paso, flujo_registro$usuarios)
+```
+
+```{webr}
+#| exercise: t5_peor
+e$paso[which.min(e$______)]
+```
+
+::: {.hint exercise="t5_peor"}
+La columna que compara con el paso anterior se llama `continua`.
+:::
+
+::: {.solution exercise="t5_peor"}
+```r
+e$paso[which.min(e$continua)]
+```
+«Crear cuenta»: solo continúa el 70 % de quienes llegan a la pantalla de inicio. Es un punto clásico de abandono. Antes de rediseñarlo, conviene averiguar por qué: ¿hace falta una cuenta para lo que la persona quería hacer?
+:::
+
+```{webr}
+#| exercise: t5_peor
+#| check: true
+if (identical(as.character(.result), "Crear cuenta")) {
+  list(correct = TRUE, message = "Correcto: «Crear cuenta», con un 70 % de continuidad.")
+} else {
+  list(correct = FALSE, message = "Busca el mínimo de la columna continua.")
+}
+```
+
+### Ejercicio 5.2 {.unnumbered}
+
+¿Qué porcentaje de quienes llegan a la pantalla de inicio termina con la cuenta activa?
+
+```{webr}
+#| exercise: t5_final
+#| setup: true
+source("datos/uxlearn.R")
+e <- embudo(flujo_registro$paso, flujo_registro$usuarios)
+```
+
+```{webr}
+#| exercise: t5_final
+e$acumulado[nrow(______)]
+```
+
+::: {.hint exercise="t5_final"}
+El último paso está en la fila número `nrow(e)`.
+:::
+
+::: {.solution exercise="t5_final"}
+```r
+e$acumulado[nrow(e)]
+```
+El 31,7 %: de cada diez personas que empiezan, solo tres terminan el registro. Quitar pasos que no aporten valor a la persona es la primera hipótesis que habría que probar.
+:::
+
+```{webr}
+#| exercise: t5_final
+#| check: true
+if (isTRUE(all.equal(as.numeric(.result), 31.7))) {
+  list(correct = TRUE, message = "Correcto: el 31,7 % completa el registro.")
+} else {
+  list(correct = FALSE, message = "Usa la columna acumulado en la última fila.")
+}
+```
+
+## Reto evaluable {#reto-t5}
+
+::: {.callout-important appearance="simple" icon="false"}
+## Reto del Tema 5 · Flujos de la tarea principal
+Para la tarea principal de tu proyecto:
+
+1. Haz el **análisis de la tarea**: objetivo, subtareas y pasos.
+2. Dibuja el **flujo principal**, al menos **dos alternativos** y al menos **dos de error**, con la notación del apartado 3.
+3. Revisa el flujo con la lista del apartado 4 y documenta los cambios que haces y por qué.
+4. Indica qué datos de analítica o de prueba usarías para saber dónde se pierden los usuarios.
+
+**Entrega:** un informe hecho con la [plantilla de entrega](plantillas/entrega_reto.qmd) con los diagramas (en papel fotografiado o en una herramienta digital). Se evalúa con la rúbrica que incluye la plantilla. Este reto **no tiene solución en el libro**: cada estudiante trabaja con un proyecto distinto y la corrección la hace el profesorado.
+:::
+
+## Autoevaluación
+
+Responde a todas las preguntas y pulsa **Mostrar respuestas**: verás en verde las acertadas, en rojo las falladas y tu recuento. Puedes corregir y volver a comprobar. No cuenta para la nota.
+
+::: {.webex-check .webex-box}
+1. Un viaje de usuario y un flujo de usuario son lo mismo. {{< torf false >}}
+2. En un diagrama de flujo, una decisión se representa con un {{< mcq "óvalo" "rectángulo" "*rombo" >}}
+3. Qué ocurre cuando la sala se ocupa mientras alguien la reserva se documenta en un flujo {{< mcq "principal" "alternativo" "*de error" >}}
+4. Volver atrás en un formulario no debería borrar lo que la persona ya había escrito. {{< torf true >}}
+5. En el embudo de la práctica, ¿qué porcentaje de quienes llegan a «Crear cuenta» pasa a «Datos personales»? {{< fitb "72.6" "72,6" >}} %
+6. El embudo indica en qué paso abandonan los usuarios y también por qué lo hacen. {{< torf false >}}
+:::
+
+::: {.webex-solution boton="Ver explicaciones"}
+- El viaje cubre toda la experiencia, también fuera del producto; el flujo, el recorrido por el sistema en una tarea.
+- El rombo es la decisión; el rectángulo, una pantalla; el óvalo, el inicio o el fin.
+- Es un fallo que el diseño debe prever.
+- Es control y libertad del usuario (heurística 3) y prevención de errores.
+- 610 / 840 = 72,6 %.
+- El embudo dice dónde, no por qué: para eso hace falta investigación cualitativa.
+:::
+
+## Recursos complementarios
+
+| Recurso | Para qué sirve |
+|---|---|
+| [Nielsen Norman Group – User journeys vs. user flows](https://www.nngroup.com/articles/user-journeys-vs-user-flows/) | Diferencias entre artefactos |
+| [Nielsen Norman Group – Wireflows](https://www.nngroup.com/articles/wireflows/) | Flujos con esquemas de página |
+| [Nielsen Norman Group – Task analysis](https://www.nngroup.com/articles/task-analysis/) | Descomponer tareas |
+| [Figma Community](https://www.figma.com/community) | Plantillas de diagramas de flujo |

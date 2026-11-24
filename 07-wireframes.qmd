@@ -1,0 +1,186 @@
+---
+engine: markdown
+---
+
+# Tema 7. Esquemas de página en papel y en pantalla {#sec-tema7}
+
+::: {.callout-note appearance="default"}
+## Objetivos
+- Dibujar esquemas de página a mano y con herramientas digitales.
+- Organizar la pantalla con jerarquía visual, rejillas y áreas de contenido.
+- Representar la navegación, los formularios y los elementos funcionales.
+:::
+
+::: {.callout-note appearance="simple" icon="false"}
+## Glosario del tema
+[Esquema de página](92-glosario.qmd#gl-wireframe) · [Jerarquía visual](92-glosario.qmd#gl-jerarquia) · [Rejilla](92-glosario.qmd#gl-rejilla) · [Medianil](92-glosario.qmd#gl-medianil) · [Área de contenido](92-glosario.qmd#gl-area) · [Convención](92-glosario.qmd#gl-convencion) · [Anotación](92-glosario.qmd#gl-anotacion)
+:::
+
+::: {.callout-tip appearance="simple" icon="false"}
+## Descargas
+[Script R del capítulo](plantillas/07_wireframes.R){.btn .btn-outline-primary .btn-sm download="07_wireframes.R"}
+[Plantillas para esquemas en papel (PDF)](plantillas/plantillas_esquemas.pdf){.btn .btn-outline-primary .btn-sm download="plantillas_esquemas.pdf"}
+[Plantilla de entrega del reto (.qmd)](plantillas/entrega_reto.qmd){.btn .btn-outline-primary .btn-sm download="entrega_reto.qmd"}
+[Tema de estilo (.scss)](plantillas/informe.scss){.btn .btn-outline-primary .btn-sm download="informe.scss"}
+:::
+
+## Lectura obligatoria
+
+::: {.lectura}
+Garrett, J. J. (2011). *The elements of user experience: User-centered design for the web and beyond* (2.ª ed.). New Riders. Capítulo dedicado al plano del esqueleto (*skeleton plane*): diseño de la interfaz, de la navegación y de la información.
+:::
+
+### Lecturas complementarias {.unnumbered}
+
+- Krug, S. (2006). *Don't make me think!*. New Riders. Por qué las convenciones y la jerarquía visual hacen que una página se entienda de un vistazo.
+- Nielsen Norman Group. [F-shaped pattern for reading web content](https://www.nngroup.com/articles/f-shaped-pattern-reading-web-content/). Cómo recorren la vista las páginas con mucho texto.
+- Nielsen Norman Group. [Using grids in interface designs](https://www.nngroup.com/articles/using-grids-in-interface-designs/). Rejillas de columnas en interfaces.
+
+## 1. Qué es un esquema de página
+
+Un **esquema de página** (*wireframe*) representa la estructura de una pantalla: qué elementos contiene, dónde están y qué importancia tienen. Deja fuera el estilo visual (color, tipografía definitiva, imágenes) para que la discusión se centre en el contenido y la organización. En el modelo de Garrett (2011), el esquema corresponde al **plano del esqueleto**: el que concreta la estructura antes de llegar a la superficie visual.
+
+Un buen esquema responde a tres preguntas: **qué** hay en la pantalla, **qué es lo más importante** y **qué puede hacer** la persona desde ella.
+
+## 2. En papel y en pantalla
+
+| | En papel | En pantalla (Figma u otra herramienta) |
+|---|---|---|
+| Velocidad | Máxima: segundos por pantalla | Media: requiere colocar elementos |
+| Alternativas | Muchas, fáciles de comparar sobre la mesa | Menos, aunque se duplican fácilmente |
+| Precisión | Baja: proporciones aproximadas | Alta: medidas exactas y rejilla |
+| Colaboración | Presencial, alrededor de la mesa | Remota y en tiempo real |
+| Reutilización | Nula | Componentes reutilizables y prototipo navegable |
+
+La práctica habitual es **empezar en papel** para explorar varias alternativas (de tres a cinco por pantalla clave) y pasar a digital la que se elige. Las plantillas en PDF de este tema traen marcos de móvil y escritorio con una rejilla de puntos.
+
+## 3. Jerarquía visual
+
+La **jerarquía visual** indica qué es más importante. En un esquema se construye sin color, con:
+
+- **Tamaño**: lo más grande se ve primero.
+- **Posición**: en las culturas que leen de izquierda a derecha, la parte superior izquierda recibe más atención. En páginas con mucho texto, la mirada suele recorrer un patrón en forma de F.
+- **Agrupación y espacio**: los elementos próximos se perciben como relacionados (ley de proximidad de la Gestalt).
+- **Contraste de peso**: un bloque relleno destaca frente a uno con solo contorno.
+
+Cada pantalla debería tener **una acción principal** evidente. Si todo destaca, nada destaca.
+
+## 4. Rejillas y áreas de contenido
+
+Una **rejilla** divide el ancho de la pantalla en columnas separadas por **medianiles** (*gutters*) y con márgenes laterales. Los elementos se alinean con las columnas, lo que da orden y coherencia entre pantallas. Las configuraciones habituales son 12 columnas en escritorio, 8 en tableta y 4 en móvil.
+
+El ancho de cada columna es: (ancho total − 2 × margen − (columnas − 1) × medianil) / columnas.
+
+Las **áreas de contenido** son las zonas que se repiten en todas las pantallas: cabecera, navegación principal, contenido, zona lateral y pie. Se dibujan como cajas con su nombre; el contenido de relleno se indica con líneas (texto) o con una caja cruzada por una X (imagen).
+
+![Anatomía de un esquema de página de escritorio sobre una rejilla de 12 columnas: cabecera con navegación, buscador como acción principal, contenido en 8 columnas, lateral en 4 y pie.](figuras/tema7_anatomia.svg){#fig-anatomia fig-alt="Esquema de una página de escritorio en escala de grises sobre doce columnas verticales tenues. Arriba, la cabecera con el logotipo a la izquierda y cinco enlaces de navegación. Debajo, un buscador ancho con un botón destacado. El contenido ocupa ocho columnas con un título, líneas de texto y una imagen cruzada por una X; el lateral ocupa cuatro columnas con tres bloques. Abajo, el pie."}
+
+## 5. Navegación, formularios y elementos funcionales
+
+- **Navegación**: menú principal, migas de pan, pestañas, paginación, barra inferior en móvil. Se representan con su etiqueta real: la etiqueta forma parte de la estructura.
+- **Formularios**: una etiqueta visible encima de cada campo (no solo como texto de ayuda dentro del campo), campos agrupados por tema, una sola columna y un botón principal claro. Los campos obligatorios se marcan.
+- **Elementos funcionales**: botones, enlaces, buscadores, filtros, avisos. Se distinguen entre sí por la forma, no por el color.
+
+Respetar las **convenciones** (el logotipo lleva al inicio, la lupa es buscar, el carrito está arriba a la derecha) reduce el esfuerzo de las personas: usan lo que ya saben de otros sitios.
+
+## 6. Anotar los esquemas
+
+Un esquema no se explica solo. Las **anotaciones** numeradas al margen explican el comportamiento que no se ve: qué pasa al pulsar, de dónde sale el contenido, qué reglas se aplican, qué ocurre si no hay resultados. Son la base de la documentación que se entregará al equipo de desarrollo en alta fidelidad.
+
+## Práctica en R: calcular una rejilla
+
+`rejilla()` calcula la posición de cada columna; `ancho_bloque()`, el ancho de un bloque que ocupa varias columnas; y `caracteres_por_linea()`, cuántos caracteres caben en una línea (la longitud cómoda de lectura está entre 45 y 75).
+
+```{webr}
+#| autorun: true
+source("datos/uxlearn.R")
+r <- rejilla(ancho = 1440, columnas = 12, medianil = 24, margen = 80)
+attr(r, "ancho_columna")
+ancho_bloque(8)                               # el contenido de la figura
+caracteres_por_linea(ancho_bloque(8), tamano = 18)
+```
+
+### Ejercicio 7.1 {.unnumbered}
+
+En móvil se usan 4 columnas sobre 375 px, con 16 px de medianil y 16 px de margen. ¿Cuánto mide cada columna?
+
+```{webr}
+#| exercise: t7_movil
+#| setup: true
+source("datos/uxlearn.R")
+```
+
+```{webr}
+#| exercise: t7_movil
+r <- rejilla(ancho = 375, columnas = ______, medianil = 16, margen = 16)
+attr(r, "ancho_columna")
+```
+
+::: {.hint exercise="t7_movil"}
+La rejilla de móvil del enunciado tiene 4 columnas.
+:::
+
+::: {.solution exercise="t7_movil"}
+```r
+r <- rejilla(ancho = 375, columnas = 4, medianil = 16, margen = 16)
+attr(r, "ancho_columna")
+```
+(375 − 32 − 48) / 4 = 73,75 px.
+:::
+
+```{webr}
+#| exercise: t7_movil
+#| check: true
+if (isTRUE(all.equal(as.numeric(.result), 73.75))) {
+  list(correct = TRUE, message = "Correcto: 73,75 px por columna.")
+} else {
+  list(correct = FALSE, message = "La rejilla tiene 4 columnas.")
+}
+```
+
+## Reto evaluable {#reto-t7}
+
+::: {.callout-important appearance="simple" icon="false"}
+## Reto del Tema 7 · Del papel a la pantalla
+Para las pantallas del flujo principal de tu proyecto (Tema 5):
+
+1. Dibuja en papel **tres alternativas** de la pantalla más importante y explica cuál eliges y por qué.
+2. Pasa a digital **todas las pantallas** del flujo principal en escala de grises, sobre una rejilla que documentes (columnas, medianil, margen).
+3. Señala en cada pantalla la **acción principal** y cómo la destaca la jerarquía visual.
+4. Añade **anotaciones** numeradas con el comportamiento que no se ve.
+
+**Entrega:** un informe hecho con la [plantilla de entrega](plantillas/entrega_reto.qmd) con las fotos de los bocetos y el enlace al archivo digital. Se evalúa con la rúbrica que incluye la plantilla. Este reto **no tiene solución en el libro**: cada estudiante trabaja con un proyecto distinto y la corrección la hace el profesorado.
+:::
+
+## Autoevaluación
+
+Responde a todas las preguntas y pulsa **Mostrar respuestas**: verás en verde las acertadas, en rojo las falladas y tu recuento. Puedes corregir y volver a comprobar. No cuenta para la nota.
+
+::: {.webex-check .webex-box}
+1. Un esquema de página debe incluir ya los colores definitivos de la marca. {{< torf false >}}
+2. La separación entre columnas de una rejilla se llama {{< fitb "medianil" "gutter" ignorecase=true >}}
+3. Una rejilla de 1440 px con 12 columnas, 24 px de medianil y 80 px de margen tiene columnas de unos {{< mcq "72 px" "*84,7 px" "120 px" >}}
+4. En un formulario es preferible que la etiqueta de cada campo esté visible encima del campo y no solo dentro como texto de ayuda. {{< torf true >}}
+5. ¿Qué principio explica que los elementos próximos se perciban como relacionados? {{< mcq "*Proximidad" "Cierre" "Continuidad" >}}
+6. ¿Para qué sirven las anotaciones de un esquema?
+
+{{< longmcq "Para indicar los colores y tipografías" "*Para explicar el comportamiento que no se ve en el dibujo" "Para sustituir la prueba con usuarios" >}}
+:::
+
+::: {.webex-solution boton="Ver explicaciones"}
+- El color pertenece a la alta fidelidad; el esquema trabaja la estructura.
+- Medianil (*gutter*).
+- (1440 − 160 − 264) / 12 = 84,7 px.
+- La etiqueta dentro del campo desaparece al escribir y obliga a recordar qué se pedía.
+- Ley de proximidad de la Gestalt.
+- Explican interacciones, reglas y casos especiales.
+:::
+
+## Recursos complementarios
+
+| Recurso | Para qué sirve |
+|---|---|
+| [Nielsen Norman Group – Using grids in interface designs](https://www.nngroup.com/articles/using-grids-in-interface-designs/) | Rejillas en interfaces |
+| [Nielsen Norman Group – F-shaped pattern](https://www.nngroup.com/articles/f-shaped-pattern-reading-web-content/) | Patrones de lectura en pantalla |
+| [Figma Community](https://www.figma.com/community) | Kits de esquemas de página |
+| [Interaction Design Foundation – Wireframes](https://ixdf.org/literature/topics/wireframe) | Introducción y ejemplos |

@@ -1,0 +1,123 @@
+---
+engine: markdown
+---
+
+# Tema 11. Economía de la atención y bienestar digital {#sec-tema11}
+
+::: {.callout-note appearance="default"}
+## Objetivos
+- Entender por qué la atención se ha convertido en un recurso económico.
+- Reconocer los mecanismos de diseño que captan y retienen la atención.
+- Aplicar criterios de diseño que respeten el tiempo y el bienestar de las personas.
+:::
+
+::: {.callout-note appearance="simple" icon="false"}
+## Glosario del tema
+[Economía de la atención](92-glosario.qmd#gl-economia-atencion) · [Métrica de implicación](92-glosario.qmd#gl-implicacion) · [Refuerzo intermitente](92-glosario.qmd#gl-refuerzo) · [Desplazamiento infinito](92-glosario.qmd#gl-infinito) · [Señal de parada](92-glosario.qmd#gl-parada) · [Bienestar digital](92-glosario.qmd#gl-bienestar)
+:::
+
+::: {.callout-tip appearance="simple" icon="false"}
+## Descargas
+[Plantilla de entrega del reto (.qmd)](plantillas/entrega_reto.qmd){.btn .btn-outline-primary .btn-sm download="entrega_reto.qmd"}
+[Tema de estilo (.scss)](plantillas/informe.scss){.btn .btn-outline-primary .btn-sm download="informe.scss"}
+:::
+
+## Lectura obligatoria
+
+::: {.lectura}
+Williams, J. (2018). [*Stand out of our light: Freedom and resistance in the attention economy*](https://doi.org/10.1017/9781108453004). Cambridge University Press. Libro en acceso abierto: lee la primera parte.
+:::
+
+### Lecturas complementarias {.unnumbered}
+
+- Mathur, A. et al. (2019). [Dark patterns at scale](https://doi.org/10.1145/3359183). *Proceedings of the ACM on Human-Computer Interaction*, 3(CSCW). Urgencia y escasez como técnicas para captar la atención y precipitar decisiones.
+- Center for Humane Technology. [Recursos para tecnología humana](https://www.humanetech.com/). Materiales sobre diseño que respeta la atención.
+
+## 1. La atención como recurso escaso
+
+Herbert Simon advirtió en 1971 que la abundancia de información crea pobreza de atención: cuanta más información compite por nosotros, más valiosa se vuelve la atención que podemos darle. Muchos servicios digitales gratuitos se financian con publicidad, y la publicidad se vende por la atención que se consigue: cuanto más tiempo y más a menudo se usa el servicio, más ingresos. Ese es el núcleo de la **economía de la atención**.
+
+Williams (2018), que trabajó en publicidad en Google antes de dedicarse a la filosofía, sostiene que el problema no es solo de productividad. Las tecnologías optimizadas para captar la atención pueden apartar a las personas de sus propios objetivos, de lo que ellas mismas querrían hacer con su tiempo.
+
+## 2. Las métricas que dirigen el diseño
+
+Lo que se mide se optimiza. Si el éxito de un producto se mide con **métricas de implicación** (tiempo de uso, sesiones al día, desplazamiento), el diseño evoluciona hacia lo que las aumenta, aunque no ayude a la persona. Una aplicación de biblioteca que «tiene éxito» porque la gente pasa más tiempo buscando probablemente está fallando: lo deseable es que encuentren rápido lo que necesitan.
+
+Por eso, al definir las métricas de un proyecto (Tema 4), conviene preguntar si miden el **valor para la persona** (éxito en la tarea, satisfacción) o solo su **tiempo**.
+
+## 3. Mecanismos de captación
+
+| Mecanismo | Cómo funciona |
+|---|---|
+| **Desplazamiento infinito** | Elimina el final de la página: no hay un punto natural en el que parar |
+| **Reproducción automática** | El siguiente contenido empieza solo; parar exige actuar |
+| **Refuerzo intermitente** | Recompensas impredecibles (al actualizar, a veces hay algo nuevo), el mecanismo más difícil de abandonar |
+| **Notificaciones** | Interrumpen desde fuera para devolver a la persona al producto |
+| **Rachas y contadores** | Convierten el uso diario en algo que no se quiere «perder» (aversión a la pérdida, Tema 10) |
+| **Reciprocidad social** | «Te ha escrito», «ha visto tu mensaje»: obligan a responder |
+
+Muchos de estos mecanismos aprovechan los mismos sesgos que los patrones engañosos. La diferencia es de grado y de intención, y no siempre es nítida.
+
+## 4. Diseñar para el bienestar digital
+
+Diseñar a favor de la atención de las personas no significa diseñar productos aburridos, sino **alineados con sus objetivos**:
+
+- **Señales de parada**: un final visible de la lista, un resumen al terminar, paginación en lugar de desplazamiento infinito cuando la tarea es encontrar.
+- **Control de las interrupciones**: notificaciones agrupadas, configurables y desactivadas por defecto salvo las imprescindibles.
+- **Valores por defecto protectores**: sin reproducción automática, sin rachas.
+- **Transparencia**: mostrar el tiempo de uso si la persona lo pide, explicar por qué se recomienda algo.
+- **Éxito definido por la tarea**: medir si la persona consiguió lo que quería y cuánto tardó.
+- **Atención a los menores y a las personas más vulnerables**, para quienes estos mecanismos tienen más efecto.
+
+En la Unión Europea, el Reglamento de Servicios Digitales obliga a las plataformas y buscadores de muy gran tamaño a evaluar y mitigar los riesgos sistémicos de sus servicios, entre ellos los efectos negativos sobre el bienestar físico y mental de las personas, y exige medidas de protección de los menores en todas las plataformas.
+
+## Práctica
+
+Elige una aplicación que uses a diario y activa durante un día su contador de tiempo de uso (o el del sistema operativo). Anota cada vez que la abres **sin haberlo decidido** y qué te llevó a hacerlo. Identifica qué mecanismos del apartado 3 intervienen.
+
+## Reto evaluable {#reto-t11}
+
+::: {.callout-important appearance="simple" icon="false"}
+## Reto del Tema 11 · Rediseño para la atención
+Elige un servicio digital que use mecanismos de captación de la atención:
+
+1. Identifica **al menos cuatro** mecanismos del apartado 3, con capturas, y explica qué métrica de negocio favorece cada uno.
+2. Propón para tu propio proyecto **dos métricas de éxito** centradas en la persona y explica por qué no usas el tiempo de uso.
+3. Rediseña en baja fidelidad **dos pantallas** del servicio elegido aplicando los criterios del apartado 4.
+4. Valora qué perdería y qué ganaría la organización con tu rediseño.
+
+**Entrega:** un informe hecho con la [plantilla de entrega](plantillas/entrega_reto.qmd). Se evalúa con la rúbrica que incluye la plantilla. Este reto **no tiene solución en el libro**: cada estudiante trabaja con un servicio distinto y la corrección la hace el profesorado.
+:::
+
+## Autoevaluación
+
+Responde a todas las preguntas y pulsa **Mostrar respuestas**: verás en verde las acertadas, en rojo las falladas y tu recuento. Puedes corregir y volver a comprobar. No cuenta para la nota.
+
+::: {.webex-check .webex-box}
+1. En la economía de la atención, muchos servicios gratuitos se financian con publicidad que se vende según la atención conseguida. {{< torf true >}}
+2. Eliminar el final de la página para que no haya un punto natural en el que parar es el {{< mcq "refuerzo intermitente" "*desplazamiento infinito" "encuadre" >}}
+3. Que al actualizar «a veces» haya contenido nuevo aprovecha el refuerzo {{< fitb "intermitente" "variable" ignorecase=true >}}
+4. Para una aplicación de búsqueda en el catálogo, un aumento del tiempo de uso es siempre una buena señal. {{< torf false >}}
+5. ¿Cuál de estas decisiones favorece el bienestar digital?
+
+{{< longmcq "Activar la reproducción automática por defecto" "*Agrupar las notificaciones y dejar desactivadas las no imprescindibles" "Mostrar una racha de días consecutivos de uso" >}}
+
+6. Las rachas de uso aprovechan sobre todo el sesgo de {{< mcq "anclaje" "*aversión a la pérdida" "confirmación" >}}
+:::
+
+::: {.webex-solution boton="Ver explicaciones"}
+- Es el núcleo del modelo: la atención es lo que se vende.
+- Sin final visible, no hay señal de parada.
+- Las recompensas impredecibles son las que más enganchan.
+- Si la tarea es encontrar, más tiempo suele significar más dificultad.
+- Reducir las interrupciones devuelve el control a la persona.
+- Perder la racha pesa más que el valor de lo que se hace cada día.
+:::
+
+## Recursos complementarios
+
+| Recurso | Para qué sirve |
+|---|---|
+| [Williams, J. (2018), en acceso abierto](https://doi.org/10.1017/9781108453004) | La lectura obligatoria |
+| [Center for Humane Technology](https://www.humanetech.com/) | Guías de diseño que respeta la atención |
+| [Reglamento (UE) 2022/2065 de Servicios Digitales](https://eur-lex.europa.eu/eli/reg/2022/2065/oj) | Riesgos sistémicos y protección de menores |

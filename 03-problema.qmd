@@ -1,0 +1,128 @@
+---
+engine: markdown
+---
+
+# Tema 3. Definir el problema de diseño {#sec-tema3}
+
+::: {.callout-note appearance="default"}
+## Objetivos
+- Redactar enunciados del problema basados en necesidades reales.
+- Formular hipótesis de diseño que se puedan comprobar.
+- Delimitar el alcance del proyecto y construir un punto de partida común para el equipo.
+:::
+
+::: {.callout-note appearance="simple" icon="false"}
+## Glosario del tema
+[Enunciado del problema](92-glosario.qmd#gl-enunciado) · [Hipótesis de diseño](92-glosario.qmd#gl-hipotesis) · [Alcance](92-glosario.qmd#gl-alcance) · [Problema retorcido](92-glosario.qmd#gl-retorcido) · [Encuadre](92-glosario.qmd#gl-encuadre) · [*Brief* de diseño](92-glosario.qmd#gl-brief)
+:::
+
+::: {.callout-tip appearance="simple" icon="false"}
+## Descargas
+[Plantilla de entrega del reto (.qmd)](plantillas/entrega_reto.qmd){.btn .btn-outline-primary .btn-sm download="entrega_reto.qmd"}
+[Tema de estilo (.scss)](plantillas/informe.scss){.btn .btn-outline-primary .btn-sm download="informe.scss"}
+:::
+
+## Lectura obligatoria
+
+::: {.lectura}
+Dorst, K. (2011). [The core of 'design thinking' and its application](https://doi.org/10.1016/j.destud.2011.07.006). *Design Studies*, 32(6), 521-532.
+:::
+
+### Lecturas complementarias {.unnumbered}
+
+- Rittel, H. W. J.; Webber, M. M. (1973). [Dilemmas in a general theory of planning](https://doi.org/10.1007/BF01405730). *Policy Sciences*, 4(2), 155-169. El texto que introdujo los «problemas retorcidos» (*wicked problems*).
+- Goodwin, K. (2009). *Designing for the digital age*. Wiley. Capítulos sobre la definición de requisitos y objetivos (bibliografía complementaria de la asignatura).
+
+## 1. Por qué definir el problema
+
+Los equipos tienden a saltar a la solución: «hagamos una aplicación». Pero una solución solo es buena respecto a un problema, y la mayoría de los proyectos que fracasan resolvieron bien un problema equivocado. Definir el problema es convertir lo aprendido en la investigación (Tema 2) en un enunciado que todo el equipo comparta y que permita decidir qué entra y qué no.
+
+Rittel y Webber (1973) llamaron **problemas retorcidos** (*wicked problems*) a los que no tienen una formulación definitiva: entender el problema y diseñar la solución ocurren a la vez, y cada solución cambia el problema. Muchos problemas de diseño de interacción son así. Por eso el enunciado del problema es **provisional**: se revisa cuando la evidencia lo pide.
+
+## 2. Encuadrar el problema
+
+Dorst (2011) describe el núcleo del pensamiento de diseño como la creación de **encuadres** (*frames*): maneras nuevas de mirar una situación que abren soluciones que antes no se veían. En lugar de preguntar «¿cómo hacemos más rápida la reserva de salas?», un encuadre distinto pregunta «¿cómo hacemos que la gente sepa qué salas están libres sin tener que reservar?». El encuadre no sale de la nada: nace de entender los valores y las prácticas de las personas implicadas.
+
+## 3. El enunciado del problema
+
+Un buen enunciado del problema está **centrado en la persona**, describe una **necesidad** (no una función) y se apoya en **evidencia**. Una estructura útil:
+
+> **[Persona usuaria]** necesita **[necesidad]** porque **[conclusión de la investigación]**.
+
+| Débil | Mejor |
+|---|---|
+| «Los usuarios necesitan una aplicación de reservas.» | «Quien estudia en la biblioteca en época de exámenes necesita saber si encontrará sitio antes de salir de casa, porque llegar y no encontrarlo le hace perder la tarde.» |
+| «Hay que mejorar la web.» | «Quien visita por primera vez la biblioteca necesita encontrar el horario y la ubicación en un solo vistazo, porque lo busca desde el móvil y con prisa.» |
+
+El enunciado débil contiene ya una solución y no dice a quién ni por qué. El bueno deja abiertas varias soluciones: una aplicación, un indicador de ocupación en la web o un aviso en las pantallas de la facultad.
+
+## 4. Hipótesis de diseño
+
+Una **hipótesis de diseño** convierte una idea en algo comprobable. Indica qué creemos, qué resultado esperamos y cómo sabremos si acertamos:
+
+> Creemos que **[cambio o solución]** para **[persona usuaria]** conseguirá **[resultado]**. Sabremos que es así cuando **[señal medible]**.
+
+Por ejemplo: «Creemos que mostrar la ocupación en tiempo real en la portada de la web para quien estudia en época de exámenes reducirá los desplazamientos inútiles. Sabremos que es así cuando, en la prueba con el prototipo, al menos 4 de 5 participantes decidan correctamente si ir o no a la biblioteca en menos de 30 segundos». La señal medible conecta con el Tema 4.
+
+## 5. Alcance y punto de partida común
+
+El **alcance** dice qué entra en el proyecto y, sobre todo, qué **no** entra. Escribirlo evita que el proyecto crezca sin control y que cada miembro del equipo diseñe para un problema distinto. Una tabla sencilla basta:
+
+| Dentro | Fuera |
+|---|---|
+| Consultar la ocupación de salas y puestos | Gestión de préstamos |
+| Reserva de salas de trabajo en grupo | Pagos y sanciones |
+| Versión móvil | Aplicación nativa |
+
+El **brief de diseño** reúne en una página el enunciado del problema, las personas usuarias, las hipótesis, el alcance, las restricciones (plazos, tecnología, normativa de accesibilidad) y los criterios de éxito. Es el punto de partida común del equipo, y el primer documento del proyecto final de la asignatura.
+
+## Práctica
+
+En parejas, cada uno redacta el enunciado del problema a partir de los mismos tres hallazgos de investigación. Comparad los enunciados: ¿proponéis el mismo encuadre? ¿Alguno contiene una solución escondida? Reescribidlos hasta que ninguno la contenga.
+
+## Reto evaluable {#reto-t3}
+
+::: {.callout-important appearance="simple" icon="false"}
+## Reto del Tema 3 · *Brief* de diseño
+A partir de la investigación del reto del Tema 2 (o de otro servicio que elijas), elabora el **brief de diseño** de un proyecto:
+
+1. **Dos encuadres** distintos del problema y la justificación del que eliges.
+2. El **enunciado del problema** con la estructura persona-necesidad-conclusión, apoyado en al menos un hallazgo.
+3. **Tres hipótesis de diseño** con su señal medible.
+4. La **tabla de alcance** (dentro y fuera) y las restricciones del proyecto.
+
+**Entrega:** un informe de dos páginas como máximo hecho con la [plantilla de entrega](plantillas/entrega_reto.qmd). Se evalúa con la rúbrica que incluye la plantilla. Este reto **no tiene solución en el libro**: cada estudiante trabaja con un proyecto distinto y la corrección la hace el profesorado.
+:::
+
+## Autoevaluación
+
+Responde a todas las preguntas y pulsa **Mostrar respuestas**: verás en verde las acertadas, en rojo las falladas y tu recuento. Puedes corregir y volver a comprobar. No cuenta para la nota.
+
+::: {.webex-check .webex-box}
+1. «Los usuarios necesitan una aplicación de reservas» es un buen enunciado del problema. {{< torf false >}}
+2. Los problemas que no tienen una formulación definitiva y cambian con cada solución se llaman problemas {{< mcq "técnicos" "*retorcidos (wicked)" "domesticados" >}}
+3. Según Dorst, el núcleo del pensamiento de diseño es crear nuevos {{< fitb "encuadres" "encuadre" "frames" ignorecase=true >}} del problema.
+4. Una hipótesis de diseño debe incluir una señal que permita saber si se cumple. {{< torf true >}}
+5. ¿Qué parte del alcance evita con más eficacia que el proyecto crezca sin control?
+
+{{< longmcq "La lista de lo que entra en el proyecto" "*La lista explícita de lo que no entra" "El calendario de entregas" >}}
+
+6. ¿Qué documento reúne en una página el problema, las personas usuarias, las hipótesis, el alcance y los criterios de éxito? {{< mcq "El storyboard" "*El brief de diseño" "El flujo de usuario" >}}
+:::
+
+::: {.webex-solution boton="Ver explicaciones"}
+- Contiene ya una solución y no dice para quién ni por qué.
+- Rittel y Webber los llamaron *wicked problems*.
+- Encuadrar es mirar la situación de una forma que abre soluciones nuevas.
+- Sin señal medible, la hipótesis no se puede comprobar.
+- Escribir lo que queda fuera obliga a decidir y evita añadidos sin fin.
+- El *brief* es el punto de partida común del equipo.
+:::
+
+## Recursos complementarios
+
+| Recurso | Para qué sirve |
+|---|---|
+| [Interaction Design Foundation – Problem statements](https://ixdf.org/literature/topics/problem-statements) | Cómo redactar el enunciado del problema |
+| [Nielsen Norman Group – Using «How might we» questions](https://www.nngroup.com/articles/how-might-we-questions/) | Del problema a las oportunidades de diseño |
+| [Design Council – Framework for innovation](https://www.designcouncil.org.uk/our-resources/framework-for-innovation/) | El doble diamante: divergir y converger en el problema y en la solución |

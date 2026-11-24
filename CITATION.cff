@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "Si usas este libro, cítalo así."
+type: book
+title: "Esquemas de página y prototipos de baja fidelidad: guía interactiva"
+version: "1.0.0"
+date-released: 2026-11-24
+license: CC-BY-4.0
+url: "https://pablosancheznunez.com/prototipos-baja-fidelidad/"
+repository-code: "https://github.com/pablosancheznunez/prototipos-baja-fidelidad"
+authors:
+  - family-names: "Sánchez-Núñez"
+    given-names: "Pablo"
+    orcid: "https://orcid.org/0000-0001-7845-9506"
+    affiliation: "Universidad Carlos III de Madrid"
+keywords:
+  - experiencia de usuario
+  - wireframes
+  - prototipos de baja fidelidad
+  - diseño de interacción
+  - accesibilidad
+  - patrones engañosos

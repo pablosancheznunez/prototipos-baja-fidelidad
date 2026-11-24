@@ -1,0 +1,180 @@
+---
+engine: markdown
+---
+
+# Tema 10. Sesgos cognitivos y patrones engañosos {#sec-tema10}
+
+::: {.callout-note appearance="default"}
+## Objetivos
+- Reconocer los sesgos cognitivos que afectan a las personas usuarias y a quienes diseñan.
+- Identificar patrones engañosos (*dark patterns*) con las taxonomías de la investigación.
+- Asumir la responsabilidad ética de las decisiones de diseño y conocer su marco legal básico.
+:::
+
+::: {.callout-note appearance="simple" icon="false"}
+## Glosario del tema
+[Sesgo cognitivo](92-glosario.qmd#gl-sesgo) · [Heurístico](92-glosario.qmd#gl-heuristico) · [Efecto de anclaje](92-glosario.qmd#gl-anclaje) · [Opción por defecto](92-glosario.qmd#gl-defecto) · [Patrón engañoso](92-glosario.qmd#gl-patron-enganoso) · [Sesgo de confirmación](92-glosario.qmd#gl-confirmacion) · [Arquitectura de la decisión](92-glosario.qmd#gl-arquitectura-decision)
+:::
+
+::: {.callout-tip appearance="simple" icon="false"}
+## Descargas
+[Script R del capítulo](plantillas/10_sesgos.R){.btn .btn-outline-primary .btn-sm download="10_sesgos.R"}
+[Plantilla de entrega del reto (.qmd)](plantillas/entrega_reto.qmd){.btn .btn-outline-primary .btn-sm download="entrega_reto.qmd"}
+[Tema de estilo (.scss)](plantillas/informe.scss){.btn .btn-outline-primary .btn-sm download="informe.scss"}
+:::
+
+## Lectura obligatoria
+
+::: {.lectura}
+Gray, C. M.; Kou, Y.; Battles, B.; Hoggatt, J.; Toombs, A. L. (2018). [The dark (patterns) side of UX design](https://doi.org/10.1145/3173574.3174108). En *Proceedings of the 2018 CHI Conference on Human Factors in Computing Systems* (pp. 1-14). ACM.
+:::
+
+### Lecturas complementarias {.unnumbered}
+
+- Mathur, A.; Acar, G.; Friedman, M. J.; Lucherini, E.; Mayer, J.; Chetty, M.; Narayanan, A. (2019). [Dark patterns at scale: Findings from a crawl of 11K shopping websites](https://doi.org/10.1145/3359183). *Proceedings of the ACM on Human-Computer Interaction*, 3(CSCW), 1-32. Una medición sistemática en comercio electrónico.
+- Tversky, A.; Kahneman, D. (1974). [Judgment under uncertainty: Heuristics and biases](https://doi.org/10.1126/science.185.4157.1124). *Science*, 185(4157), 1124-1131. El artículo que fundó el estudio de los sesgos.
+- Comité Europeo de Protección de Datos (2023). [Directrices 03/2022 sobre patrones de diseño engañosos en interfaces de redes sociales](https://www.edpb.europa.eu/our-work-tools/our-documents/guidelines/guidelines-032022-deceptive-design-patterns-social-media_en). Cómo los patrones engañosos afectan al consentimiento.
+
+## 1. Sesgos cognitivos
+
+Tversky y Kahneman (1974) mostraron que, cuando decidimos con incertidumbre, usamos **heurísticos**: atajos mentales que suelen funcionar pero que producen errores sistemáticos, los **sesgos**. El diseño de interfaces influye en las decisiones aunque no lo pretenda. Algunos sesgos especialmente relevantes:
+
+| Sesgo | Qué ocurre | Ejemplo en una interfaz |
+|---|---|---|
+| **Anclaje** | La primera cifra que vemos condiciona las siguientes | Mostrar primero el plan más caro hace que el intermedio parezca barato |
+| **Opción por defecto** | Tendemos a dejar lo que viene marcado | Casilla del boletín premarcada |
+| **Encuadre** | La misma información se valora distinto según cómo se presente | «95 % de éxito» frente a «5 % de fracaso» |
+| **Aversión a la pérdida** | Perder pesa más que ganar lo mismo | «No pierdas tus ventajas» al darse de baja |
+| **Prueba social** | Hacemos lo que parecen hacer los demás | «1.200 personas han reservado hoy» |
+
+Quien diseña también tiene sesgos: el **sesgo de confirmación** (buscar datos que confirman la idea propia), el **falso consenso** (creer que los usuarios piensan como el equipo) o el apego a la primera solución. La investigación (Tema 2) y las pruebas (Tema 9) son la defensa.
+
+## 2. De influir a manipular
+
+Toda interfaz es una **arquitectura de la decisión**: alguna opción aparece primero, otra viene marcada. Influir es inevitable; la pregunta es **a favor de quién**. Un diseño es manipulador cuando aprovecha los sesgos para que la persona haga algo que no haría si entendiera la situación, en beneficio de otro.
+
+## 3. Patrones engañosos
+
+El término ***dark patterns*** lo acuñó Harry Brignull en 2010; hoy él mismo y buena parte de la literatura prefieren hablar de **diseño engañoso** (*deceptive design*). Son soluciones de interfaz que engañan, presionan o dificultan decidir libremente.
+
+Gray et al. (2018) analizaron ejemplos recogidos por profesionales y propusieron cinco **estrategias**:
+
+| Estrategia | Qué hace |
+|---|---|
+| **Insistencia** (*nagging*) | Interrumpe una y otra vez la tarea para pedir algo |
+| **Obstrucción** | Pone difícil una acción que interesa a la persona (darse de baja, rechazar) |
+| **Ocultación** (*sneaking*) | Esconde o retrasa información relevante (costes, condiciones) |
+| **Interferencia en la interfaz** | Manipula la presentación para favorecer una opción |
+| **Acción forzada** | Exige hacer algo que no se busca para poder continuar |
+
+Mathur et al. (2019) rastrearon unas 11.000 webs de comercio y encontraron patrones de **urgencia** (contadores), **escasez** («quedan dos»), **prueba social**, **desvío** (*misdirection*), además de ocultación, obstrucción y acción forzada. Hallaron algunos de esos mensajes generados de forma engañosa, sin relación con datos reales.
+
+## 4. Responsabilidad y marco legal
+
+Gray et al. subrayan que los patrones engañosos no suelen nacer de la mala fe de una persona diseñadora, sino de la presión por métricas de negocio a corto plazo. Por eso la responsabilidad ética incluye saber **argumentar** ante el equipo: los patrones engañosos dañan la confianza, aumentan las reclamaciones y pueden ser ilegales.
+
+- El **Reglamento de Servicios Digitales** de la UE ([Reglamento (UE) 2022/2065](https://eur-lex.europa.eu/eli/reg/2022/2065/oj), art. 25) prohíbe a las plataformas en línea diseñar sus interfaces de forma que engañen o manipulen a las personas usuarias o limiten su capacidad de decidir libremente.
+- El **Reglamento General de Protección de Datos** exige que el consentimiento sea libre e informado; el Comité Europeo de Protección de Datos ha descrito cómo los patrones engañosos lo vician.
+- La normativa de **prácticas comerciales desleales** prohíbe las prácticas engañosas y agresivas con consumidores.
+
+Una pregunta práctica para revisar un diseño: **¿la persona elegiría lo mismo si viera con claridad todas las opciones y sus consecuencias?** Si la respuesta es no, hay un problema.
+
+## Práctica en R: dos taxonomías
+
+`patrones_enganosos` reúne las categorías de Gray et al. (2018) y Mathur et al. (2019), con un ejemplo inventado de cada una.
+
+```{webr}
+#| autorun: true
+source("datos/uxlearn.R")
+patrones_enganosos[, c("fuente", "categoria", "original")]
+```
+
+### Ejercicio 10.1 {.unnumbered}
+
+¿Qué categorías aparecen en **las dos** taxonomías? `intersect()` devuelve los elementos comunes a dos vectores.
+
+```{webr}
+#| exercise: t10_comunes
+#| setup: true
+source("datos/uxlearn.R")
+g <- patrones_enganosos
+```
+
+```{webr}
+#| exercise: t10_comunes
+gray   <- g$categoria[g$fuente == "Gray et al. (2018)"]
+mathur <- g$categoria[g$fuente == "______"]
+intersect(gray, mathur)
+```
+
+::: {.hint exercise="t10_comunes"}
+Copia el valor exacto de la columna `fuente` para el segundo estudio, con el año entre paréntesis.
+:::
+
+::: {.solution exercise="t10_comunes"}
+```r
+gray   <- g$categoria[g$fuente == "Gray et al. (2018)"]
+mathur <- g$categoria[g$fuente == "Mathur et al. (2019)"]
+intersect(gray, mathur)
+```
+Ocultación, obstrucción y acción forzada. Son los patrones más estables en la literatura; los de urgencia, escasez y prueba social son más propios del comercio electrónico.
+:::
+
+```{webr}
+#| exercise: t10_comunes
+#| check: true
+if (setequal(as.character(.result), c("Obstrucción", "Ocultación", "Acción forzada"))) {
+  list(correct = TRUE, message = "Correcto: obstrucción, ocultación y acción forzada.")
+} else {
+  list(correct = FALSE, message = "Escribe \"Mathur et al. (2019)\" exactamente.")
+}
+```
+
+## Reto evaluable {#reto-t10}
+
+::: {.callout-important appearance="simple" icon="false"}
+## Reto del Tema 10 · Auditoría de diseño engañoso
+Elige un servicio digital real (una suscripción, una tienda, una red social o una aplicación de reservas):
+
+1. Recorre el **alta** y la **baja** (o la cancelación) y documenta con capturas cada patrón engañoso que encuentres, clasificado con Gray et al. y con Mathur et al.
+2. Identifica qué **sesgo cognitivo** aprovecha cada patrón.
+3. Valora si alguno podría contravenir el art. 25 del Reglamento de Servicios Digitales o las reglas del consentimiento, y explica por qué (sin necesidad de un análisis jurídico completo).
+4. Rediseña en baja fidelidad **una pantalla** sin el patrón y explica cómo has equilibrado los intereses de la organización y de la persona.
+
+**Entrega:** un informe hecho con la [plantilla de entrega](plantillas/entrega_reto.qmd). Se evalúa con la rúbrica que incluye la plantilla. Este reto **no tiene solución en el libro**: cada estudiante trabaja con un servicio distinto y la corrección la hace el profesorado.
+:::
+
+## Autoevaluación
+
+Responde a todas las preguntas y pulsa **Mostrar respuestas**: verás en verde las acertadas, en rojo las falladas y tu recuento. Puedes corregir y volver a comprobar. No cuenta para la nota.
+
+::: {.webex-check .webex-box}
+1. Una casilla de suscripción al boletín marcada de antemano aprovecha el sesgo de la {{< mcq "prueba social" "*opción por defecto" "aversión a la pérdida" >}}
+2. Que darse de baja exija llamar por teléfono cuando el alta fue en línea es un ejemplo de {{< mcq "insistencia" "*obstrucción" "escasez" >}}
+3. Un contador que reinicia la «oferta» cada vez que se recarga la página es un patrón de {{< fitb "urgencia" ignorecase=true >}}
+4. Según Gray et al., los patrones engañosos suelen deberse a la mala fe individual de quien diseña. {{< torf false >}}
+5. ¿Qué norma de la UE prohíbe a las plataformas en línea diseñar interfaces que engañen o manipulen?
+
+{{< longmcq "La Directiva de accesibilidad web" "*El Reglamento de Servicios Digitales (Reglamento 2022/2065)" "La norma ISO 9241-210" >}}
+
+6. Mostrar primero el plan más caro para que el intermedio parezca barato aprovecha el efecto de {{< mcq "*anclaje" "encuadre" "confirmación" >}}
+7. Buscar solo datos que confirmen la idea propia es un sesgo que afecta también a quien diseña. {{< torf true >}}
+:::
+
+::: {.webex-solution boton="Ver explicaciones"}
+- Tendemos a dejar lo que viene marcado.
+- Hacer difícil lo que interesa a la persona es obstrucción.
+- Es urgencia falsa, documentada por Mathur et al. (2019).
+- Más bien de la presión por métricas de negocio; por eso importa saber argumentar.
+- Es el art. 25 del Reglamento de Servicios Digitales.
+- La primera cifra sirve de ancla para valorar las demás.
+- El sesgo de confirmación: la investigación y las pruebas lo contrarrestan.
+:::
+
+## Recursos complementarios
+
+| Recurso | Para qué sirve |
+|---|---|
+| [Deceptive Design](https://www.deceptive.design/) | Catálogo de tipos y casos (antes *Dark Patterns*) |
+| [Comité Europeo de Protección de Datos – Directrices 03/2022](https://www.edpb.europa.eu/our-work-tools/our-documents/guidelines/guidelines-032022-deceptive-design-patterns-social-media_en) | Patrones engañosos y consentimiento |
+| [Reglamento (UE) 2022/2065 de Servicios Digitales](https://eur-lex.europa.eu/eli/reg/2022/2065/oj) | Art. 25: diseño de las interfaces |

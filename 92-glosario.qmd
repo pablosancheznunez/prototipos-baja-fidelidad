@@ -1,0 +1,265 @@
+---
+engine: markdown
+---
+
+# Glosario {#sec-glosario}
+
+Términos del libro ordenados por tema. Cada entrada enlaza con el tema donde se explica.
+
+## Tema 1. Fundamentos
+
+### Prototipo {#gl-prototipo}
+Representación de un diseño que se construye para aprender algo sobre él antes de desarrollarlo. → [Tema 1](01-fundamentos.qmd)
+
+### Fidelidad {#gl-fidelidad}
+Grado en que un prototipo se parece al producto final. Tiene varias dimensiones independientes: apariencia, datos, funcionalidad, interactividad y estructura espacial. → [Tema 1](01-fundamentos.qmd)
+
+### Boceto {#gl-boceto}
+Dibujo rápido, barato y ambiguo que sirve para explorar y generar alternativas, no para especificar. → [Tema 1](01-fundamentos.qmd)
+
+### Esquema de página {#gl-wireframe}
+*Wireframe*. Representación de la estructura de una pantalla: qué elementos contiene, dónde están y qué importancia tienen, sin estilo visual. → [Tema 7](07-wireframes.qmd)
+
+### Diseño centrado en las personas {#gl-dcp}
+Enfoque, descrito en la norma ISO 9241-210, que repite un ciclo de cuatro actividades: entender el contexto de uso, especificar requisitos, producir soluciones y evaluarlas. → [Tema 1](01-fundamentos.qmd)
+
+### Iteración {#gl-iteracion}
+Cada vuelta del ciclo de diseño y evaluación. → [Tema 1](01-fundamentos.qmd)
+
+## Tema 2. Investigación
+
+### Investigación con usuarios {#gl-investigacion}
+Conjunto de métodos para entender quién usará un producto, qué intenta conseguir, en qué contexto y qué se lo impide. → [Tema 2](02-investigacion.qmd)
+
+### Método actitudinal {#gl-actitudinal}
+Método que recoge lo que las personas dicen: opiniones, intenciones, preferencias. → [Tema 2](02-investigacion.qmd)
+
+### Método comportamental {#gl-comportamental}
+Método que observa lo que las personas hacen. → [Tema 2](02-investigacion.qmd)
+
+### Evaluación heurística {#gl-heuristica}
+Inspección de una interfaz por varios evaluadores con una lista breve de principios (heurísticas), sin participación de usuarios. → [Tema 2](02-investigacion.qmd)
+
+### Severidad {#gl-severidad}
+Gravedad de un problema de usabilidad, de 0 (no es un problema) a 4 (catástrofe) en la escala de Nielsen. → [Tema 2](02-investigacion.qmd)
+
+### Diagrama de afinidad {#gl-afinidad}
+Técnica de análisis que agrupa observaciones escritas en notas según su similitud hasta que emergen temas. → [Tema 2](02-investigacion.qmd)
+
+### Hallazgo {#gl-hallazgo}
+Observación de la investigación con su evidencia. Se distingue de la conclusión (*insight*), que la interpreta. → [Tema 2](02-investigacion.qmd)
+
+### «¿Cómo podríamos…?» {#gl-hmw}
+*How might we*. Forma de convertir una conclusión de la investigación en una oportunidad de diseño abierta a varias soluciones. → [Tema 2](02-investigacion.qmd)
+
+## Tema 3. Definir el problema
+
+### Enunciado del problema {#gl-enunciado}
+Frase que describe a quién afecta el problema, qué necesita y por qué, sin incluir una solución. → [Tema 3](03-problema.qmd)
+
+### Hipótesis de diseño {#gl-hipotesis}
+Afirmación comprobable sobre el efecto de un cambio de diseño, con la señal que permitirá saber si se cumple. → [Tema 3](03-problema.qmd)
+
+### Alcance {#gl-alcance}
+Lo que entra y, sobre todo, lo que no entra en un proyecto. → [Tema 3](03-problema.qmd)
+
+### Problema retorcido {#gl-retorcido}
+*Wicked problem*. Problema sin formulación definitiva en el que entenderlo y resolverlo ocurren a la vez (Rittel y Webber, 1973). → [Tema 3](03-problema.qmd)
+
+### Encuadre {#gl-encuadre}
+Manera de mirar una situación que abre soluciones nuevas; según Dorst (2011), el núcleo del pensamiento de diseño. → [Tema 3](03-problema.qmd)
+
+### *Brief* de diseño {#gl-brief}
+Documento breve que reúne el problema, las personas usuarias, las hipótesis, el alcance, las restricciones y los criterios de éxito. → [Tema 3](03-problema.qmd)
+
+## Tema 4. Métricas
+
+### Objetivo SMART {#gl-smart}
+Objetivo específico, medible, alcanzable, relevante y con plazo. → [Tema 4](04-metricas.qmd)
+
+### Hito {#gl-hito}
+Punto del proyecto definido por un resultado comprobable. → [Tema 4](04-metricas.qmd)
+
+### Marco HEART {#gl-heart}
+Agrupación de métricas de experiencia en satisfacción, implicación, adopción, retención y éxito en la tarea (Rodden et al., 2010). → [Tema 4](04-metricas.qmd)
+
+### Tasa de éxito {#gl-tasa-exito}
+Proporción de participantes que completan una tarea. → [Tema 4](04-metricas.qmd)
+
+### Intervalo de confianza {#gl-intervalo}
+Rango de valores entre los que está probablemente el valor real de una métrica. Con muestras pequeñas es ancho. → [Tema 4](04-metricas.qmd)
+
+### Media geométrica {#gl-media-geometrica}
+Media de los logaritmos devuelta a la escala original; representa mejor el tiempo típico cuando hay valores muy altos. → [Tema 4](04-metricas.qmd)
+
+### SUS {#gl-sus}
+*System Usability Scale*. Cuestionario de diez afirmaciones que da una puntuación de usabilidad percibida de 0 a 100, que no es un porcentaje. → [Tema 4](04-metricas.qmd)
+
+## Tema 5. Flujos
+
+### Flujo de usuario {#gl-flujo}
+Recorrido por el sistema para completar una tarea, con sus pantallas y decisiones. → [Tema 5](05-flujos.qmd)
+
+### Análisis de tareas {#gl-analisis-tareas}
+Descomposición de un objetivo en subtareas y pasos. → [Tema 5](05-flujos.qmd)
+
+### Mapa de tareas {#gl-mapa-tareas}
+Representación ordenada de todas las tareas de un servicio, sin entrar en pantallas. → [Tema 5](05-flujos.qmd)
+
+### *Wireflow* {#gl-wireflow}
+Flujo dibujado con miniaturas de los esquemas de cada pantalla. → [Tema 5](05-flujos.qmd)
+
+### Flujo de error {#gl-flujo-error}
+Camino que sigue la persona cuando algo falla. → [Tema 5](05-flujos.qmd)
+
+### Callejón sin salida {#gl-callejon}
+Punto de un flujo desde el que no se puede continuar, volver ni salir. → [Tema 5](05-flujos.qmd)
+
+### Embudo {#gl-embudo}
+Recuento de las personas que llegan a cada paso de un flujo, que muestra dónde se pierden. → [Tema 5](05-flujos.qmd)
+
+## Tema 6. *Storyboards*
+
+### *Storyboard* {#gl-storyboard}
+Secuencia de viñetas que cuenta cómo una persona usa un producto en una situación concreta. → [Tema 6](06-storyboards.qmd)
+
+### Escenario {#gl-escenario}
+Historia escrita de una persona concreta que persigue un objetivo en un contexto; sirve de guion al *storyboard*. → [Tema 6](06-storyboards.qmd)
+
+### Contexto de uso {#gl-contexto}
+Entorno físico, social y técnico en el que se usa un producto. → [Tema 6](06-storyboards.qmd)
+
+### Momento clave {#gl-momento}
+Instante de la historia en el que el producto marca la diferencia. → [Tema 6](06-storyboards.qmd)
+
+### Viñeta {#gl-vineta}
+Cada uno de los cuadros de un *storyboard*. → [Tema 6](06-storyboards.qmd)
+
+## Tema 7. Esquemas de página
+
+### Jerarquía visual {#gl-jerarquia}
+Orden de importancia de los elementos, comunicado con el tamaño, la posición, la agrupación y el contraste. → [Tema 7](07-wireframes.qmd)
+
+### Rejilla {#gl-rejilla}
+División del ancho de la pantalla en columnas, medianiles y márgenes para alinear los elementos. → [Tema 7](07-wireframes.qmd)
+
+### Medianil {#gl-medianil}
+*Gutter*. Separación entre las columnas de una rejilla. → [Tema 7](07-wireframes.qmd)
+
+### Área de contenido {#gl-area}
+Zona de la pantalla que se repite en todas las páginas: cabecera, navegación, contenido, lateral, pie. → [Tema 7](07-wireframes.qmd)
+
+### Convención {#gl-convencion}
+Solución de interfaz que la mayoría de los sitios resuelve igual y que las personas ya esperan. → [Tema 7](07-wireframes.qmd)
+
+### Anotación {#gl-anotacion}
+Nota numerada en un esquema que explica un comportamiento que el dibujo no muestra. → [Tema 7](07-wireframes.qmd)
+
+## Tema 8. Estados y transiciones
+
+### Estado {#gl-estado}
+Cada situación distinta en la que puede estar un componente o una pantalla. → [Tema 8](08-estados.qmd)
+
+### Transición {#gl-transicion}
+Paso de un estado a otro, provocado por un evento. → [Tema 8](08-estados.qmd)
+
+### Diagrama de estados {#gl-diagrama-estados}
+Representación de los estados de un sistema y de las transiciones entre ellos, basada en los *statecharts* de Harel (1987). → [Tema 8](08-estados.qmd)
+
+### Estado vacío {#gl-vacio}
+Estado de una pantalla cuando no hay contenido que mostrar. → [Tema 8](08-estados.qmd)
+
+### Foco {#gl-foco}
+Estado del elemento al que se ha llegado con el teclado; debe ser siempre visible. → [Tema 8](08-estados.qmd)
+
+### Prototipo navegable {#gl-navegable}
+Conjunto de pantallas enlazadas que se puede recorrer como si fuera el producto. → [Tema 8](08-estados.qmd)
+
+## Tema 9. Prototipos en papel
+
+### Prototipo en papel {#gl-papel}
+Prototipo hecho con hojas y piezas de papel que se manipulan durante una prueba. → [Tema 9](09-prototipos-papel.qmd)
+
+### Facilitador {#gl-facilitador}
+Persona que dirige una sesión de prueba, lee las tareas y mantiene la neutralidad. → [Tema 9](09-prototipos-papel.qmd)
+
+### «Ordenador humano» {#gl-ordenador}
+Persona que, en una prueba en papel, cambia las hojas según lo que hace el participante, como lo haría el sistema. → [Tema 9](09-prototipos-papel.qmd)
+
+### Pensamiento en voz alta {#gl-voz-alta}
+Técnica en la que el participante dice lo que busca, espera y le sorprende mientras usa el prototipo. → [Tema 9](09-prototipos-papel.qmd)
+
+### Escenario de tarea {#gl-escenario-tarea}
+Situación realista que da un objetivo al participante sin decirle cómo conseguirlo. → [Tema 9](09-prototipos-papel.qmd)
+
+### Prueba de usabilidad {#gl-prueba}
+Sesión en la que personas representativas realizan tareas con un producto o prototipo mientras se observa qué ocurre. → [Tema 9](09-prototipos-papel.qmd)
+
+## Tema 10. Sesgos y patrones engañosos
+
+### Sesgo cognitivo {#gl-sesgo}
+Error sistemático en el juicio que se produce al usar atajos mentales. → [Tema 10](10-sesgos.qmd)
+
+### Heurístico {#gl-heuristico}
+Atajo mental para decidir con incertidumbre (Tversky y Kahneman, 1974). No confundir con las heurísticas de usabilidad. → [Tema 10](10-sesgos.qmd)
+
+### Efecto de anclaje {#gl-anclaje}
+Tendencia a que la primera cifra vista condicione la valoración de las siguientes. → [Tema 10](10-sesgos.qmd)
+
+### Opción por defecto {#gl-defecto}
+La opción que viene marcada; tendemos a no cambiarla. → [Tema 10](10-sesgos.qmd)
+
+### Patrón engañoso {#gl-patron-enganoso}
+*Dark pattern* o diseño engañoso. Solución de interfaz que engaña, presiona o dificulta decidir libremente. → [Tema 10](10-sesgos.qmd)
+
+### Sesgo de confirmación {#gl-confirmacion}
+Tendencia a buscar y valorar más los datos que confirman la idea propia. → [Tema 10](10-sesgos.qmd)
+
+### Arquitectura de la decisión {#gl-arquitectura-decision}
+Forma en que se presentan las opciones, que influye en lo que se elige. → [Tema 10](10-sesgos.qmd)
+
+## Tema 11. Economía de la atención
+
+### Economía de la atención {#gl-economia-atencion}
+Modelo económico en el que la atención de las personas es el recurso que se capta y se vende, sobre todo a anunciantes. → [Tema 11](11-atencion.qmd)
+
+### Métrica de implicación {#gl-implicacion}
+Medida de la intensidad de uso (tiempo, sesiones, desplazamiento) que no indica por sí sola si el producto ayuda a la persona. → [Tema 11](11-atencion.qmd)
+
+### Refuerzo intermitente {#gl-refuerzo}
+Recompensa que llega de forma impredecible; es el patrón que más cuesta abandonar. → [Tema 11](11-atencion.qmd)
+
+### Desplazamiento infinito {#gl-infinito}
+Lista que carga contenido sin fin al llegar abajo, sin un punto natural para parar. → [Tema 11](11-atencion.qmd)
+
+### Señal de parada {#gl-parada}
+Elemento de diseño que marca un final natural (un final de lista, un resumen). → [Tema 11](11-atencion.qmd)
+
+### Bienestar digital {#gl-bienestar}
+Relación con la tecnología alineada con los objetivos y la salud de las personas. → [Tema 11](11-atencion.qmd)
+
+## Tema 12. Diseño inclusivo y accesible
+
+### Diseño inclusivo {#gl-inclusivo}
+Diseño que tiene en cuenta toda la diversidad humana en lugar de un usuario medio. → [Tema 12](12-inclusivo.qmd)
+
+### Accesibilidad {#gl-accesibilidad}
+Condición de un producto que pueden percibir, entender, navegar y usar las personas con discapacidad. → [Tema 12](12-inclusivo.qmd)
+
+### WCAG {#gl-wcag}
+Pautas de Accesibilidad para el Contenido Web del W3C; la versión actual es la 2.2 (2023). → [Tema 12](12-inclusivo.qmd)
+
+### Espectro de personas {#gl-espectro}
+Idea de que una limitación puede ser permanente, temporal o situacional. → [Tema 12](12-inclusivo.qmd)
+
+### GenderMag {#gl-gendermag}
+Método de inspección que detecta sesgos de género con personajes que varían en cinco facetas cognitivas (Burnett et al., 2016). → [Tema 12](12-inclusivo.qmd)
+
+### Contraste {#gl-contraste}
+Relación entre la luminancia de dos colores, de 1:1 a 21:1. → [Tema 12](12-inclusivo.qmd)
+
+### Daltonismo {#gl-daltonismo}
+Deficiencia en la visión de los colores; la más frecuente afecta al eje rojo-verde. → [Tema 12](12-inclusivo.qmd)
+
+### Orden de foco {#gl-orden-foco}
+Secuencia en la que el teclado recorre los elementos interactivos de una pantalla. → [Tema 12](12-inclusivo.qmd)

@@ -1,0 +1,61 @@
+---
+engine: markdown
+---
+
+# El paquete UxLearn {#sec-uxlearn}
+
+**UxLearn** es un paquete de R que reúne las funciones y los datos simulados de este libro y de su continuación, *Diseño e interacción en prototipos de alta fidelidad*. Sirve para **comprobar y medir** lo que se diseña: no sustituye a las herramientas de diseño.
+
+Dentro del libro se carga con `source("datos/uxlearn.R")`. En tu ordenador, con RStudio o Positron, instálalo una vez:
+
+```r
+install.packages("remotes")
+remotes::install_github("pablosancheznunez/UxLearn")
+library(UxLearn)
+vignette("UxLearn")   # guía rápida
+```
+
+## Funciones
+
+| Para… | Función | Tema |
+|---|---|---|
+| Relación de contraste entre dos colores (WCAG) | `contraste()` | 12 |
+| ¿Cumple el contraste mínimo AA o AAA? | `cumple_wcag()` | 12 |
+| Revisar todos los colores de una paleta | `revisar_paleta()` | 12 |
+| Simular protanopía, deuteranopía o tritanopía | `simular_daltonismo()` | 12 |
+| ¿Se distinguen dos colores por luminosidad? | `distinguibles()` | 12 |
+| Calcular una rejilla de columnas | `rejilla()`, `ancho_bloque()` | 7 |
+| Caracteres por línea | `caracteres_por_linea()` | 7 |
+| Escala tipográfica modular | `escala_tipografica()` | Alta fidelidad |
+| Puntuación SUS y su aceptabilidad | `puntuacion_sus()`, `aceptabilidad_sus()` | 4 |
+| Tasa de éxito con intervalo de confianza | `tasa_exito()` | 4, 9 |
+| Tiempo típico (media geométrica) | `tiempo_tipico()` | 4, 9 |
+| Abandono en cada paso de un flujo | `embudo()` | 5 |
+| Priorizar los hallazgos de una revisión heurística | `priorizar_hallazgos()` | 2 |
+
+## Datos (todos simulados, salvo las taxonomías)
+
+| Objeto | Contenido |
+|---|---|
+| `respuestas_sus` | Respuestas al SUS de 12 participantes |
+| `sesiones_prueba` | 8 participantes × 3 tareas × prototipo en papel y digital |
+| `flujo_registro` | Usuarios en cada paso de un registro |
+| `hallazgos_heuristicos` | 6 problemas valorados por 3 evaluadores |
+| `heuristicas_nielsen` | Las diez heurísticas de Nielsen |
+| `patrones_enganosos` | Categorías de Gray et al. (2018) y Mathur et al. (2019) |
+| `paleta_ejemplo` | Nueve colores de un sistema de diseño |
+
+Prueba aquí cualquier función:
+
+```{webr}
+source("datos/uxlearn.R")
+revisar_paleta(c(marca = "#000e78", aviso = "#c2410c", gris = "#6b7280"))
+```
+
+## Referencias de los métodos
+
+- Bangor, A.; Kortum, P. T.; Miller, J. T. (2008). [An empirical evaluation of the System Usability Scale](https://doi.org/10.1080/10447310802205776). *International Journal of Human-Computer Interaction*, 24(6), 574-594.
+- Brooke, J. (1996). SUS: A «quick and dirty» usability scale. En P. W. Jordan et al. (eds.), *Usability evaluation in industry* (pp. 189-194). Taylor & Francis.
+- Machado, G. M.; Oliveira, M. M.; Fernandes, L. A. F. (2009). [A physiologically-based model for simulation of color vision deficiency](https://doi.org/10.1109/TVCG.2009.113). *IEEE Transactions on Visualization and Computer Graphics*, 15(6), 1291-1298.
+- Sauro, J.; Lewis, J. R. (2016). *Quantifying the user experience* (2.ª ed.). Morgan Kaufmann.
+- W3C (2023). [Web Content Accessibility Guidelines (WCAG) 2.2](https://www.w3.org/TR/WCAG22/).

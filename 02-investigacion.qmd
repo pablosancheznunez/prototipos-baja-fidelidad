@@ -1,0 +1,241 @@
+---
+engine: markdown
+---
+
+# Tema 2. La investigación como base del concepto creativo {#sec-tema2}
+
+::: {.callout-note appearance="default"}
+## Objetivos
+- Elegir métodos de investigación cualitativos y cuantitativos según la pregunta.
+- Planificar entrevistas, encuestas, observación, análisis de la competencia y revisión heurística.
+- Convertir los hallazgos en conceptos creativos viables y comprobables.
+:::
+
+::: {.callout-note appearance="simple" icon="false"}
+## Glosario del tema
+[Investigación con usuarios](92-glosario.qmd#gl-investigacion) · [Método actitudinal](92-glosario.qmd#gl-actitudinal) · [Método comportamental](92-glosario.qmd#gl-comportamental) · [Evaluación heurística](92-glosario.qmd#gl-heuristica) · [Severidad](92-glosario.qmd#gl-severidad) · [Diagrama de afinidad](92-glosario.qmd#gl-afinidad) · [Hallazgo](92-glosario.qmd#gl-hallazgo) · [«¿Cómo podríamos…?»](92-glosario.qmd#gl-hmw)
+:::
+
+::: {.callout-tip appearance="simple" icon="false"}
+## Descargas
+[Script R del capítulo](plantillas/02_investigacion.R){.btn .btn-outline-primary .btn-sm download="02_investigacion.R"}
+[Plantilla de entrega del reto (.qmd)](plantillas/entrega_reto.qmd){.btn .btn-outline-primary .btn-sm download="entrega_reto.qmd"}
+[Tema de estilo (.scss)](plantillas/informe.scss){.btn .btn-outline-primary .btn-sm download="informe.scss"}
+:::
+
+## Lectura obligatoria
+
+::: {.lectura}
+Nielsen, J.; Molich, R. (1990). [Heuristic evaluation of user interfaces](https://doi.org/10.1145/97243.97281). En *Proceedings of the SIGCHI Conference on Human Factors in Computing Systems (CHI '90)* (pp. 249-256). ACM.
+:::
+
+### Lecturas complementarias {.unnumbered}
+
+- Nielsen, J. (1994). [Enhancing the explanatory power of usability heuristics](https://doi.org/10.1145/191666.191729). En *CHI '94* (pp. 152-158). ACM. El origen de las diez heurísticas que se usan hoy.
+- Rohrer, C. (2022). [When to use which user-experience research methods](https://www.nngroup.com/articles/which-ux-research-methods/). Nielsen Norman Group. El mapa de métodos que usa este tema.
+- Sharp, H.; Rogers, Y.; Preece, J. (2023). *Interaction design: Beyond human-computer interaction*. Wiley. Capítulos sobre recogida y análisis de datos.
+
+## 1. Por qué investigar antes de dibujar
+
+Un esquema de página resuelve un problema; si el problema está mal entendido, el mejor esquema no sirve. La investigación con usuarios reduce la incertidumbre sobre **quién** usará el producto, **qué** intenta conseguir, **en qué contexto** y **qué le impide** conseguirlo hoy. No se trata de preguntar a la gente qué quiere, sino de entender lo que hace y por qué.
+
+Rohrer (2022) ordena los métodos en dos ejes que ayudan a elegir:
+
+- **Actitudinal o comportamental**: lo que las personas *dicen* (opiniones, intenciones) frente a lo que *hacen* (conducta observada). Ambas cosas difieren a menudo.
+- **Cualitativo o cuantitativo**: entender el *porqué* y el *cómo* con pocas personas, frente a medir el *cuánto* con muchas.
+
+![Mapa simplificado de métodos de investigación según Rohrer (2022). La pregunta de investigación decide el cuadrante.](figuras/tema2_metodos.svg){#fig-metodos fig-alt="Plano con un eje horizontal que va de cualitativo a cuantitativo y un eje vertical que va de comportamental (abajo) a actitudinal (arriba). Arriba a la izquierda, entrevistas y grupos de discusión; arriba a la derecha, encuestas; abajo a la izquierda, observación contextual y pruebas de usabilidad; abajo a la derecha, analítica web y pruebas A/B. La revisión heurística y el análisis de la competencia aparecen aparte, como métodos de inspección sin usuarios."}
+
+## 2. Métodos cualitativos
+
+**Entrevistas.** Conversaciones individuales semiestructuradas, de 30 a 60 minutos, con un guion de temas y no de preguntas cerradas. Funcionan mejor si se pide a la persona que cuente **la última vez** que hizo algo concreto («cuéntame la última vez que buscaste un libro para un trabajo») que si se le pide que generalice. Se evitan las preguntas que sugieren la respuesta («¿verdad que sería útil…?»).
+
+**Observación contextual.** Se observa a la persona en su entorno real mientras hace la tarea, y se le pregunta sobre la marcha. Revela lo que no se cuenta en una entrevista: atajos, notas en papel, trucos para sortear el sistema.
+
+**Grupos de discusión.** Útiles para conocer actitudes y vocabulario, pero poco fiables para predecir conducta: la dinámica del grupo influye en lo que se dice.
+
+Con cinco a ocho entrevistas por perfil suelen aparecer los patrones principales. El análisis más habitual es el **diagrama de afinidad**: cada observación se escribe en una nota, y las notas se agrupan por similitud hasta que emergen temas.
+
+## 3. Métodos cuantitativos
+
+**Encuestas.** Miden actitudes y características en muchas personas. Exigen preguntas neutras, opciones de respuesta exhaustivas y excluyentes, y una muestra que represente a quien interesa. Una encuesta no explica el porqué: suele combinarse con entrevistas.
+
+**Analítica.** Los datos de uso de un producto existente (páginas vistas, búsquedas sin resultados, abandono en un formulario) muestran dónde están los problemas, aunque no por qué ocurren.
+
+## 4. Análisis de la competencia
+
+Consiste en revisar de forma sistemática productos que resuelven el mismo problema, directos (otra aplicación de reservas) o indirectos (cómo se reserva hoy por teléfono o en persona). Se compara con una tabla: tareas que permite, cómo las resuelve, puntos fuertes y débiles. El objetivo no es copiar, sino conocer las convenciones que los usuarios ya esperan (Tema 7) y encontrar huecos.
+
+## 5. Revisión heurística
+
+Nielsen y Molich (1990) propusieron que varios evaluadores revisen una interfaz con una lista breve de principios, las **heurísticas**, y anoten los problemas. Es un método de **inspección**: no participan usuarios, así que es rápido y barato, pero no sustituye a las pruebas con personas. Sus hallazgos más importantes:
+
+- Un evaluador solo encuentra una parte de los problemas; con **tres a cinco** evaluadores independientes se detecta la mayoría.
+- Cada evaluador revisa por separado y después se juntan los resultados.
+
+Cada problema se valora con una escala de **severidad** de 0 a 4: 0, no es un problema; 1, cosmético; 2, menor; 3, importante; 4, catástrofe que hay que resolver antes de lanzar. Las diez heurísticas de Nielsen (1994) son:
+
+| N.º | Heurística |
+|---|---|
+| 1 | Visibilidad del estado del sistema |
+| 2 | Correspondencia entre el sistema y el mundo real |
+| 3 | Control y libertad del usuario |
+| 4 | Consistencia y estándares |
+| 5 | Prevención de errores |
+| 6 | Reconocer mejor que recordar |
+| 7 | Flexibilidad y eficiencia de uso |
+| 8 | Diseño estético y minimalista |
+| 9 | Ayudar a reconocer, diagnosticar y recuperarse de errores |
+| 10 | Ayuda y documentación |
+
+## 6. Del hallazgo al concepto creativo
+
+Los datos no diseñan solos. El paso de la investigación al concepto tiene tres momentos:
+
+1. **Hallazgos**: lo que se ha observado, con su evidencia («4 de 6 personas buscaban el horario en la página de contacto»).
+2. **Conclusiones** (*insights*): la interpretación que explica el hallazgo («para quien no conoce la biblioteca, el horario es información de contacto»).
+3. **Oportunidades**, formuladas como preguntas **«¿Cómo podríamos…?»** («¿cómo podríamos hacer que el horario esté donde la gente lo busca?»). Son lo bastante abiertas para admitir varias soluciones y lo bastante concretas para orientar los bocetos.
+
+Un **concepto creativo** viable responde a una oportunidad con una idea que se puede explicar en una frase y probar con un prototipo de baja fidelidad.
+
+## Práctica en R: priorizar los hallazgos de una revisión heurística
+
+Tres evaluadores han revisado una aplicación de biblioteca. La tabla `hallazgos_heuristicos` (datos simulados) recoge cada problema, la heurística afectada y la severidad que le da cada evaluador.
+
+```{webr}
+#| autorun: true
+source("datos/uxlearn.R")
+hallazgos_heuristicos
+```
+
+La función `priorizar_hallazgos()` agrupa por problema, calcula la severidad media y cuántos evaluadores lo detectaron, y ordena:
+
+```{webr}
+#| autorun: true
+priorizar_hallazgos(hallazgos_heuristicos)
+```
+
+### Ejercicio 2.1 {.unnumbered}
+
+¿Cuántos problemas tienen prioridad **alta**? Completa el código.
+
+```{webr}
+#| exercise: t2_alta
+#| setup: true
+source("datos/uxlearn.R")
+```
+
+```{webr}
+#| exercise: t2_alta
+p <- priorizar_hallazgos(hallazgos_heuristicos)
+sum(p$prioridad == "______")
+```
+
+::: {.hint exercise="t2_alta"}
+Las categorías son «alta», «media» y «baja», en minúsculas.
+:::
+
+::: {.solution exercise="t2_alta"}
+```r
+p <- priorizar_hallazgos(hallazgos_heuristicos)
+sum(p$prioridad == "alta")
+```
+Dos: el botón «Atrás» que borra el formulario y los mensajes de error genéricos. Son los primeros que hay que resolver en el siguiente esquema.
+:::
+
+```{webr}
+#| exercise: t2_alta
+#| check: true
+if (identical(as.integer(.result), 2L)) {
+  list(correct = TRUE, message = "Correcto: dos problemas de prioridad alta.")
+} else {
+  list(correct = FALSE, message = "Compara la columna prioridad con \"alta\".")
+}
+```
+
+### Ejercicio 2.2 {.unnumbered}
+
+Un problema detectado por un solo evaluador puede ser una opinión personal; uno detectado por todos, casi seguro un problema real. ¿Qué problema detectaron **menos** evaluadores y a la vez tiene la **menor** severidad media? Escribe el código que lo muestra.
+
+```{webr}
+#| exercise: t2_menor
+#| setup: true
+source("datos/uxlearn.R")
+p <- priorizar_hallazgos(hallazgos_heuristicos)
+```
+
+```{webr}
+#| exercise: t2_menor
+p$problema[nrow(______)]
+```
+
+::: {.hint exercise="t2_menor"}
+La tabla está ordenada de mayor a menor severidad: el último es el de la fila número `nrow(p)`.
+:::
+
+::: {.solution exercise="t2_menor"}
+```r
+p$problema[nrow(p)]
+```
+La tipografía de 12 px en los avisos legales: dos evaluadores, severidad media 1,5. No se ignora (el Tema 12 explica por qué el tamaño de letra importa), pero va al final de la lista.
+:::
+
+```{webr}
+#| exercise: t2_menor
+#| check: true
+if (identical(as.character(.result), "Tipografía de 12 px en los avisos legales")) {
+  list(correct = TRUE, message = "Correcto: es el último de la lista priorizada.")
+} else {
+  list(correct = FALSE, message = "Usa nrow(p) para llegar a la última fila.")
+}
+```
+
+## Reto evaluable {#reto-t2}
+
+::: {.callout-important appearance="simple" icon="false"}
+## Reto del Tema 2 · Plan de investigación y revisión heurística
+Elige un servicio digital de una biblioteca, un archivo o un museo:
+
+1. Redacta **tres preguntas de investigación** y, para cada una, el método más adecuado según el mapa de Rohrer, justificando el cuadrante.
+2. Escribe el **guion de una entrevista** de 30 minutos (máximo diez temas) que evite preguntas sugestivas.
+3. Haz una **revisión heurística** del servicio con las diez heurísticas de Nielsen: al menos seis problemas, con captura, heurística y severidad de 0 a 4.
+4. Formula **dos preguntas «¿Cómo podríamos…?»** a partir de los problemas más graves.
+
+**Entrega:** un informe hecho con la [plantilla de entrega](plantillas/entrega_reto.qmd). Se evalúa con la rúbrica que incluye la plantilla. Este reto **no tiene solución en el libro**: cada estudiante trabaja con un servicio distinto y la corrección la hace el profesorado.
+:::
+
+## Autoevaluación
+
+Responde a todas las preguntas y pulsa **Mostrar respuestas**: verás en verde las acertadas, en rojo las falladas y tu recuento. Puedes corregir y volver a comprobar. No cuenta para la nota.
+
+::: {.webex-check .webex-box}
+1. Una encuesta es el mejor método para entender **por qué** las personas abandonan un formulario. {{< torf false >}}
+2. Observar a alguien mientras busca un libro en el catálogo es un método {{< mcq "actitudinal" "*comportamental" >}}
+3. En una revisión heurística participan usuarios reales. {{< torf false >}}
+4. Según Nielsen y Molich, ¿cuántos evaluadores independientes conviene emplear para detectar la mayoría de los problemas? {{< mcq "uno" "*de tres a cinco" "más de veinte" >}}
+5. En la escala de severidad de Nielsen, un problema que hay que resolver antes del lanzamiento recibe un {{< fitb "4" width=3 >}}
+6. ¿Cuál de estas preguntas de entrevista es más adecuada?
+
+{{< longmcq "¿Verdad que sería útil reservar salas desde el móvil?" "¿Usarías una aplicación de reservas?" "*Cuéntame la última vez que necesitaste una sala de estudio: ¿qué hiciste?" >}}
+
+7. «Para quien no conoce la biblioteca, el horario es información de contacto» es un {{< mcq "hallazgo" "*insight (conclusión)" "concepto creativo" >}}
+:::
+
+::: {.webex-solution boton="Ver explicaciones"}
+- La encuesta mide cuánto, pero no explica por qué: para eso hacen falta métodos cualitativos o la observación.
+- Observar la conducta es comportamental; preguntar opiniones es actitudinal.
+- Es un método de inspección: lo hacen evaluadores con experiencia, sin usuarios.
+- Un solo evaluador detecta solo una parte; tres a cinco cubren la mayoría.
+- 4 es «catástrofe de usabilidad»: imprescindible resolverla.
+- Pedir un episodio concreto y reciente da información fiable y evita sugerir la respuesta.
+- Es la interpretación que explica lo observado; el hallazgo es el dato con su evidencia.
+:::
+
+## Recursos complementarios
+
+| Recurso | Para qué sirve |
+|---|---|
+| [Nielsen Norman Group – 10 usability heuristics](https://www.nngroup.com/articles/ten-usability-heuristics/) | Las heurísticas con ejemplos actuales |
+| [Nielsen Norman Group – Which UX research methods](https://www.nngroup.com/articles/which-ux-research-methods/) | El mapa de métodos |
+| [Interaction Design Foundation – User research](https://ixdf.org/literature/topics/user-research) | Introducción a los métodos |
+| Hanington, B.; Martin, B. (2022). *The pocket universal methods of design*. Quarto | Fichas breves de métodos (bibliografía complementaria) |

@@ -1,0 +1,99 @@
+---
+engine: markdown
+---
+
+# Presentación {#sec-presentacion .unnumbered}
+
+Este libro acompaña a la asignatura **Esquemas de página y prototipos de baja fidelidad** (código 19945, 6 ECTS, primer cuatrimestre) del Máster Universitario en Experiencia de Usuario y Análisis de Información Digital de la Universidad Carlos III de Madrid. Recorre los doce temas del programa oficial: de la investigación que da origen a un concepto hasta el prototipo en papel que se pone delante de personas reales, pasando por los flujos, los *storyboards*, los esquemas de página y los estados de la interfaz.
+
+Es un libro para **diseñar pensando antes de dibujar**. En baja fidelidad se decide qué hace la interfaz, para quién y en qué orden, y se descarta pronto lo que no funciona, cuando cambiarlo todavía es barato. Por eso el libro dedica tres temas a lo que debe estar claro antes del primer boceto, y tres más a las responsabilidades de quien diseña: los sesgos, los patrones engañosos, la economía de la atención y el diseño equitativo y accesible.
+
+**Autor:** Pablo Sánchez-Núñez ([ORCID 0000-0001-7845-9506](https://orcid.org/0000-0001-7845-9506)), Universidad Carlos III de Madrid.
+
+## Objetivos de la asignatura
+
+Al terminar la asignatura deberías ser capaz de:
+
+- Aplicar los conceptos y métodos del prototipado de baja fidelidad en el diseño de interacción.
+- Convertir los resultados de la investigación con usuarios en conceptos creativos viables y comprobables.
+- Definir problemas de diseño claros e hitos de proyecto medibles.
+- Diseñar flujos de usuario coherentes, eficientes y sin barreras.
+- Crear esquemas de página (*wireframes*) y *storyboards* en papel y en pantalla.
+- Construir prototipos en papel y digitales con estados y transiciones definidos.
+- Detectar y evitar sesgos cognitivos, patrones engañosos y daños de la economía de la atención.
+- Aplicar criterios de diseño equitativo, inclusivo y accesible.
+- Justificar las decisiones de diseño en una memoria con análisis crítico.
+
+## Cómo está organizado cada tema
+
+Todos los temas siguen la misma estructura:
+
+1. **Objetivos** del tema y **glosario** con enlaces a las definiciones.
+2. **Lectura obligatoria**, con enlace a la fuente, y lecturas complementarias.
+3. **Contenidos**, numerados como en el programa.
+4. **Práctica**: actividades de diseño y, en algunos temas, un ejercicio corto en R que se ejecuta en el navegador.
+5. **Reto evaluable**, una actividad individual para la evaluación continua.
+6. **Autoevaluación** con corrección inmediata, que no cuenta para la nota.
+7. **Recursos complementarios**.
+
+::: {.callout-note appearance="simple" icon="false"}
+## ¿Por qué hay R en un libro de prototipado?
+Los esquemas y prototipos se dibujan en papel o con herramientas como Figma. R aparece solo donde ayuda a **comprobar y medir**: calcular la tasa de éxito de una prueba con cinco personas, ver en qué paso se pierden los usuarios de un flujo, priorizar los hallazgos de una revisión heurística o comprobar si dos colores se distinguen con daltonismo. No hace falta saber programar: el capítulo [Usar R en este libro](00-r-en-el-libro.qmd) explica lo imprescindible, y todos los ejercicios tienen pistas y solución.
+:::
+
+::: {.callout-tip appearance="simple" icon="false"}
+## Descargar el libro
+[Libro en PDF](pdf/prototipos-baja-fidelidad.pdf){.btn .btn-primary download="prototipos-baja-fidelidad.pdf"}
+[Libro en EPUB](pdf/prototipos-baja-fidelidad.epub){.btn .btn-outline-primary download="prototipos-baja-fidelidad.epub"}
+
+El PDF sirve para leer o imprimir; el EPUB, para lectores de libros electrónicos y móviles. En los dos, el código aparece sin ejecutar y las preguntas, sin corrección automática; las soluciones y explicaciones van en recuadros.
+:::
+
+## Tu progreso y uso sin conexión
+
+El libro anota los ejercicios que resuelves y las preguntas que aciertas. El progreso se guarda **solo en este navegador**: no se envía a ningún servidor ni lo ve el profesorado.
+
+::: {#progreso-resumen}
+Activa JavaScript para ver tu progreso.
+:::
+
+Después de la primera visita, el navegador guarda el libro y el motor de R, así que podrás consultar los capítulos que hayas abierto y ejecutar el código **sin conexión**. [Si tu navegador lo permite, se activa al cargar la página.]{#sin-conexion-estado .sin-conexion-estado}
+
+Usa el interruptor que hay junto al título del libro, en la barra lateral, para cambiar entre el modo claro y el oscuro. Al principio se respeta la preferencia de tu sistema.
+
+## Mapa del libro
+
+| Bloque | Temas | Qué se decide |
+|---|---|---|
+| Antes de dibujar | [1](01-fundamentos.qmd), [2](02-investigacion.qmd), [3](03-problema.qmd), [4](04-metricas.qmd) | Para qué sirve la baja fidelidad, qué sabemos de las personas usuarias, qué problema resolvemos y cómo sabremos si lo hemos resuelto |
+| Estructura e interacción | [5](05-flujos.qmd), [6](06-storyboards.qmd), [7](07-wireframes.qmd), [8](08-estados.qmd) | Por dónde pasa el usuario, en qué contexto, qué ve en cada pantalla y cómo cambia la interfaz |
+| Validación temprana | [9](09-prototipos-papel.qmd) | Qué aprendemos poniendo el prototipo delante de personas |
+| Responsabilidad | [10](10-sesgos.qmd), [11](11-atencion.qmd), [12](12-inclusivo.qmd) | Qué decisiones manipulan, explotan la atención o excluyen, y cómo evitarlas |
+
+## Relación con la evaluación
+
+La asignatura se evalúa con un **examen final (50 %)**, en el que hay que obtener al menos un 4 sobre 10, y una **evaluación continua (50 %)**: actividades en Aula Global (25 %) y un **proyecto final** en equipo (25 %) con un flujo de usuario, esquemas funcionales, un prototipo navegable de baja fidelidad y una memoria crítica.
+
+- Las **autoevaluaciones** de cada tema no cuentan para la nota: sirven para comprobar lo que has entendido. Están también en Aula Global como banco de preguntas.
+- Los **retos evaluables** son actividades individuales de evaluación continua. No tienen solución en el libro.
+- El proyecto final integra lo que se trabaja en los retos: los temas 3 a 9 siguen su orden natural.
+
+Esta descripción resume la ficha oficial; en caso de diferencia, prevalece lo que publique la asignatura en Aula Global.
+
+## Bibliografía básica de la asignatura
+
+- Buxton, W. (2007). *Sketching user experiences: Getting the design right and the right design*. Elsevier.
+- Cooper, A. (2014). *About face: The essentials of interaction design*. Wiley.
+- Krug, S. (2006). *Don't make me think!: A common sense approach to web usability*. New Riders.
+- Norman, D. A. (2013). *The design of everyday things*. MIT Press.
+- Sharp, H.; Rogers, Y.; Preece, J. (2023). *Interaction design: Beyond human-computer interaction*. Wiley.
+
+Referencias tal como aparecen en la ficha de la asignatura.
+
+## Autoría y cómo citar
+
+Libro escrito por Pablo Sánchez-Núñez (Universidad Carlos III de Madrid). Los textos y las figuras se publican con licencia [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.es) y el código con licencia MIT. El código fuente está en [GitHub](https://github.com/pablosancheznunez/prototipos-baja-fidelidad).
+
+> Sánchez-Núñez, P. (2026). *Esquemas de página y prototipos de baja fidelidad: guía interactiva*. Zenodo.
+
+Todos los datos de los ejercicios son **simulados**: no proceden de personas reales.

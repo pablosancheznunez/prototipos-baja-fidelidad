@@ -1,0 +1,56 @@
+---
+engine: markdown
+---
+
+# Guía para el profesorado {#sec-guia}
+
+Esta guía explica cómo está pensado el libro para la docencia de la asignatura y cómo mantenerlo.
+
+## Correspondencia con la ficha de la asignatura
+
+Los doce temas siguen, en el mismo orden, los contenidos de la ficha oficial de **Esquemas de página y prototipos de baja fidelidad** (19945). Los objetivos de cada tema concretan los objetivos específicos de la ficha.
+
+| Actividad de evaluación (ficha) | Peso | Apoyo en el libro |
+|---|---|---|
+| Examen final | 50 % | Contenidos y lecturas obligatorias de los doce temas; las autoevaluaciones sirven de práctica |
+| Actividades en Aula Global | 25 % | **Retos evaluables** (uno por tema) y banco de preguntas en Moodle XML |
+| Proyecto final en equipo | 25 % | Los retos 3 a 9 son los pasos del proyecto: *brief*, métricas, flujos, *storyboards*, esquemas, prototipo navegable y prueba |
+
+## Retos evaluables
+
+Cada tema termina con un reto sin pista, solución ni corrección automática. Cada estudiante trabaja con un servicio o un proyecto elegido por él, lo que dificulta copiar. Se entrega con la plantilla `entrega_reto.qmd`, que lleva una rúbrica común: comprensión del tema (20 %), calidad del trabajo de diseño (30 %), justificación de las decisiones (20 %), ética, inclusión y accesibilidad (15 %) y presentación (15 %). La plantilla genera un HTML con las imágenes dentro, de modo que la entrega es un único fichero. No hace falta saber R para usarla.
+
+Las soluciones de referencia y los criterios de corrección de los retos no están en el repositorio público.
+
+## Autoevaluación en Aula Global
+
+Las preguntas de autoevaluación de cada tema están exportadas a **Moodle XML** en la carpeta `moodle/` del repositorio: un fichero por tema y uno con todo el banco. Se importan desde *Banco de preguntas → Importar → Formato Moodle XML*. Cada pregunta conserva su explicación como retroalimentación general.
+
+## El papel de R
+
+El libro usa R lo imprescindible: cinco temas tienen ejercicios breves de completar huecos con funciones del paquete UxLearn (métricas, embudos, priorización de hallazgos, rejillas y color). El capítulo [Usar R en este libro](00-r-en-el-libro.qmd) basta como preparación. Ningún reto exige programar.
+
+## Funciones del libro
+
+- **Progreso del estudiante**: cada capítulo muestra los ejercicios resueltos y las preguntas acertadas; la presentación resume todos. Se guarda solo en el navegador del estudiante (`localStorage`): el profesorado no lo ve. Sirve para la autorregulación, no para evaluar.
+- **Uso sin conexión**: un *service worker* (`sw.js`) guarda las páginas, webR y sus paquetes tras la primera visita.
+- **Modo claro y oscuro**, con auditoría de accesibilidad (WCAG 2.1 AA) en los dos.
+- **PDF y EPUB** generados con `python3 herramientas/pdf.py`.
+
+## Mantenimiento
+
+Desde la raíz del repositorio:
+
+```bash
+python3 herramientas/preparar.py        # sw.js y flujo de integración continua
+python3 herramientas/extraer_r.py       # scripts .R de cada capítulo
+python3 herramientas/moodle.py          # banco de preguntas
+python3 herramientas/figuras.py         # figuras y plantillas en PDF
+python3 herramientas/paquete_webr.py ../UxLearn   # funciones de UxLearn para webR
+python3 herramientas/pdf.py             # PDF y EPUB
+quarto render
+```
+
+El flujo `.github/workflows/comprobar.yml` renderiza el libro y comprueba en un navegador real todos los ejercicios, las preguntas y la accesibilidad en modo claro y oscuro. Al publicar una versión nueva, actualiza `version` en `CITATION.cff` y vuelve a ejecutar `preparar.py` para que los navegadores renueven su copia.
+
+Los datos de todos los ejercicios son **simulados**; no hay datos de personas reales.
