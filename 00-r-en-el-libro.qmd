@@ -10,7 +10,7 @@ En algunos temas hay ejercicios cortos de R que se ejecutan **en tu navegador**,
 ## Objetivos
 - Ejecutar y modificar código de R en el navegador.
 - Guardar valores en objetos y hacer cálculos con vectores.
-- Usar funciones del paquete UxLearn para medir decisiones de diseño.
+- Usar funciones del libro para medir decisiones de diseño.
 :::
 
 ## Cómo funcionan las celdas
@@ -70,13 +70,13 @@ if (isTRUE(all.equal(as.numeric(.result), 7 / 9))) {
 }
 ```
 
-## El paquete UxLearn
+## Las funciones del libro
 
-Las funciones propias de este libro están en el paquete **UxLearn**. Dentro del libro se cargan con `source("datos/uxlearn.R")`; en tu ordenador, se instalan una vez (lo explica el [Apéndice A](90-uxlearn.qmd)). Por ejemplo, `contraste()` calcula la relación de contraste entre dos colores según las WCAG:
+Las funciones propias de este libro están en el fichero `funciones_ux.R`. Dentro del libro se cargan con `source("datos/funciones_ux.R")`; para usarlas en tu ordenador, descárgalo (lo explica el [Apéndice A](90-uxlearn.qmd)). Por ejemplo, `contraste()` calcula la relación de contraste entre dos colores según las WCAG:
 
 ```{webr}
 #| autorun: true
-source("datos/uxlearn.R")
+source("datos/funciones_ux.R")
 contraste("#767676", "#ffffff")   # gris sobre blanco
 contraste("#999999", "#ffffff")
 ```
@@ -88,7 +88,7 @@ Las WCAG piden un contraste mínimo de 4,5:1 para el texto normal. Completa el c
 ```{webr}
 #| exercise: r_contraste
 #| setup: true
-source("datos/uxlearn.R")
+source("datos/funciones_ux.R")
 ```
 
 ```{webr}
@@ -124,7 +124,7 @@ Las tablas de datos (`data.frame`) tienen filas y columnas. `sesiones_prueba` re
 ```{webr}
 #| exercise: r_filas
 #| setup: true
-source("datos/uxlearn.R")
+source("datos/funciones_ux.R")
 ```
 
 ```{webr}

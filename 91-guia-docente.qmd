@@ -28,7 +28,7 @@ Las preguntas de autoevaluación de cada tema están exportadas a **Moodle XML**
 
 ## El papel de R
 
-El libro usa R lo imprescindible: cinco temas tienen ejercicios breves de completar huecos con funciones del paquete UxLearn (métricas, embudos, priorización de hallazgos, rejillas y color). El capítulo [Usar R en este libro](00-r-en-el-libro.qmd) basta como preparación. Ningún reto exige programar.
+El libro usa R lo imprescindible: cinco temas tienen ejercicios breves de completar huecos con funciones del libro (métricas, embudos, priorización de hallazgos, rejillas y color). El capítulo [Usar R en este libro](00-r-en-el-libro.qmd) basta como preparación. Ningún reto exige programar.
 
 ## Funciones del libro
 
@@ -46,7 +46,6 @@ python3 herramientas/preparar.py        # sw.js y flujo de integración continua
 python3 herramientas/extraer_r.py       # scripts .R de cada capítulo
 python3 herramientas/moodle.py          # banco de preguntas
 python3 herramientas/figuras.py         # figuras y plantillas en PDF
-python3 herramientas/paquete_webr.py ../UxLearn   # funciones de UxLearn para webR
 python3 herramientas/pdf.py             # PDF y EPUB
 quarto render
 ```

@@ -2,17 +2,17 @@
 engine: markdown
 ---
 
-# El paquete UxLearn {#sec-uxlearn}
+# Las funciones del libro {#sec-uxlearn}
 
-**UxLearn** es un paquete de R que reúne las funciones y los datos simulados de este libro y de su continuación, *Diseño e interacción en prototipos de alta fidelidad*. Sirve para **comprobar y medir** lo que se diseña: no sustituye a las herramientas de diseño.
+El fichero **`funciones_ux.R`** reúne las funciones y los datos simulados de este libro y de su continuación, *Diseño e interacción en prototipos de alta fidelidad*. Sirve para **comprobar y medir** lo que se diseña: no sustituye a las herramientas de diseño.
 
-Dentro del libro se carga con `source("datos/uxlearn.R")`. En tu ordenador, con RStudio o Positron, instálalo una vez:
+Dentro del libro se carga con `source("datos/funciones_ux.R")`. Para usarlo en tu ordenador, con RStudio o Positron, descárgalo en la carpeta de tu proyecto y cárgalo igual; no hace falta instalar nada:
+
+[Descargar funciones_ux.R](datos/funciones_ux.R){.btn .btn-outline-primary .btn-sm download="funciones_ux.R"}
 
 ```r
-install.packages("remotes")
-remotes::install_github("pablosancheznunez/UxLearn")
-library(UxLearn)
-vignette("UxLearn")   # guía rápida
+source("funciones_ux.R")
+revisar_paleta(paleta_ejemplo)
 ```
 
 ## Funciones
@@ -48,7 +48,7 @@ vignette("UxLearn")   # guía rápida
 Prueba aquí cualquier función:
 
 ```{webr}
-source("datos/uxlearn.R")
+source("datos/funciones_ux.R")
 revisar_paleta(c(marca = "#000e78", aviso = "#c2410c", gris = "#6b7280"))
 ```
 

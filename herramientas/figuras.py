@@ -3,7 +3,7 @@ esquemas en papel (plantillas/plantillas_esquemas.pdf).
 
 Uso, desde la raíz del libro:   python3 herramientas/figuras.py
 Paleta categórica validada (orden fijo): azul, naranja, aguamarina, amarillo, magenta.
-Los datos de las figuras 4 y 9 se calculan con las mismas fórmulas que UxLearn.
+Los datos de las figuras 4 y 9 se calculan con las mismas fórmulas que las funciones del libro (datos/funciones_ux.R).
 """
 import math, pathlib, sys
 import matplotlib

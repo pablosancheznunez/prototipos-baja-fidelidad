@@ -81,7 +81,7 @@ Después de cada ronda, el equipo junta las observaciones, agrupa los problemas 
 
 ```{webr}
 #| autorun: true
-source("datos/uxlearn.R")
+source("datos/funciones_ux.R")
 aggregate(exito ~ prototipo + tarea, data = sesiones_prueba, FUN = sum)
 ```
 
@@ -92,7 +92,7 @@ Calcula la tasa de éxito con intervalo de confianza de la tarea «Reservar una 
 ```{webr}
 #| exercise: t9_reservar
 #| setup: true
-source("datos/uxlearn.R")
+source("datos/funciones_ux.R")
 ```
 
 ```{webr}
@@ -131,7 +131,7 @@ Calcula el **tiempo típico** (media geométrica) de la tarea «Renovar un prés
 ```{webr}
 #| exercise: t9_tiempo
 #| setup: true
-source("datos/uxlearn.R")
+source("datos/funciones_ux.R")
 ```
 
 ```{webr}
@@ -141,7 +141,7 @@ ______(d$tiempo_s)
 ```
 
 ::: {.hint exercise="t9_tiempo"}
-La función de UxLearn para la media geométrica es `tiempo_tipico()`.
+La función del libro para la media geométrica es `tiempo_tipico()`.
 :::
 
 ::: {.solution exercise="t9_tiempo"}

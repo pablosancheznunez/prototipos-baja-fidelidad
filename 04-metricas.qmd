@@ -89,7 +89,7 @@ Las pruebas de prototipos se hacen con pocas personas, a menudo cinco. Con muest
 
 ```{webr}
 #| autorun: true
-source("datos/uxlearn.R")
+source("datos/funciones_ux.R")
 tasa_exito(exitos = 4, n = 5)
 tiempos <- c(32, 41, 38, 45, 120)
 c(media = mean(tiempos), media_geometrica = tiempo_tipico(tiempos))
@@ -102,7 +102,7 @@ En la prueba con el prototipo en papel, 3 de 8 participantes reservaron la sala 
 ```{webr}
 #| exercise: t4_intervalo
 #| setup: true
-source("datos/uxlearn.R")
+source("datos/funciones_ux.R")
 ```
 
 ```{webr}
@@ -140,7 +140,7 @@ if (isTRUE(all.equal(unname(as.numeric(.result)), unname(tasa_exito(3, 8)["super
 ```{webr}
 #| exercise: t4_sus
 #| setup: true
-source("datos/uxlearn.R")
+source("datos/funciones_ux.R")
 ```
 
 ```{webr}

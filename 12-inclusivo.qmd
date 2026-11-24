@@ -85,7 +85,7 @@ El contraste mínimo AA es de **4,5:1** para el texto normal, **3:1** para el te
 
 ```{webr}
 #| autorun: true
-source("datos/uxlearn.R")
+source("datos/funciones_ux.R")
 revisar_paleta(paleta_ejemplo)[, c("nombre", "contraste", "texto_normal_AA", "componente_AA")]
 ```
 
@@ -96,7 +96,7 @@ El color de acento `#f29900` no cumple el contraste para texto sobre blanco. ¿C
 ```{webr}
 #| exercise: t12_componente
 #| setup: true
-source("datos/uxlearn.R")
+source("datos/funciones_ux.R")
 ```
 
 ```{webr}
@@ -132,7 +132,7 @@ Simula cómo ve los colores de error y éxito una persona con **deuteranopía** 
 ```{webr}
 #| exercise: t12_cvd
 #| setup: true
-source("datos/uxlearn.R")
+source("datos/funciones_ux.R")
 ```
 
 ```{webr}

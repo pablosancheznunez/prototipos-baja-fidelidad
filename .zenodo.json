@@ -2,7 +2,7 @@
   "title": "Esquemas de página y prototipos de baja fidelidad: guía interactiva",
   "upload_type": "publication",
   "publication_type": "book",
-  "description": "<p>Libro abierto e interactivo para la asignatura «Esquemas de página y prototipos de baja fidelidad» (19945) del Máster Universitario en Experiencia de Usuario y Análisis de Información Digital de la Universidad Carlos III de Madrid. Cubre los doce temas del programa oficial con lecturas, glosario, autoevaluación, retos evaluables y ejercicios en R que se ejecutan en el navegador (webR) con el paquete UxLearn.</p>",
+  "description": "<p>Libro abierto e interactivo para la asignatura «Esquemas de página y prototipos de baja fidelidad» (19945) del Máster Universitario en Experiencia de Usuario y Análisis de Información Digital de la Universidad Carlos III de Madrid. Cubre los doce temas del programa oficial con lecturas, glosario, autoevaluación, retos evaluables y ejercicios en R que se ejecutan en el navegador (webR) con funciones propias.</p>",
   "creators": [
     {
       "name": "Sánchez-Núñez, Pablo",

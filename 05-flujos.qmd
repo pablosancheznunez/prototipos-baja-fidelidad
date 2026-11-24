@@ -86,7 +86,7 @@ Cuando un flujo ya existe, la analítica muestra cuántas personas llegan a cada
 
 ```{webr}
 #| autorun: true
-source("datos/uxlearn.R")
+source("datos/funciones_ux.R")
 e <- embudo(flujo_registro$paso, flujo_registro$usuarios)
 e
 ```
@@ -98,7 +98,7 @@ e
 ```{webr}
 #| exercise: t5_peor
 #| setup: true
-source("datos/uxlearn.R")
+source("datos/funciones_ux.R")
 e <- embudo(flujo_registro$paso, flujo_registro$usuarios)
 ```
 
@@ -135,7 +135,7 @@ if (identical(as.character(.result), "Crear cuenta")) {
 ```{webr}
 #| exercise: t5_final
 #| setup: true
-source("datos/uxlearn.R")
+source("datos/funciones_ux.R")
 e <- embudo(flujo_registro$paso, flujo_registro$usuarios)
 ```
 

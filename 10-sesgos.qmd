@@ -85,7 +85,7 @@ Una pregunta práctica para revisar un diseño: **¿la persona elegiría lo mism
 
 ```{webr}
 #| autorun: true
-source("datos/uxlearn.R")
+source("datos/funciones_ux.R")
 patrones_enganosos[, c("fuente", "categoria", "original")]
 ```
 
@@ -96,7 +96,7 @@ patrones_enganosos[, c("fuente", "categoria", "original")]
 ```{webr}
 #| exercise: t10_comunes
 #| setup: true
-source("datos/uxlearn.R")
+source("datos/funciones_ux.R")
 g <- patrones_enganosos
 ```
 

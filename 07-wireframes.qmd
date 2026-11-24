@@ -93,7 +93,7 @@ Un esquema no se explica solo. Las **anotaciones** numeradas al margen explican 
 
 ```{webr}
 #| autorun: true
-source("datos/uxlearn.R")
+source("datos/funciones_ux.R")
 r <- rejilla(ancho = 1440, columnas = 12, medianil = 24, margen = 80)
 attr(r, "ancho_columna")
 ancho_bloque(8)                               # el contenido de la figura
@@ -107,7 +107,7 @@ En móvil se usan 4 columnas sobre 375 px, con 16 px de medianil y 16 px de marg
 ```{webr}
 #| exercise: t7_movil
 #| setup: true
-source("datos/uxlearn.R")
+source("datos/funciones_ux.R")
 ```
 
 ```{webr}

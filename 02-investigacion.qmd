@@ -104,7 +104,7 @@ Tres evaluadores han revisado una aplicación de biblioteca. La tabla `hallazgos
 
 ```{webr}
 #| autorun: true
-source("datos/uxlearn.R")
+source("datos/funciones_ux.R")
 hallazgos_heuristicos
 ```
 
@@ -122,7 +122,7 @@ priorizar_hallazgos(hallazgos_heuristicos)
 ```{webr}
 #| exercise: t2_alta
 #| setup: true
-source("datos/uxlearn.R")
+source("datos/funciones_ux.R")
 ```
 
 ```{webr}
@@ -160,7 +160,7 @@ Un problema detectado por un solo evaluador puede ser una opinión personal; uno
 ```{webr}
 #| exercise: t2_menor
 #| setup: true
-source("datos/uxlearn.R")
+source("datos/funciones_ux.R")
 p <- priorizar_hallazgos(hallazgos_heuristicos)
 ```
 
