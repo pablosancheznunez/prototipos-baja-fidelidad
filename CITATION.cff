@@ -2,7 +2,7 @@ cff-version: 1.2.0
 message: "Si usas este libro, cítalo así."
 type: book
 title: "Esquemas de página y prototipos de baja fidelidad: guía interactiva"
-version: "1.0.0"
+version: 1.0.1
 date-released: 2026-11-24
 license: CC-BY-4.0
 url: "https://pablosancheznunez.com/prototipos-baja-fidelidad/"
