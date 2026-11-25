@@ -88,6 +88,43 @@ Cada problema se valora con una escala de **severidad** de 0 a 4: 0, no es un pr
 | 9 | Ayudar a reconocer, diagnosticar y recuperarse de errores |
 | 10 | Ayuda y documentación |
 
+### Laboratorio: tu revisión heurística {#lab-heuristica}
+
+::: {.laboratorio}
+::: {.laboratorio-etiqueta}
+Laboratorio · se ejecuta en tu navegador
+:::
+
+Revisa una interfaz (la de tu proyecto o la de la competencia) heurística por heurística. Anota la severidad de lo que encuentres y una nota breve. El informe se ordena por severidad y puedes descargarlo en Markdown para pegarlo en tu entrega.
+
+```{ojs}
+//| echo: false
+{
+  const H = ["Visibilidad del estado del sistema", "Correspondencia entre el sistema y el mundo real", "Control y libertad del usuario", "Consistencia y estándares", "Prevención de errores", "Reconocer mejor que recordar", "Flexibilidad y eficiencia de uso", "Diseño estético y minimalista", "Ayudar a reconocer, diagnosticar y recuperarse de errores", "Ayuda y documentación"];
+  const SEV = ["0 · no es un problema", "1 · cosmético", "2 · menor", "3 · importante", "4 · catástrofe"];
+  const raiz = html`<div class="heur-lab"></div>`;
+  const nombre = html`<div class="mb-2"><label class="form-label" for="heur-int">Interfaz evaluada</label><input id="heur-int" class="form-control form-control-sm" value="ReservaSala, versión 1"></div>`;
+  const tabla = html`<table class="table table-sm align-middle"><thead><tr><th scope="col">Heurística</th><th scope="col">Severidad</th><th scope="col">Hallazgo</th></tr></thead><tbody></tbody></table>`;
+  const filas = H.map((h, i) => { const tr = html`<tr><td class="small">${i + 1}. ${h}</td><td><select class="form-select form-select-sm" aria-label="Severidad: ${h}">${SEV.map((s, k) => `<option value="${k}">${s}</option>`).join("")}</select></td><td><input class="form-control form-control-sm" aria-label="Hallazgo: ${h}" placeholder="Qué pasa y dónde"></td></tr>`; tabla.tBodies[0].append(tr); return tr.querySelectorAll("select, input"); });
+  const salida = html`<div role="status" aria-live="polite"></div>`;
+  const esc = (s) => s.replace(/[&<>|]/g, (c) => ({"&": "&amp;", "<": "&lt;", ">": "&gt;", "|": "/"}[c]));
+  function informe() {
+    const items = filas.map(([s, n], i) => ({h: H[i], i: i + 1, s: +s.value, n: n.value.trim()})).filter((x) => x.s > 0).sort((a, b) => b.s - a.s);
+    const graves = items.filter((x) => x.s >= 3).length;
+    const md = `# Revisión heurística: ${nombre.querySelector("input").value}\n\n| Severidad | Heurística | Hallazgo |\n|---|---|---|\n` + items.map((x) => `| ${x.s} | ${x.i}. ${x.h} | ${x.n.replace(/\|/g, "/") || "(sin nota)"} |`).join("\n") + `\n\nProblemas importantes o catastróficos: ${graves}.\n`;
+    const url = URL.createObjectURL(new Blob([md], {type: "text/markdown"}));
+    salida.innerHTML = items.length ? `<p><strong>${items.length} problemas</strong> · ${graves} de severidad 3 o 4${graves ? " — resuélvelos antes de seguir." : "."}</p><ol>${items.map((x) => `<li><strong>Severidad ${x.s}</strong> · ${x.h}${x.n ? ": " + esc(x.n) : ""}</li>`).join("")}</ol><a class="btn btn-outline-primary btn-sm" download="revision-heuristica.md" href="${url}">Descargar el informe (.md)</a>` : "<p>Todavía no has anotado problemas. Asigna una severidad mayor que 0 a una heurística.</p>";
+  }
+  raiz.addEventListener("input", informe);
+  raiz.append(nombre, tabla, salida); informe();
+  return raiz;
+}
+```
+
+Para que la revisión sea fiable, haz que **3 a 5 personas** la hagan por separado y después juntad los hallazgos: una sola persona encuentra alrededor de un tercio de los problemas.
+:::
+
+
 ## 6. Del hallazgo al concepto creativo
 
 Los datos no diseñan solos. El paso de la investigación al concepto tiene tres momentos:

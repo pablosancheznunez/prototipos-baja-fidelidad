@@ -87,6 +87,37 @@ Respetar las **convenciones** (el logotipo lleva al inicio, la lupa es buscar, e
 
 Un esquema no se explica solo. Las **anotaciones** numeradas al margen explican el comportamiento que no se ve: qué pasa al pulsar, de dónde sale el contenido, qué reglas se aplican, qué ocurre si no hay resultados. Son la base de la documentación que se entregará al equipo de desarrollo en alta fidelidad.
 
+## 7. Patrones de navegación
+
+No hace falta inventar la navegación: hay **patrones** que la gente ya conoce. Elegir bien depende del número de secciones, de su frecuencia de uso y de la profundidad de la jerarquía.
+
+::: {layout-ncol=4}
+![Pestañas inferiores](figuras/p_pestanas.svg){fig-alt="Esquema con barra inferior de cuatro pestañas."}
+
+![Menú lateral](figuras/p_cajon.svg){fig-alt="Esquema con un menú lateral abierto."}
+
+![Búsqueda con filtros](figuras/p_busqueda.svg){fig-alt="Esquema con buscador y filtros en forma de chip."}
+
+![Asistente por pasos](figuras/p_pasos.svg){fig-alt="Esquema de formulario con indicador de cuatro pasos."}
+:::
+
+El apéndice de [patrones de navegación e interfaz](94-patrones.qmd) explica ocho patrones con cuándo usarlos, cuándo no y cómo hacerlos accesibles, y ofrece un kit de componentes y plantillas imprimibles.
+
+## 8. Del móvil al escritorio
+
+Empezar por el móvil (*mobile first*) obliga a priorizar: si algo no cabe, quizá no hacía falta. Al pasar a pantallas grandes, el contenido se **reorganiza**, no se estira:
+
+- Los filtros, que en móvil eran chips o una hoja, pasan a una **columna lateral** siempre visible.
+- La lista de una columna se convierte en una **rejilla** de 2 o 3 columnas.
+- Las pestañas inferiores pasan a la **navegación superior**.
+- La acción principal sigue siendo una sola por elemento.
+
+![Esquema de escritorio de ReservaSala: navegación superior, filtros en una columna lateral y una rejilla de seis salas con botón de reserva.](figuras/g_escritorio.svg){#fig-escritorio .column-page fig-alt="Esquema de escritorio en un marco de navegador: logotipo ReservaSala y cuatro enlaces de navegación arriba; a la izquierda, una columna de filtros con cuatro campos y el botón Aplicar filtros; a la derecha, el título 12 salas disponibles esta tarde, un selector de orden y una rejilla de tres por dos tarjetas de salas con imagen, nombre, capacidad y botón Reservar."}
+
+::: {.column-margin}
+**Puntos de ruptura.** Define los cambios de diseño por el **contenido** (cuándo la lista deja de leerse bien) y no por modelos concretos de teléfono. En la [rejilla de escritorio imprimible](plantillas/plantilla-escritorio.pdf) tienes 12 columnas para bocetar.
+:::
+
 ## Práctica en R: calcular una rejilla
 
 `rejilla()` calcula la posición de cada columna; `ancho_bloque()`, el ancho de un bloque que ocupa varias columnas; y `caracteres_por_linea()`, cuántos caracteres caben en una línea (la longitud cómoda de lectura está entre 45 y 75).

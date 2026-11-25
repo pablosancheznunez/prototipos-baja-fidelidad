@@ -102,6 +102,28 @@ flowchart LR
 ![**Después.** La misma función rediseñada: la tarea principal primero y lenguaje de la persona.](figuras/g_inicio.svg){#fig-g-despues fig-alt="Esquema móvil de la pantalla de inicio rediseñada de ReservaSala, con la próxima reserva, la elección de franja y las salas libres."}
 :::
 
+### Compara deslizando
+
+Mueve el control para pasar de una versión a otra sobre la misma pantalla. También funciona con las flechas del teclado.
+
+```{=html}
+<div class="comparador" style="max-width:360px;margin:1rem auto">
+  <div style="position:relative;aspect-ratio:360/640">
+    <img src="figuras/g_inicio.svg" alt="Después: pantalla de inicio rediseñada" style="position:absolute;inset:0;width:100%;height:100%">
+    <img class="comparador-antes" src="figuras/g_problemas.svg" alt="Antes: primera versión con problemas" style="position:absolute;inset:0;width:100%;height:100%;clip-path:inset(0 50% 0 0)">
+    <div class="comparador-linea" aria-hidden="true" style="position:absolute;top:0;bottom:0;left:50%;width:3px;background:#d6336c"></div>
+  </div>
+  <label class="form-label small mt-2" for="comparador-rango">Antes ← → Después</label>
+  <input id="comparador-rango" class="form-range" type="range" min="0" max="100" value="50" aria-valuetext="50 % antes, 50 % después">
+</div>
+<script>
+document.querySelectorAll(".comparador").forEach((c) => {
+  const r = c.querySelector("input"), a = c.querySelector(".comparador-antes"), l = c.querySelector(".comparador-linea");
+  r.addEventListener("input", () => { const v = +r.value; a.style.clipPath = `inset(0 ${100 - v}% 0 0)`; l.style.left = v + "%"; r.setAttribute("aria-valuetext", `${v} % antes, ${100 - v} % después`); });
+});
+</script>
+```
+
 ## Actividad: encuentra los problemas
 
 ::: {.zonas #ia-g-problemas titulo="¿Qué falla en esta primera versión?" imagen="figuras/g_problemas.svg" alt="Esquema móvil con cabecera técnica, banner grande, dos campos sin etiqueta, cuadros de disponibilidad en grises, dos botones iguales Ejecutar y Borrar todo y una pequeña ayuda."}

@@ -80,6 +80,31 @@ Al revisar un flujo conviene comprobar:
 
 Cuando un flujo ya existe, la analítica muestra cuántas personas llegan a cada paso. Ese recorrido se representa como un **embudo**: para cada paso, cuántos continúan respecto al paso anterior y respecto al inicio. El paso con menos continuidad señala dónde hay que mirar primero, aunque no explica por qué: para eso se necesita investigación cualitativa (Tema 2).
 
+## 6. Del flujo a la arquitectura: el mapa del sitio
+
+El flujo describe **una tarea**; el **mapa del sitio** describe **todo el espacio** por el que se mueven las tareas: qué secciones hay y cómo se agrupan. Se construyen juntos: cada pantalla del flujo tiene que tener un lugar en el mapa, y cada sección del mapa debe servir al menos a una tarea importante.
+
+```{dot}
+//| fig-cap: "Mapa del sitio de ReservaSala. Las tareas principales (buscar y reservar) están a un toque de la pantalla de inicio."
+digraph reservasala {
+  graph [rankdir=TB, nodesep=0.3, ranksep=0.5, fontname="Helvetica", bgcolor="white", pad=0.2];
+  node [shape=box, style="rounded", fontname="Helvetica", fontsize=11];
+  edge [arrowhead=none];
+  Inicio [style="rounded,filled", fillcolor="#e8f0fb"];
+  Inicio -> {"Buscar salas"; "Mis reservas"; Mapa; Perfil};
+  "Buscar salas" -> Lista -> "Ficha de sala" -> "Confirmar" -> "Reserva confirmada";
+  "Mis reservas" -> {"Próximas"; "Historial"};
+  "Próximas" -> {"Cancelar"; "Cómo llegar"};
+  Perfil -> {"Avisos"; "Normas"; "Ayuda"};
+}
+```
+
+Para decidir cómo agrupar las secciones según el modelo mental de las personas, usa la **ordenación de tarjetas** (puedes practicarla en el [laboratorio de la galería](93-galeria.qmd#lab-galeria-tarjetas)) y, para comprobar que encuentran las cosas, la **prueba de árbol** del Tema 7.
+
+::: {.column-margin}
+**Regla práctica.** Las tareas más frecuentes deberían estar a uno o dos toques del inicio. Si una tarea frecuente queda en el tercer nivel del mapa, revisa la agrupación.
+:::
+
 ## Práctica en R: el embudo de un flujo de registro
 
 `flujo_registro` contiene los usuarios que llegan a cada paso del registro en una aplicación de biblioteca (datos simulados). La función `embudo()` calcula la continuidad:

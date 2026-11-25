@@ -56,6 +56,8 @@ book:
     - 12-inclusivo.qmd
   appendices:
   - 93-galeria.qmd
+  - 94-patrones.qmd
+  - 95-casos.qmd
   - 90-uxlearn.qmd
   - 91-guia-docente.qmd
   - 92-glosario.qmd
@@ -65,6 +67,7 @@ crossref:
 filters:
 - webex
 - interactivos
+- glosario.lua
 format:
   live-html:
     theme:
@@ -80,6 +83,8 @@ format:
     number-sections: false
     code-copy: true
     lightbox: auto
+    footnotes-hover: true
+    reference-location: margin
     css: fuentes/fuentes.css
     link-external-newwindow: true
     callout-appearance: simple

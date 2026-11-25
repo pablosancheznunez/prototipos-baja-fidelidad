@@ -63,6 +63,56 @@ Una pantalla que muestra datos tiene, como mínimo, estos estados:
 - **Error**: algo ha fallado. Hay que explicar qué y cómo seguir.
 - **Ideal**: el contenido esperado.
 
+La misma pantalla de ReservaSala, la lista de salas, en sus cinco estados:
+
+::: {.panel-tabset}
+
+### Ideal
+
+::: {layout="[40,60]"}
+![Lista con seis salas disponibles.](figuras/g_lista.svg){fig-alt="Esquema de la lista de salas con filtros y seis salas con su capacidad y disponibilidad."}
+
+El estado que se suele dibujar primero… y el único que muchos equipos dibujan. Muestra el contenido esperado con los filtros aplicados.
+:::
+
+### Cargando
+
+::: {layout="[40,60]"}
+![Lista con bloques grises que imitan la estructura de las tarjetas mientras llega el contenido.](figuras/g_cargando.svg){fig-alt="Esquema de la lista en estado de carga: los filtros visibles y seis bloques grises con la forma de las tarjetas, sin texto."}
+
+Una **pantalla esqueleto** muestra la estructura mientras llegan los datos: la persona sabe qué va a ver y la espera parece más corta. Los filtros ya funcionan. Si la carga pasa de unos segundos, añade un mensaje.
+:::
+
+### Vacío
+
+::: {layout="[40,60]"}
+![Mensaje que explica que no hay salas para 10 personas y ofrece alternativas.](figuras/g_vacio.svg){fig-alt="Esquema de estado vacío con un símbolo, el texto No hay salas para 10 personas, la explicación de que las más grandes son para 8 y alternativas."}
+
+El estado vacío **explica por qué** no hay resultados y **qué hacer**: no es un callejón sin salida.
+:::
+
+### Parcial
+
+::: {layout="[40,60]"}
+![Una única sala disponible y un bloque con tres alternativas para ver más opciones.](figuras/g_parcial.svg){fig-alt="Esquema con un solo resultado, Sala 3.02, y debajo el bloque ¿Quieres más opciones? con tres enlaces: otra franja con 6 salas libres, quitar el filtro Silencio y ver otras bibliotecas."}
+
+Con poco contenido la pantalla parece rota. Aprovecha el espacio para **ampliar la búsqueda** con sugerencias concretas, que digan cuántos resultados darán.
+:::
+
+### Error
+
+::: {layout="[40,60]"}
+![Aviso de que no se han podido cargar las salas, con botón para reintentar y la última información guardada.](figuras/g_error.svg){fig-alt="Esquema de error con un aviso naranja No hemos podido cargar las salas, explicación de la falta de conexión, botón Reintentar y dos salas de la última información guardada marcadas como Puede haber cambiado."}
+
+El mensaje dice **qué ha pasado** en lenguaje de la persona, **conserva** sus filtros y ofrece **cómo seguir** (reintentar). Mostrar los últimos datos guardados, avisando de que pueden haber cambiado, es mejor que una pantalla en blanco.
+:::
+
+:::
+
+::: {.column-margin}
+**Pantallas esqueleto.** Indican la estructura sin prometer contenido concreto. No las uses para cargas muy rápidas (menos de 1 s): el parpadeo molesta más que la espera.
+:::
+
 ## 4. Diagramas de estados
 
 Harel (1987) propuso los ***statecharts***, una notación para describir sistemas que cambian de estado según los eventos. En diseño de interacción se usa una versión simplificada: cada estado es una caja con nombre, cada transición es una flecha con el **evento** que la provoca y, si hace falta, la **condición**. Sirve para comprobar que no falta ningún caso: ¿qué pasa si se pulsa «Reservar» dos veces?, ¿y si se pierde la conexión mientras se carga?
