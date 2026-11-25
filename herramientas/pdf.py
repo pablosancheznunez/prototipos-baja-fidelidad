@@ -31,7 +31,7 @@ def cuerpo(fichero):
 autor0 = yaml.safe_load((RAIZ / "_quarto.yml").read_text())["book"]["author"][0]
 doi0 = yaml.safe_load((RAIZ / "_quarto.yml").read_text())["book"].get("doi")
 linea_doi = f"- **DOI:** [https://doi.org/{doi0}](https://doi.org/{doi0})\n" if doi0 else ""
-cita_doi = f" <https://doi.org/{doi0}>" if doi0 else ""
+cita_doi = f" <https://doi.org/{doi0}>" if doi0 and doi0 not in CFG["cita"] else ""
 ficha = f"""
 ::: {{.callout-note title="Ficha del libro"}}
 - **Autor:** {autor0["name"]}
