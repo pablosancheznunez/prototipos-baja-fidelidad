@@ -2,26 +2,25 @@ project:
   type: book
   output-dir: _book
   resources:
-    - laboratorio.js
-    - fuentes
-    - datos
-    - webr
-    - webr-repo
-    - plantillas
-    - pdf
-    - moodle
-    - sw.js
-
+  - laboratorio.js
+  - fuentes
+  - datos
+  - webr
+  - webr-repo
+  - plantillas
+  - pdf
+  - moodle
+  - sw.js
 book:
-  title: "Esquemas de página y prototipos de baja fidelidad"
-  subtitle: "Guía interactiva para el Máster Universitario en Experiencia de Usuario y Análisis de Información Digital"
+  title: Esquemas de página y prototipos de baja fidelidad
+  subtitle: Guía interactiva para el Máster Universitario en Experiencia de Usuario y Análisis de Información Digital
   author:
-    - name: "Pablo Sánchez-Núñez"
-      orcid: 0000-0001-7845-9506
-      url: https://pablosancheznunez.com
-      affiliation: "Universidad Carlos III de Madrid"
+  - name: Pablo Sánchez-Núñez
+    orcid: 0000-0001-7845-9506
+    url: https://pablosancheznunez.com
+    affiliation: Universidad Carlos III de Madrid
   date: last-modified
-  date-format: "D [de] MMMM [de] YYYY"
+  date-format: D [de] MMMM [de] YYYY
   language: es
   site-url: https://pablosancheznunez.com/prototipos-baja-fidelidad/
   doi: 10.5281/zenodo.24515131
@@ -29,51 +28,52 @@ book:
   page-navigation: true
   sidebar:
     tools:
-      - icon: download
-        menu:
-          - text: "Libro en PDF"
-            href: pdf/prototipos-baja-fidelidad.pdf
-          - text: "Libro en EPUB (lectores de libros electrónicos)"
-            href: pdf/prototipos-baja-fidelidad.epub
+    - icon: download
+      menu:
+      - text: Libro en PDF
+        href: pdf/prototipos-baja-fidelidad.pdf
+      - text: Libro en EPUB (lectores de libros electrónicos)
+        href: pdf/prototipos-baja-fidelidad.epub
   page-footer:
-    left: "© 2026 [Pablo Sánchez-Núñez](https://pablosancheznunez.com) · [ORCID 0000-0001-7845-9506](https://orcid.org/0000-0001-7845-9506) · Texto bajo licencia [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.es)"
-    right: "Universidad Carlos III de Madrid · Hecho con [Quarto](https://quarto.org) y [webR](https://docs.r-wasm.org/webr/latest/)"
+    left: © 2026 [Pablo Sánchez-Núñez](https://pablosancheznunez.com) · [ORCID 0000-0001-7845-9506](https://orcid.org/0000-0001-7845-9506) · Texto bajo licencia [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.es)
+    right: Universidad Carlos III de Madrid · Hecho con [Quarto](https://quarto.org) y [webR](https://docs.r-wasm.org/webr/latest/)
   chapters:
-    - index.qmd
-    - 00-r-en-el-libro.qmd
-    - part: "Temas"
-      chapters:
-        - 01-fundamentos.qmd
-        - 02-investigacion.qmd
-        - 03-problema.qmd
-        - 04-metricas.qmd
-        - 05-flujos.qmd
-        - 06-storyboards.qmd
-        - 07-wireframes.qmd
-        - 08-estados.qmd
-        - 09-prototipos-papel.qmd
-        - 10-sesgos.qmd
-        - 11-atencion.qmd
-        - 12-inclusivo.qmd
+  - index.qmd
+  - 00-r-en-el-libro.qmd
+  - part: Temas
+    chapters:
+    - 01-fundamentos.qmd
+    - 02-investigacion.qmd
+    - 03-problema.qmd
+    - 04-metricas.qmd
+    - 05-flujos.qmd
+    - 06-storyboards.qmd
+    - 07-wireframes.qmd
+    - 08-estados.qmd
+    - 09-prototipos-papel.qmd
+    - 10-sesgos.qmd
+    - 11-atencion.qmd
+    - 12-inclusivo.qmd
   appendices:
-    - 90-uxlearn.qmd
-    - 91-guia-docente.qmd
-    - 92-glosario.qmd
-
+  - 93-galeria.qmd
+  - 90-uxlearn.qmd
+  - 91-guia-docente.qmd
+  - 92-glosario.qmd
 lang: es
-
 crossref:
   chapters: false
-
 filters:
-  - webex
-  - interactivos
-
+- webex
+- interactivos
 format:
   live-html:
     theme:
-      light: [cosmo, estilos.scss]
-      dark: [darkly, estilos-oscuro.scss]
+      light:
+      - cosmo
+      - estilos.scss
+      dark:
+      - darkly
+      - estilos-oscuro.scss
     respect-user-color-scheme: true
     toc: true
     toc-depth: 3
@@ -84,14 +84,13 @@ format:
     link-external-newwindow: true
     callout-appearance: simple
     include-in-header:
-      - laboratorio.html
+    - laboratorio.html
     include-after-body:
-      - accesibilidad.html
-      - progreso.html
-
+    - accesibilidad.html
+    - progreso.html
 webr:
   engine-url: webr/
   repos:
-    - webr-repo
+  - webr-repo
   resources:
-    - datos
+  - datos
