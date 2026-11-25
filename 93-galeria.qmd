@@ -117,6 +117,75 @@ Esta pantalla tiene **siete** problemas de usabilidad o accesibilidad. Pulsa sob
 - [88, 90.5, 7, 5] Ayuda «?» diminuta | si | Demasiado pequeña para pulsarla y para verla.
 :::
 
+## El esquema anotado
+
+Un esquema que se entrega a desarrollo o a la persona que hará la alta fidelidad necesita **anotaciones**: qué hace cada elemento, sus reglas y sus estados. Numera los elementos y escribe una nota breve y verificable para cada uno.
+
+![Esquema anotado del formulario de reserva: ocho notas numeradas explican el comportamiento de cada elemento.](figuras/g_anotado.svg){#fig-g-anotado fig-alt="Esquema del formulario Confirmar reserva con ocho círculos numerados conectados a notas: 1 resumen fijo de la reserva; 2 número con teclado numérico y límites; 3 campo opcional de 120 caracteres; 4 autocompletar con el directorio UC3M; 5 casilla desmarcada por defecto; 6 regla de negocio visible; 7 acción principal que muestra Reservando mientras se envía; 8 botón secundario que conserva lo escrito."}
+
+::: {.clasificar #ia-g-anotaciones titulo="¿Qué tipo de anotación es?" categorias="Comportamiento|Contenido|Validación|Regla de negocio"}
+Clasifica estas anotaciones del esquema.
+
+- Al pulsar «Confirmar» el botón muestra «Reservando…» → Comportamiento // Describe qué ocurre al interactuar.
+- El motivo admite como máximo 120 caracteres → Validación // Es una restricción sobre lo que se puede escribir.
+- La sala se libera si no confirmas en 15 minutos → Regla de negocio // Viene de la normativa de la biblioteca, no de la interfaz.
+- El título muestra sala, día y franja elegidos → Contenido // Indica qué información aparece.
+- Solo se aceptan correos de la UC3M → Validación // Restringe los valores válidos.
+- «Volver» conserva lo que se ha escrito → Comportamiento // Describe una respuesta del sistema.
+- Máximo 2 horas de reserva al día por persona → Regla de negocio // Es una política del servicio.
+- Si no hay salas libres, se muestra el estado vacío con alternativas → Contenido // Define qué se muestra en un caso concreto.
+:::
+
+## Laboratorio: ordenación de tarjetas {#lab-galeria-tarjetas}
+
+::: {.laboratorio}
+::: {.laboratorio-etiqueta}
+Laboratorio · se ejecuta en tu navegador
+:::
+
+La **ordenación de tarjetas** (*card sorting*) ayuda a decidir la arquitectura de la información antes de dibujar la navegación. Asigna cada contenido de ReservaSala a un grupo, cambia el nombre de los grupos si quieres y mira el mapa del sitio que resulta. Puedes descargarlo en SVG.
+
+```{ojs}
+//| echo: false
+{
+  const tarjetas = ["Buscar sala libre", "Reservar para hoy", "Mis reservas", "Cancelar una reserva", "Normas de uso", "Horarios de las bibliotecas", "Plano de cada planta", "Avisos y recordatorios", "Mis datos y preferencias", "Ayuda y contacto", "Salas favoritas", "Historial de reservas"];
+  const raiz = html`<div class="tarjetas-lab"></div>`;
+  const nombres = ["Reservar", "Mis reservas", "Información", "Mi cuenta"];
+  const grupos = html`<fieldset class="mb-2"><legend class="h6">Nombres de los grupos</legend></fieldset>`;
+  const entradas = nombres.map((n, i) => { const id = "ct-g" + i + Math.random().toString(36).slice(2, 6); const d = html`<div class="d-inline-block me-2 mb-1"><label class="form-label small" for="${id}">Grupo ${i + 1}</label><input id="${id}" class="form-control form-control-sm" value="${n}" maxlength="24"></div>`; grupos.append(d); return d.querySelector("input"); });
+  const tabla = html`<table class="table table-sm"><caption class="small">Asigna cada tarjeta a un grupo</caption><thead><tr><th scope="col">Tarjeta</th><th scope="col">Grupo</th></tr></thead><tbody></tbody></table>`;
+  const selects = tarjetas.map((t, k) => { const id = "ct-t" + k + Math.random().toString(36).slice(2, 6); const fila = html`<tr><td><label for="${id}">${t}</label></td><td><select id="${id}" class="form-select form-select-sm"><option value="-1">Sin asignar</option>${nombres.map((n, i) => `<option value="${i}">${n}</option>`).join("")}</select></td></tr>`; tabla.tBodies[0].append(fila); return fila.querySelector("select"); });
+  const salida = html`<div role="status" aria-live="polite"></div>`;
+  const esc = (s) => s.replace(/[&<>"]/g, (c) => ({"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;"}[c]));
+  function dibujar() {
+    const ng = entradas.map((e) => e.value.trim() || "(sin nombre)");
+    selects.forEach((s) => [...s.options].slice(1).forEach((o, i) => o.textContent = ng[i]));
+    const hijos = ng.map((_, i) => tarjetas.filter((_, k) => +selects[k].value === i));
+    const sin = tarjetas.filter((_, k) => +selects[k].value === -1);
+    const ancho = 760, colw = ancho / 4, alto = 90 + Math.max(1, ...hijos.map((h) => h.length)) * 30 + 20;
+    let s = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${ancho} ${alto}" width="100%" role="img" aria-label="Mapa del sitio con ${ng.length} grupos" font-family="Source Sans 3, Helvetica, Arial, sans-serif"><rect width="${ancho}" height="${alto}" fill="#fff"/>`;
+    s += `<rect x="${ancho / 2 - 70}" y="8" width="140" height="30" rx="6" fill="#2a78d6"/><text x="${ancho / 2}" y="28" font-size="14" fill="#fff" text-anchor="middle" font-weight="600">Inicio</text>`;
+    ng.forEach((n, i) => {
+      const cx = colw * i + colw / 2;
+      s += `<path d="M${ancho / 2} 38 V48 H${cx} V58" fill="none" stroke="#52514e"/><rect x="${cx - 80}" y="58" width="160" height="28" rx="6" fill="#e8f0fb" stroke="#2a78d6"/><text x="${cx}" y="77" font-size="13" text-anchor="middle" font-weight="600" fill="#0b0b0b">${esc(n)}</text>`;
+      hijos[i].forEach((h, j) => { const y = 96 + j * 30; s += `<path d="M${cx - 70} 86 V${y + 12} H${cx - 62}" fill="none" stroke="#8a8a8a"/><text x="${cx - 58}" y="${y + 16}" font-size="12" fill="#0b0b0b">${esc(h)}</text>`; });
+    });
+    s += "</svg>";
+    const avisos = [];
+    if (sin.length) avisos.push(`Quedan ${sin.length} tarjetas sin asignar.`);
+    hijos.forEach((h, i) => { if (h.length === 0) avisos.push(`El grupo «${esc(ng[i])}» está vacío: elimínalo o reparte contenidos.`); if (h.length > 5) avisos.push(`«${esc(ng[i])}» tiene ${h.length} elementos: valora dividirlo.`); });
+    const enlace = URL.createObjectURL(new Blob([s], {type: "image/svg+xml"}));
+    salida.innerHTML = `${s}<p class="mt-2">${avisos.length ? avisos.join(" ") : "Arquitectura equilibrada: todos los grupos tienen entre 1 y 5 contenidos."}</p><a class="btn btn-outline-primary btn-sm" download="mapa-del-sitio.svg" href="${enlace}">Descargar SVG</a>`;
+  }
+  [...entradas, ...selects].forEach((e) => e.addEventListener("input", dibujar));
+  raiz.append(grupos, tabla, salida); dibujar();
+  return raiz;
+}
+```
+
+Comprueba después tu propuesta con personas reales: una ordenación **abierta** (ellas crean los grupos) para descubrir sus categorías y una **cerrada** (grupos dados) para validarlas.
+:::
+
 ## Laboratorio: constructor de esquemas {#lab-galeria-constructor}
 
 ::: {.laboratorio}
@@ -213,6 +282,15 @@ Un prototipo de baja fidelidad navegable hecho solo con los esquemas de la galer
 }
 ```
 :::
+
+## Para ver y seguir aprendiendo
+
+Son enlaces, no vídeos incrustados: el vídeo se abre en la web de quien lo publica, así esta página no carga rastreadores de terceros. La mayoría está en inglés; activa los subtítulos si los necesitas.
+
+- **[Paper Prototyping 101](https://www.nngroup.com/videos/paper-prototyping-101/)** — Nielsen Norman Group. Cómo probar una idea con un prototipo en papel y corregirla en el momento.
+- **[Paper Prototyping: How to Create & Usability-Test Simple UI Prototypes](https://www.nngroup.com/videos/paper-prototyping-tutorial/)** — Nielsen Norman Group. Tutorial largo con ejemplos de problemas que se descubren con prototipos de baja fidelidad.
+- **[Pencils vs. Pixels for UI Prototyping and Sketching](https://www.nngroup.com/videos/pencils-vs-pixels/)** — Nielsen Norman Group. Profesionales explican cuándo prefieren bocetar a mano y cuándo en pantalla.
+- **[Presenting Low-Fidelity Prototypes to Stakeholders](https://www.nngroup.com/videos/low-fi-prototypes-stakeholders/)** — Nielsen Norman Group. Cómo presentar esquemas a las partes interesadas para obtener apoyo temprano.
 
 ## Para tu proyecto
 

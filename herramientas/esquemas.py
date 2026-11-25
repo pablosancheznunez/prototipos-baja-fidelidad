@@ -70,3 +70,27 @@ c += r(24, 410, 150, 36, G2, 4) + t(99, 433, "Ejecutar", 12, T, "400", "middle")
 c += t(330, 600, "?", 10, G3, "400", "end")
 svg("g_problemas", c)
 print("ok")
+
+# 8 Esquema anotado: el formulario con notas para desarrollo (pantalla + columna de notas)
+import re as _re, textwrap as _tw
+_base = (OUT / "g_formulario.svg").read_text(encoding="utf-8")
+_cuerpo = _re.sub(r"^<svg[^>]*>|</svg>\s*$", "", _base.strip())
+_notas = [
+    (104, "Resumen fijo de la reserva: la persona no pierde el contexto al rellenar."),
+    (164, "Número: teclado numérico en móvil; mínimo 1 y máximo la capacidad de la sala."),
+    (240, "Campo opcional y marcado como tal; máximo 120 caracteres."),
+    (316, "Autocompleta con el directorio UC3M y valida el dominio del correo."),
+    (375, "Casilla desmarcada por defecto: decide la persona (sin patrones engañosos)."),
+    (431, "Regla de negocio visible antes de confirmar, no después."),
+    (507, "Acción principal: se desactiva y muestra «Reservando…» mientras se envía."),
+    (557, "Secundaria: vuelve atrás conservando lo escrito."),
+]
+_c = f'<g>{_cuerpo}</g>'
+for i, (y, nota) in enumerate(_notas, 1):
+    yn = 70 + (i - 1) * 70
+    _c += f'<path d="M336 {y} L368 {y} L392 {yn}" fill="none" stroke="#d6336c" stroke-width="1.5"/>'
+    _c += f'<circle cx="404" cy="{yn}" r="12" fill="#d6336c"/><text x="404" y="{yn + 5}" font-size="13" fill="#fff" font-weight="700" text-anchor="middle">{i}</text>'
+    for k, linea in enumerate(_tw.wrap(nota, 34)):
+        _c += f'<text x="424" y="{yn + 5 + k * 17}" font-size="13" fill="#0b0b0b">{linea}</text>'
+(OUT / "g_anotado.svg").write_text(f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 640" width="680" height="640" font-family="Source Sans 3, Helvetica, Arial, sans-serif"><rect width="680" height="640" fill="#fff"/>{_c}</svg>', encoding="utf-8")
+print("anotado ok")

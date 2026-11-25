@@ -2,7 +2,7 @@ cff-version: 1.2.0
 message: "Si usas este libro, cítalo así."
 type: book
 title: "Esquemas de página y prototipos de baja fidelidad: guía interactiva"
-version: 1.3.0
+version: 1.4.0
 doi: "10.5281/zenodo.24515131"
 identifiers:
   - type: doi
