@@ -165,6 +165,76 @@ if (isTRUE(all.equal(as.numeric(.result), 31.7))) {
 }
 ```
 
+## Laboratorio: el embudo de un flujo {#lab-t5-embudo}
+
+::: {.laboratorio}
+::: {.laboratorio-etiqueta}
+Laboratorio · cálculo en tu navegador
+:::
+
+Un **embudo** muestra cuántas personas llegan a cada paso de un flujo. Ajusta las cifras del flujo de reserva de una sala de estudio y localiza el paso donde se pierde más gente: es el primero que conviene rediseñar.
+
+```{ojs}
+//| echo: false
+rango = window.Lab.rango
+pasos_embudo = ["Entran en «Reservar sala»", "Eligen fecha", "Eligen franja horaria", "Se identifican", "Confirman la reserva"]
+viewof cifras = {
+  const caja = html`<div></div>`, ini = [1000, 820, 700, 360, 330];
+  const r = pasos_embudo.map((t, i) => { const c = rango(t, [0, 1000], {step: 10, value: ini[i]}); c.addEventListener("input", e => { e.stopPropagation(); caja.value = r.map(x => x.value); caja.dispatchEvent(new Event("input", {bubbles: true})); }); caja.appendChild(c); return c; });
+  caja.value = r.map(x => x.value); return caja;
+}
+```
+
+```{ojs}
+//| echo: false
+{
+  const v = cifras.map((x, i) => Math.min(x, i ? cifras.slice(0, i).reduce((a, b) => Math.min(a, b)) : x));
+  const perdidas = v.map((x, i) => i ? (v[i - 1] ? 1 - x / v[i - 1] : 0) : 0);
+  const peor = perdidas.indexOf(Math.max(...perdidas));
+  const fmt = new Intl.NumberFormat("es-ES");
+  return html`<div role="status"><table class="table table-sm"><thead><tr><th scope="col">Paso</th><th scope="col">Personas</th><th scope="col">Se pierden</th><th scope="col"><span class="visually-hidden">Barra</span></th></tr></thead><tbody>
+  ${pasos_embudo.map((p, i) => html`<tr style="${i === peor && i ? "font-weight:600" : ""}"><td>${p}</td><td style="text-align:right">${fmt.format(v[i])}</td>
+   <td style="text-align:right">${i ? Math.round(100 * perdidas[i]) + " %" : "—"}</td>
+   <td style="width:40%"><div style="height:.8rem;border-radius:2px;background:${i === peor && i ? "#eb6834" : "#2a78d6"};width:${v[0] ? 100 * v[i] / v[0] : 0}%"></div></td></tr>`)}</tbody></table>
+  <p>Conversión total: <strong>${v[0] ? Math.round(100 * v[4] / v[0]) : 0} %</strong>. ${peor ? html`La mayor pérdida está en <strong>«${pasos_embudo[peor]}»</strong> (${Math.round(100 * perdidas[peor])} %).` : ""}</p>
+  <p class="small">Un paso no puede tener más personas que el anterior: el laboratorio lo corrige. Con las funciones del libro: <code>embudo()</code>.</p></div>`;
+}
+```
+:::
+
+## Actividades
+
+::: {.clasificar #ia-t5-ramas titulo="¿Flujo principal, alternativo o de error?" categorias="Principal|Alternativo|Error"}
+- Busco un libro, lo encuentro y lo reservo → Principal
+- Busco un libro, no está disponible y me apunto a la lista de espera → Alternativo
+- Al reservar, el sistema avisa de que la sesión ha caducado → Error
+- Reservo desde la ficha del libro que me envió un compañero → Alternativo // Otro punto de entrada al mismo objetivo.
+- Introduzco un número de carné que no existe → Error
+:::
+
+::: {.ordenar #ia-t5-pasos titulo="Ordena el flujo principal de «Renovar un préstamo»"}
+1. Iniciar sesión
+2. Abrir «Mis préstamos»
+3. Seleccionar el préstamo que vence
+4. Pulsar «Renovar»
+5. Ver la nueva fecha de devolución
+:::
+
+::: {.clasificar #ia-t5-notacion titulo="¿Qué representa cada forma en un diagrama de flujo?" categorias="Inicio o fin|Pantalla o acción|Decisión|Conector"}
+- Óvalo → Inicio o fin
+- Rectángulo → Pantalla o acción
+- Rombo → Decisión
+- Flecha → Conector
+:::
+
+::: {.callout-warning appearance="simple" icon="false"}
+## Errores frecuentes
+- **Dibujar solo el camino feliz.** Los flujos de error y alternativos son donde más se pierde la gente.
+- **Confundir flujo con mapa del sitio.** El flujo sigue una tarea; el mapa, la estructura.
+- **Decisiones sin salida**: cada rombo necesita al menos dos ramas etiquetadas.
+- **Pasos que piden lo que el sistema ya sabe** (volver a escribir el correo, el carné…).
+:::
+
 ## Reto evaluable {#reto-t5}
 
 ::: {.callout-important appearance="simple" icon="false"}

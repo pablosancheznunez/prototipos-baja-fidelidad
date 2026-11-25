@@ -190,6 +190,122 @@ if (identical(as.character(.result), "Tipografía de 12 px en los avisos legales
 }
 ```
 
+## Laboratorio: ordenación de tarjetas (*card sorting*) {#lab-t2-tarjetas}
+
+::: {.laboratorio}
+::: {.laboratorio-etiqueta}
+Laboratorio · datos simulados
+:::
+
+La **ordenación de tarjetas** revela cómo agrupan las personas los contenidos, y sirve para diseñar la arquitectura de información. Agrupa estas diez funciones de la aplicación de una biblioteca en los grupos que te parezcan naturales (puedes renombrar los grupos). Después compara tu propuesta con la de **20 participantes simulados**: la matriz muestra qué porcentaje de ellos puso cada par de tarjetas en el mismo grupo.
+
+```{ojs}
+//| echo: false
+texto = window.Lab.texto
+seleccion = window.Lab.seleccion
+area = window.Lab.area
+rango = window.Lab.rango
+boton = window.Lab.boton
+color = window.Lab.color
+tarjetas = ["Buscar en el catálogo", "Reservar un libro", "Renovar un préstamo", "Ver mis préstamos", "Pagar una multa",
+  "Cambiar la contraseña", "Elegir el idioma", "Horarios y sedes", "Contactar con la biblioteca", "Mis listas de lectura"]
+viewof grupos = texto("Nombres de tus grupos (separados por comas)", {value: "Buscar, Mis préstamos, Mi cuenta, Información", submit: "Usar estos grupos"})
+```
+
+```{ojs}
+//| echo: false
+viewof asignacion = {
+  const nombres = grupos.split(",").map(x => x.trim()).filter(Boolean);
+  const caja = html`<div class="lab-tarjetas"></div>`;
+  const sels = tarjetas.map((t, i) => {
+    const s = seleccion(t, [["", "Elige un grupo…"], ...nombres.map(n => [n, n])]);
+    s.addEventListener("input", e => { e.stopPropagation(); caja.value = sels.map(x => x.value); caja.dispatchEvent(new Event("input", {bubbles: true})); });
+    caja.appendChild(s); return s;
+  });
+  caja.value = sels.map(x => x.value);
+  return caja;
+}
+```
+
+```{ojs}
+//| echo: false
+simulados = {
+  // 20 participantes simulados: tres agrupaciones de base con algo de variación
+  const base = [0, 0, 1, 1, 1, 2, 2, 3, 3, 0];
+  let s = 11; const rnd = () => (s = (s * 9301 + 49297) % 233280) / 233280;
+  return Array.from({length: 20}, () => base.map((g, i) => {
+    const r = rnd();
+    if (i === 9 && r < 0.45) return 1;       // «Mis listas» a veces con los préstamos
+    if (i === 4 && r < 0.35) return 2;       // «Pagar una multa» a veces en la cuenta
+    if (i === 1 && r < 0.3) return 1;        // «Reservar» a veces con los préstamos
+    return r < 0.06 ? Math.floor(rnd() * 4) : g;
+  }));
+}
+juntos = tarjetas.map((_, i) => tarjetas.map((_, j) => simulados.filter(p => p[i] === p[j]).length / simulados.length))
+{
+  const tuyo = asignacion;
+  const completo = tuyo.every(Boolean);
+  let acuerdo = 0, pares = 0;
+  for (let i = 0; i < 10; i++) for (let j = i + 1; j < 10; j++) {
+    pares++; const t = tuyo[i] && tuyo[i] === tuyo[j]; const m = juntos[i][j] >= 0.5;
+    if (t === m) acuerdo++;
+  }
+  const celda = 30, izq = 190, arriba = 190, w = izq + celda * 10 + 70, h = arriba + celda * 10 + 10;
+  const svg = [`<svg viewBox="0 0 ${w} ${h}" width="100%" style="max-width:${w}px" role="img" aria-label="Matriz de similitud de las diez tarjetas según los participantes simulados">`];
+  tarjetas.forEach((t, i) => {
+    svg.push(`<text x="${izq - 6}" y="${arriba + i * celda + 19}" text-anchor="end" font-size="11" fill="currentColor">${t}</text>`);
+    svg.push(`<text transform="translate(${izq + i * celda + 19},${arriba - 6}) rotate(-60)" font-size="11" fill="currentColor">${t}</text>`);
+    tarjetas.forEach((_, j) => {
+      const v = juntos[i][j], mismo = tuyo[i] && tuyo[i] === tuyo[j];
+      svg.push(`<rect x="${izq + j * celda}" y="${arriba + i * celda}" width="${celda - 2}" height="${celda - 2}" rx="3" fill="#2a78d6" fill-opacity="${0.08 + 0.85 * v}" stroke="${mismo && i !== j ? "#eb6834" : "none"}" stroke-width="2.5"/>`);
+      svg.push(`<text x="${izq + j * celda + 14}" y="${arriba + i * celda + 19}" text-anchor="middle" font-size="9" fill="${v > 0.55 ? "#fff" : "currentColor"}">${Math.round(v * 100)}</text>`);
+    });
+  });
+  svg.push("</svg>");
+  const d = html`<div role="status"></div>`;
+  d.innerHTML = `<p>${completo ? `<strong>Coincides con la mayoría en el ${Math.round(100 * acuerdo / pares)} % de los pares</strong> (dos tarjetas juntas o separadas).` : "Asigna un grupo a todas las tarjetas para comparar tu propuesta."}</p>
+  <p class="small">Cada celda es el % de participantes que juntaron esas dos tarjetas; los bordes naranjas marcan los pares que tú has juntado.</p>${svg.join("")}`;
+  return d;
+}
+```
+
+**Fíjate** en las tarjetas que dividen a los participantes («Mis listas de lectura», «Pagar una multa»): son las que piden una etiqueta más clara o estar en dos sitios.
+:::
+
+## Actividades
+
+::: {.zonas #ia-t2-heuristica titulo="Revisión heurística de un formulario" imagen="figuras/t2_formulario.svg" alt="Esquema de la pantalla «Renovar préstamos» de una biblioteca: cabecera con menú, lista de tres préstamos con casillas, un recuadro de novedades, dos campos de texto, dos botones azules iguales y un mensaje de error rojo; abajo a la derecha, un enlace de ayuda."}
+Pulsa sobre las **cinco** zonas que incumplen alguna heurística de Nielsen y comprueba.
+
+- [0.6, 0.8, 98.8, 11] Cabecera con el menú principal | no | Es consistente y deja ver dónde estás.
+- [5, 25, 55, 24] Lista de préstamos con casillas | no | Muestra el estado y la fecha de cada préstamo.
+- [66, 25, 29, 24] Recuadro de novedades | no | Puede distraer, pero no impide la tarea.
+- [5, 54, 34, 7] Campo con el texto «Introduce el código» | si | Sin etiqueta visible: el texto desaparece al escribir y no dice qué código es (heurísticas 6 y 10).
+- [45, 54, 34, 7] Campo con el texto «AAAAMMDD» | si | Exige un formato rígido sin ejemplo ni calendario (5, prevención de errores).
+- [5, 66, 30, 9] Botón «Ejecutar transacción OPAC» | si | Jerga del sistema en lugar del lenguaje de la persona: «Renovar» (2).
+- [38, 66, 20, 9] Botón «Borrar todo» | si | Acción destructiva con el mismo peso que la principal y sin confirmación (3 y 5).
+- [5, 80, 50, 7] Mensaje «Error 0x8F2» | si | No explica qué ha pasado ni cómo solucionarlo (9).
+- [84, 90, 10, 7] Enlace de ayuda | no | Existe ayuda accesible (10).
+:::
+
+::: {.clasificar #ia-t2-metodos titulo="¿Cualitativo o cuantitativo?" categorias="Cualitativo|Cuantitativo"}
+- Entrevistas en profundidad con ocho estudiantes → Cualitativo
+- Encuesta a 400 personas usuarias → Cuantitativo
+- Observación contextual en la sala de lectura → Cualitativo
+- Análisis de los registros de búsqueda del catálogo → Cuantitativo
+- Prueba A/B de dos versiones de un botón → Cuantitativo
+- Estudio de diario durante dos semanas → Cualitativo
+:::
+
+::: {.clasificar #ia-t2-heuristicas titulo="¿Qué heurística se incumple?" categorias="1 Visibilidad del estado|2 Mundo real|3 Control y libertad|5 Prevención de errores|6 Reconocer mejor que recordar|9 Recuperarse de errores"}
+- Al subir un archivo grande no aparece ninguna barra de progreso → 1 Visibilidad del estado
+- Un icono de disquete significa «Exportar a PDF» → 2 Mundo real
+- No hay forma de deshacer el envío de un formulario → 3 Control y libertad
+- El formulario acepta una fecha de devolución anterior a la de préstamo → 5 Prevención de errores
+- Hay que recordar el código de la sede escrito en la pantalla anterior → 6 Reconocer mejor que recordar
+- El mensaje dice «Fallo de validación» sin indicar qué campo está mal → 9 Recuperarse de errores
+:::
+
 ## Reto evaluable {#reto-t2}
 
 ::: {.callout-important appearance="simple" icon="false"}

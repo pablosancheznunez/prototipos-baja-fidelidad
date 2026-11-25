@@ -163,6 +163,62 @@ if (isTRUE(all.equal(as.numeric(.result), tiempo_tipico(d$tiempo_s)))) {
 }
 ```
 
+## Actividades
+
+::: {.clasificar #ia-t9-roles titulo="¿Qué rol es?" categorias="Facilitación|Ordenador humano|Observación"}
+- Explica la tarea y pide a la persona que piense en voz alta → Facilitación
+- Cambia las hojas de papel cuando la persona «pulsa» un botón → Ordenador humano
+- Anota dónde duda la persona y qué dice, sin intervenir → Observación
+- Responde «¿Qué esperarías que pasara?» cuando le preguntan → Facilitación
+- Mantiene preparadas las pantallas de error y los menús desplegables → Ordenador humano
+:::
+
+::: {.ordenar #ia-t9-sesion titulo="Ordena la sesión de prueba con un prototipo en papel"}
+1. Dar la bienvenida y explicar que se prueba el diseño, no a la persona
+2. Pedir el consentimiento para tomar notas
+3. Plantear la primera tarea
+4. Observar mientras piensa en voz alta, sin ayudar
+5. Hacer preguntas de cierre
+6. Agradecer y anotar los hallazgos en caliente
+:::
+
+::: {.escenario #ia-t9-bloqueo titulo="La participante se ha bloqueado"}
+Durante una prueba, la participante lleva un minuto mirando la pantalla de búsqueda sin saber qué hacer.
+
+### Silencio {#t9e-inicio}
+¿Qué haces?
+
+- [Le digo: «Pulsa en la lupa de arriba»](#t9e-ayuda)
+- [Le pregunto: «¿Qué estás buscando ahora mismo en la pantalla?»](#t9e-pregunta)
+- [Doy la tarea por terminada sin decir nada](#t9e-corte)
+
+### Has dado la respuesta {#t9e-ayuda .final .mal}
+Al guiarla, pierdes el hallazgo más valioso de la sesión: la lupa no se ve o no se entiende. Anota el bloqueo y pregunta sin dirigir.
+
+### Cortar sin más {#t9e-corte .final .regular}
+Anotar el fracaso está bien, pero sin preguntar no sabrás por qué ocurrió.
+
+### Pregunta abierta {#t9e-pregunta}
+Responde: «Busco algo que diga "buscar", pero solo veo iconos». ¿Y ahora?
+
+- [Le explico qué significa cada icono](#t9e-explica)
+- [Anoto la frase literal y le propongo pasar a la siguiente tarea si no lo encuentra](#t9e-bien)
+
+### Explicar el diseño {#t9e-explica .final .regular}
+Ya tienes el hallazgo, pero explicar el diseño contamina las tareas siguientes.
+
+### Hallazgo registrado {#t9e-bien .final .bien}
+Has respetado a la participante, has evitado guiarla y te llevas una cita textual que justifica el cambio: el icono necesita una etiqueta.
+:::
+
+::: {.callout-warning appearance="simple" icon="false"}
+## Errores frecuentes
+- **Ayudar demasiado pronto**: el silencio incómodo es parte del método.
+- **Preguntar «¿Te gusta?»**: lo que importa es si consigue la tarea.
+- **Defender el diseño** ante la participante.
+- **Analizar días después**: anota los hallazgos al terminar cada sesión.
+:::
+
 ## Reto evaluable {#reto-t9}
 
 ::: {.callout-important appearance="simple" icon="false"}

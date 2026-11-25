@@ -100,6 +100,45 @@ Cada vuelta del ciclo es una **iteración**. La regla práctica es subir la fide
 
 Elige una aplicación que uses a diario. Dibuja en papel, en cinco minutos, su pantalla principal **sin mirarla**. Después compárala con la real y anota qué recordabas (la estructura, los elementos esenciales) y qué no (los detalles visuales). Lo que recuerdas es lo que la baja fidelidad debe capturar.
 
+![Coste relativo de cambiar una decisión de diseño según la fase. Cuanto antes se detecta un problema, más barato es corregirlo: por eso se prototipa en baja fidelidad.](figuras/t1_coste.svg){#fig-t1-coste fig-alt="Línea que sube de izquierda a derecha en escala logarítmica, por cinco fases: investigación, esquemas en papel, prototipo interactivo, desarrollo y producto lanzado. Una franja verde sobre las dos primeras fases dice: la baja fidelidad vive aquí. Nota: curva ilustrativa, la forma y no las cifras."}
+
+## Actividades
+
+::: {.clasificar #ia-t1-fidelidad titulo="¿Baja o alta fidelidad?" categorias="Baja fidelidad|Alta fidelidad"}
+Decide si cada prototipo es de baja o de alta fidelidad según sus dimensiones visual, de contenido y de interacción.
+
+- Bocetos a lápiz de cinco pantallas, con cajas grises en lugar de imágenes → Baja fidelidad
+- Maqueta con la tipografía, los colores y las fotografías definitivos → Alta fidelidad
+- Pantallas en papel que una persona cambia a mano cuando el participante «pulsa» → Baja fidelidad // Interacción simulada por una persona.
+- Prototipo navegable con animaciones y textos reales → Alta fidelidad
+- Esquema digital en escala de grises con texto de relleno → Baja fidelidad
+- Prototipo que se conecta a datos reales de la biblioteca → Alta fidelidad
+:::
+
+::: {.ordenar #ia-t1-ciclo titulo="El ciclo de diseño centrado en las personas (ISO 9241-210)"}
+1. Entender y especificar el contexto de uso
+2. Especificar los requisitos de las personas usuarias
+3. Producir soluciones de diseño
+4. Evaluar las soluciones con las personas usuarias
+:::
+
+::: {.clasificar #ia-t1-para titulo="¿Es buena idea prototipar en baja fidelidad?" categorias="Sí|No"}
+- Explorar tres estructuras de navegación distintas en una tarde → Sí
+- Comprobar si el color corporativo transmite confianza → No // Para eso hace falta fidelidad visual.
+- Detectar si las personas entienden los pasos de un trámite → Sí
+- Medir el tiempo de carga real de una página → No
+- Alinear al equipo sobre qué pantallas hacen falta → Sí
+- Validar la legibilidad de una tipografía concreta → No
+:::
+
+::: {.callout-warning appearance="simple" icon="false"}
+## Errores frecuentes
+- **Pulir demasiado pronto.** Un esquema bonito invita a opinar sobre colores en lugar de sobre estructura.
+- **Enamorarse de la primera idea.** La baja fidelidad sirve para explorar varias, no para decorar una.
+- **Confundir fidelidad con calidad.** Un boceto puede ser un prototipo excelente si responde a la pregunta que se quería probar.
+- **No decidir qué se quiere aprender** antes de prototipar.
+:::
+
 ## Reto evaluable {#reto-t1}
 
 ::: {.callout-important appearance="simple" icon="false"}

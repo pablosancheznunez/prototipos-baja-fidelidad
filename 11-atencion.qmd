@@ -75,6 +75,72 @@ En la Unión Europea, el Reglamento de Servicios Digitales obliga a las platafor
 
 Elige una aplicación que uses a diario y activa durante un día su contador de tiempo de uso (o el del sistema operativo). Anota cada vez que la abres **sin haberlo decidido** y qué te llevó a hacerlo. Identifica qué mecanismos del apartado 3 intervienen.
 
+![Patrones de lectura en F y en Z. En páginas con mucho texto la mirada barre las primeras líneas y luego baja por el margen izquierdo; en páginas con poco texto salta en zigzag entre los elementos destacados.](figuras/t11_patrones.svg){#fig-t11-patrones fig-alt="Dos esquemas de página. A la izquierda, líneas de texto con siete fijaciones numeradas que forman una F: dos barridos horizontales arriba y un descenso por el margen izquierdo. A la derecha, una página con logotipo, menú, imagen central, texto y un botón verde, con cuatro fijaciones que forman una Z."}
+
+## Laboratorio: mapa de calor simulado {#lab-t11-calor}
+
+::: {.laboratorio}
+::: {.laboratorio-etiqueta}
+Laboratorio · datos simulados (no son medidas reales)
+:::
+
+Los **mapas de calor** de un estudio de seguimiento ocular (*eye tracking*) acumulan las fijaciones de muchas personas. Este laboratorio **simula** fijaciones a partir de los patrones en F y en Z para que veas cómo se forman: elige el tipo de página y el número de personas.
+
+```{ojs}
+//| echo: false
+rango = window.Lab.rango
+seleccion = window.Lab.seleccion
+viewof c_tipo = seleccion("Tipo de página", [["F", "Texto denso (patrón en F)"], ["Z", "Poco texto (patrón en Z)"]], {value: "F"})
+viewof c_n = rango("Personas simuladas", [1, 60], {step: 1, value: 20})
+```
+
+```{ojs}
+//| echo: false
+{
+  const W = 480, H = 320, cv = document.createElement("canvas"); cv.width = W; cv.height = H;
+  cv.style.maxWidth = "100%"; cv.setAttribute("role", "img");
+  cv.setAttribute("aria-label", `Mapa de calor simulado de ${c_n} personas sobre una página ${c_tipo === "F" ? "de texto denso: el calor se concentra arriba y en el margen izquierdo" : "con poco texto: el calor se reparte en las cuatro esquinas, siguiendo una Z"}`);
+  const g = cv.getContext("2d");
+  g.fillStyle = "#fff"; g.fillRect(0, 0, W, H); g.fillStyle = "#d9d8d4";
+  if (c_tipo === "F") for (let i = 0; i < 11; i++) g.fillRect(30, 30 + i * 25, 420 - (i % 3) * 80, 8);
+  else { [[30, 25, 90, 35], [350, 25, 100, 35], [110, 100, 260, 110], [30, 250, 140, 45], [300, 250, 150, 45]].forEach(r => g.fillRect(...r)); }
+  let s = 5; const rnd = () => (s = (s * 9301 + 49297) % 233280) / 233280;
+  const gauss = () => Math.sqrt(-2 * Math.log(rnd() + 1e-9)) * Math.cos(2 * Math.PI * rnd());
+  const base = c_tipo === "F" ? [[40, 34], [200, 34], [380, 34], [40, 84], [180, 84], [300, 84], [40, 134], [40, 184], [40, 234], [40, 284]]
+                              : [[70, 42], [400, 42], [240, 155], [100, 272], [375, 272]];
+  const pts = [];
+  for (let p = 0; p < c_n; p++) base.forEach(([x, y], k) => { if (rnd() < (c_tipo === "F" ? 1 - k * 0.06 : 0.9)) pts.push([x + gauss() * 18, y + gauss() * 10]); });
+  const capa = document.createElement("canvas"); capa.width = W; capa.height = H; const c = capa.getContext("2d");
+  pts.forEach(([x, y]) => { const r = c.createRadialGradient(x, y, 0, x, y, 30); r.addColorStop(0, "rgba(0,0,0,0.12)"); r.addColorStop(1, "rgba(0,0,0,0)"); c.fillStyle = r; c.fillRect(x - 30, y - 30, 60, 60); });
+  const img = c.getImageData(0, 0, W, H), d = img.data;
+  for (let i = 0; i < d.length; i += 4) { const a = Math.min(1, d[i + 3] / 255 * 1.6); if (a < 0.03) { d[i + 3] = 0; continue; }
+    const col = a < 0.33 ? [42, 120, 214] : a < 0.66 ? [237, 161, 0] : [192, 57, 43]; d[i] = col[0]; d[i + 1] = col[1]; d[i + 2] = col[2]; d[i + 3] = 90 + 130 * a; }
+  c.putImageData(img, 0, 0); g.drawImage(capa, 0, 0);
+  return html`<figure>${cv}<figcaption class="small">${pts.length} fijaciones simuladas. Azul: pocas; amarillo: bastantes; rojo: muchas. En un estudio real, el mapa depende de la tarea y de cada página: estos patrones son tendencias, no reglas.</figcaption></figure>`;
+}
+```
+:::
+
+## Actividades
+
+::: {.clasificar #ia-t11-mecanismos titulo="¿Captación o bienestar?" categorias="Mecanismo de captación|Diseño para el bienestar"}
+- Desplazamiento infinito sin final → Mecanismo de captación
+- Reproducción automática del siguiente vídeo → Mecanismo de captación
+- Recompensas variables al refrescar el contenido → Mecanismo de captación
+- Aviso «Has terminado las novedades de hoy» → Diseño para el bienestar
+- Notificaciones agrupadas en un resumen diario → Diseño para el bienestar
+- Rachas que se pierden si un día no entras → Mecanismo de captación
+- Panel con el tiempo de uso y límites que elige la persona → Diseño para el bienestar
+:::
+
+::: {.clasificar #ia-t11-metricas titulo="¿Qué mide en realidad?" categorias="Atención|Valor para la persona"}
+- Tiempo medio en la aplicación → Atención
+- Número de sesiones al día → Atención
+- Porcentaje que consigue lo que vino a hacer → Valor para la persona
+- Satisfacción declarada tras usar el servicio → Valor para la persona
+- Clics en notificaciones → Atención
+:::
+
 ## Reto evaluable {#reto-t11}
 
 ::: {.callout-important appearance="simple" icon="false"}

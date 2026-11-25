@@ -80,6 +80,40 @@ El **brief de diseño** reúne en una página el enunciado del problema, las per
 
 En parejas, cada uno redacta el enunciado del problema a partir de los mismos tres hallazgos de investigación. Comparad los enunciados: ¿proponéis el mismo encuadre? ¿Alguno contiene una solución escondida? Reescribidlos hasta que ninguno la contenga.
 
+## Actividades
+
+::: {.clasificar #ia-t3-enunciados titulo="¿Está bien formulado el problema?" categorias="Bien formulado|Mal formulado"}
+- «Los estudiantes de primero no encuentran a tiempo los libros de la bibliografía básica porque el catálogo no los distingue, y llegan a los exámenes sin haberlos consultado.» → Bien formulado // Dice quién, qué le pasa, por qué y qué consecuencia tiene.
+- «Necesitamos una aplicación móvil para la biblioteca.» → Mal formulado // Es una solución, no un problema.
+- «La web es fea.» → Mal formulado // Opinión vaga, sin persona ni consecuencia.
+- «Las personas mayores abandonan la reserva de cita en el paso del calendario porque no ven qué días están libres.» → Bien formulado
+- «Hay que añadir inteligencia artificial al buscador.» → Mal formulado // Empieza por la tecnología.
+:::
+
+::: {.ordenar #ia-t3-proceso titulo="Del hallazgo a la hipótesis"}
+1. Recoger los hallazgos de la investigación
+2. Agruparlos y detectar patrones
+3. Redactar el enunciado del problema
+4. Convertirlo en preguntas «¿Cómo podríamos…?»
+5. Formular hipótesis de diseño comprobables
+6. Acordar el alcance con el equipo
+:::
+
+::: {.clasificar #ia-t3-hipotesis titulo="¿Es una hipótesis comprobable?" categorias="Comprobable|No comprobable"}
+- «Si mostramos la disponibilidad junto a cada resultado, más del 80 % de los participantes sabrá si puede llevarse el libro sin abrir la ficha.» → Comprobable
+- «Un diseño más moderno gustará más.» → No comprobable // No dice qué cambio, a quién ni cómo se medirá.
+- «Si el registro pide solo el correo, la tasa de abandono del formulario bajará del 40 % al 20 %.» → Comprobable
+- «La nueva navegación será intuitiva.» → No comprobable
+:::
+
+::: {.callout-warning appearance="simple" icon="false"}
+## Errores frecuentes
+- **Escribir la solución en el enunciado** («falta un botón de…»).
+- **Problemas sin persona** («el sistema es lento» ¿para quién? ¿cuándo?).
+- **Hipótesis sin criterio de éxito**: si no sabes qué resultado la refutaría, no es una hipótesis.
+- **Saltarse el acuerdo de alcance** y descubrir a mitad del proyecto que cada miembro del equipo resolvía un problema distinto.
+:::
+
 ## Reto evaluable {#reto-t3}
 
 ::: {.callout-important appearance="simple" icon="false"}

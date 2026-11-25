@@ -83,6 +83,53 @@ En un **prototipo navegable** digital, cada elemento interactivo se enlaza con l
 
 Elige un formulario de una web que uses (por ejemplo, la inscripción en una actividad). Dibuja su diagrama de estados: estados del botón de envío y de la pantalla, con los eventos y las condiciones. Busca al menos un caso que el formulario real no resuelva bien.
 
+## Actividades
+
+::: {.clasificar #ia-t8-estados titulo="¿En qué estado está la pantalla?" categorias="Vacío|Cargando|Error|Parcial|Completo"}
+- «Todavía no tienes ningún préstamo. Busca en el catálogo para empezar.» → Vacío
+- Tres tarjetas grises animadas mientras llegan los resultados → Cargando
+- «No hemos podido conectar. Comprueba tu conexión y vuelve a intentarlo.» → Error
+- Se muestran 2 de los 5 préstamos; el resto sigue llegando → Parcial
+- La lista con los cinco préstamos y sus fechas → Completo
+:::
+
+::: {.clasificar #ia-t8-componentes titulo="¿Qué estado del botón «Reservar» es?" categorias="Reposo|Foco|Pulsado|Desactivado|Cargando"}
+- Borde marcado al llegar con el tabulador → Foco
+- Color más oscuro mientras se mantiene presionado → Pulsado
+- Gris y sin respuesta porque el libro no se puede reservar → Desactivado // Explica por qué está desactivado.
+- Un indicador giratorio en lugar del texto → Cargando
+- Aspecto normal, a la espera → Reposo
+:::
+
+::: {.escenario #ia-t8-error titulo="Diseña el estado de error"}
+Estás diseñando qué pasa cuando falla la renovación de un préstamo.
+
+### Primer borrador {#t8e-inicio}
+¿Qué mensaje pones?
+
+- [«Error.»](#t8e-vago)
+- [«No se ha podido renovar: el libro tiene una reserva de otra persona. Devuélvelo antes del 02/12 o habla con el mostrador.»](#t8e-bueno)
+- [«Error 409: conflicto en la transacción.»](#t8e-tecnico)
+
+### Demasiado vago {#t8e-vago .final .mal}
+No explica qué ha pasado ni qué hacer: la persona queda bloqueada (heurística 9).
+
+### Demasiado técnico {#t8e-tecnico .final .regular}
+Es preciso para el equipo de desarrollo, pero no para quien usa el servicio. Traduce el código a una causa y una salida.
+
+### Mensaje útil {#t8e-bueno}
+Bien: dice qué ha pasado, por qué y qué hacer. ¿Dónde lo colocas?
+
+- [En una ventana emergente que tapa la lista](#t8e-modal)
+- [Junto al préstamo afectado, sin perder el resto de la lista](#t8e-junto)
+
+### Interrumpe demasiado {#t8e-modal .final .regular}
+Una ventana modal obliga a cerrarla y oculta el contexto. Resérvala para errores que bloquean todo.
+
+### Error en su sitio {#t8e-junto .final .bien}
+El mensaje aparece donde está el problema, con una salida clara, y la persona puede seguir con los demás préstamos.
+:::
+
 ## Reto evaluable {#reto-t8}
 
 ::: {.callout-important appearance="simple" icon="false"}

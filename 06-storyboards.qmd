@@ -84,6 +84,35 @@ Un *storyboard* comunica ideas, no talento artístico. Bastan figuras de palitos
 
 Escribe en cinco líneas un escenario para el proyecto de tu equipo: persona, situación, detonante, uso del producto y desenlace. Después dibújalo en cuatro viñetas en menos de diez minutos con la plantilla en PDF. Enséñaselo a alguien que no conozca el proyecto y pídele que te cuente la historia: si no la entiende sin tu ayuda, revisa el momento clave.
 
+![Plantilla de Crazy 8s, una técnica rápida para generar muchas ideas de pantalla antes de elegir una para el *storyboard*.](figuras/t6_crazy8.svg){#fig-t6-crazy8 fig-alt="Una hoja dividida en ocho recuadros numerados del 1 al 8, cada uno con un título esbozado, un rectángulo de contenido y la indicación «1 min»."}
+
+## Actividades
+
+::: {.ordenar #ia-t6-historia titulo="Ordena las viñetas de este storyboard"}
+Marta tiene que entregar un trabajo y necesita un libro que está prestado.
+
+1. Marta descubre en el catálogo que el libro está prestado
+2. Se apunta a la lista de espera desde el móvil
+3. Recibe un aviso cuando el libro vuelve a la biblioteca
+4. Lo recoge en el mostrador de autopréstamo
+5. Entrega el trabajo a tiempo
+:::
+
+::: {.clasificar #ia-t6-tipos titulo="¿Qué tipo de storyboard es?" categorias="Contexto y situación|Interacción con la pantalla|Recorrido completo"}
+- Viñetas que muestran dónde está la persona y qué le pasa antes de usar el servicio → Contexto y situación
+- Viñetas que dibujan, pantalla a pantalla, cómo se completa una reserva → Interacción con la pantalla
+- Viñetas que siguen a la persona antes, durante y después de usar el servicio → Recorrido completo
+:::
+
+::: {.clasificar #ia-t6-elementos titulo="¿Sobra o hace falta?" categorias="Hace falta|Sobra"}
+- Una persona protagonista con un objetivo → Hace falta
+- El contexto: dónde está y con qué limitaciones → Hace falta
+- Un momento de tensión o dificultad → Hace falta
+- Dibujos detallados y sombreados de los personajes → Sobra // Basta con figuras simples.
+- El desenlace: qué consigue la persona → Hace falta
+- La paleta de colores definitiva de la interfaz → Sobra
+:::
+
 ## Reto evaluable {#reto-t6}
 
 ::: {.callout-important appearance="simple" icon="false"}

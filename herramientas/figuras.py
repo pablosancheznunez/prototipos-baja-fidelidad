@@ -374,6 +374,157 @@ def plantillas_pdf():
     print("ok", destino.name)
 
 
+
+# ======================================================================
+# Figuras v1.1: pantallas para actividades de zonas (coordenadas en % de la
+# imagen: el eje va de 0 a 100 en los dos sentidos y no hay márgenes).
+def pantalla(ancho=8, alto=6):
+    fig = plt.figure(figsize=(ancho, alto))
+    ax = fig.add_axes([0, 0, 1, 1]); ax.set_xlim(0, 100); ax.set_ylim(100, 0); ax.axis("off")
+    ax.add_patch(FancyBboxPatch((0.6, 0.8), 98.8, 98.4, boxstyle="round,pad=0,rounding_size=1.2", fc=SUP, ec=TINTA2, lw=1.5))
+    return fig, ax
+
+
+def guardar_pantalla(fig, nombre):
+    fig.savefig(OUT / nombre, format="svg")
+    if "--png" in sys.argv:
+        fig.savefig(pathlib.Path("/tmp/figpng") / nombre.replace(".svg", ".png"), dpi=100)
+    plt.close(fig); print("ok", nombre)
+
+
+def rect(ax, x, y, w, h, fc=CAJA, ec=CAJA2, lw=1.2, r=0.8):
+    ax.add_patch(FancyBboxPatch((x, y), w, h, boxstyle=f"round,pad=0,rounding_size={r}", fc=fc, ec=ec, lw=lw))
+
+
+def texto(ax, x, y, t, fs=10, c=TINTA, peso="normal", ha="left", va="center", estilo="normal"):
+    ax.text(x, y, t, fontsize=fs, color=c, fontweight=peso, ha=ha, va=va, style=estilo)
+
+
+def t2_formulario():
+    fig, ax = pantalla()
+    rect(ax, 0.6, 0.8, 98.8, 11, fc=CAJA, ec=CAJA2, r=1.2)
+    texto(ax, 4, 6.3, "Biblioteca", fs=12, peso="bold")
+    for i, t in enumerate(["Catálogo", "Mi cuenta", "Horarios"]):
+        texto(ax, 55 + i * 14, 6.3, t, fs=9.5, c=TINTA2)
+    texto(ax, 5, 19, "Renovar préstamos", fs=15, peso="bold")
+    rect(ax, 5, 25, 55, 24, fc=SUP, ec=GRIS)
+    for i, t in enumerate(["☑  Diseño de interacción · vence 02/12", "☑  Usabilidad web · vence 04/12", "☐  Manual de Quarto · vence 15/12"]):
+        texto(ax, 8, 30 + i * 7, t, fs=9.5)
+    rect(ax, 5, 54, 34, 7, fc=SUP, ec=TINTA2)
+    texto(ax, 7, 57.5, "Introduce el código", fs=9, c="#8a8984", estilo="italic")
+    rect(ax, 45, 54, 34, 7, fc=SUP, ec=TINTA2)
+    texto(ax, 47, 57.5, "AAAAMMDD", fs=9, c="#8a8984", estilo="italic")
+    rect(ax, 5, 66, 30, 9, fc="#2a78d6", ec="#2a78d6")
+    texto(ax, 20, 70.5, "Ejecutar transacción OPAC", fs=9, c=SUP, peso="bold", ha="center")
+    rect(ax, 38, 66, 20, 9, fc="#2a78d6", ec="#2a78d6")
+    texto(ax, 48, 70.5, "Borrar todo", fs=9, c=SUP, peso="bold", ha="center")
+    rect(ax, 5, 80, 50, 7, fc="#fde5e1", ec="#c0392b")
+    texto(ax, 7, 83.5, "Error 0x8F2: operación no válida", fs=9, c="#a52a1a")
+    texto(ax, 92, 93.5, "Ayuda", fs=9, c="#1f5fae", ha="right")
+    rect(ax, 66, 25, 29, 24, fc=CAJA, ec=CAJA2)
+    texto(ax, 80.5, 37, "Novedades\nde la biblioteca", fs=9.5, c=TINTA2, ha="center")
+    guardar_pantalla(fig, "t2_formulario.svg")
+
+
+def t10_pago():
+    fig, ax = pantalla()
+    rect(ax, 0.6, 0.8, 98.8, 11, fc=CAJA, ec=CAJA2, r=1.2)
+    texto(ax, 4, 6.3, "Tienda", fs=12, peso="bold")
+    texto(ax, 5, 18, "Finalizar compra", fs=15, peso="bold")
+    rect(ax, 5, 23, 52, 20, fc=SUP, ec=GRIS)
+    texto(ax, 8, 28, "Dirección de envío", fs=10, peso="bold")
+    texto(ax, 8, 35, "C/ Madrid 126, Getafe", fs=9.5, c=TINTA2)
+    rect(ax, 5, 47, 52, 8, fc=SUP, ec=GRIS)
+    texto(ax, 8, 51, "☑  Añadir seguro de envío (4,99 €)", fs=9.5)
+    rect(ax, 5, 59, 52, 8, fc="#fff4d6", ec="#eda100")
+    texto(ax, 8, 63, "¡La oferta termina en 04:59!", fs=9.5, peso="bold", c="#7a5a00")
+    rect(ax, 62, 23, 33, 32, fc=CAJA, ec=CAJA2)
+    texto(ax, 65, 28, "Resumen del pedido", fs=10, peso="bold")
+    texto(ax, 65, 35, "Auriculares ........ 25,00 €", fs=9)
+    texto(ax, 65, 41, "Envío ................ 0,00 €", fs=9)
+    texto(ax, 65, 49, "Total ................ 29,99 €", fs=9.5, peso="bold")
+    rect(ax, 62, 59, 33, 8, fc="#fde5e1", ec="#c0392b")
+    texto(ax, 78.5, 63, "¡Solo quedan 2 unidades!", fs=9, c="#a52a1a", ha="center", peso="bold")
+    rect(ax, 30, 74, 40, 10, fc="#1baf7a", ec="#1baf7a")
+    texto(ax, 50, 79, "Pagar 29,99 €", fs=11, peso="bold", ha="center")
+    texto(ax, 50, 91, "No, gracias, prefiero pagar más", fs=8, c="#8a8984", ha="center")
+    guardar_pantalla(fig, "t10_pago.svg")
+
+
+def t11_patrones():
+    import numpy as np
+    fig, axs = plt.subplots(1, 2, figsize=(10, 4.4))
+    for ax, tipo in zip(axs, ("F", "Z")):
+        ax.set_xlim(0, 100); ax.set_ylim(100, 0); ax.set_aspect("equal"); ax.axis("off")
+        ax.add_patch(FancyBboxPatch((1, 1), 98, 98, boxstyle="round,pad=0,rounding_size=1.5", fc=SUP, ec=TINTA2, lw=1.4))
+        if tipo == "F":
+            for i in range(9):
+                ax.plot([8, 92 - (i % 3) * 18], [12 + i * 9.5] * 2, color=GRIS, lw=4, solid_capstyle="round")
+            ruta = [(8, 12), (88, 12), (8, 31), (65, 31), (8, 50), (8, 70), (8, 88)]
+            tit = "Patrón en F: texto denso"
+        else:
+            ax.add_patch(FancyBboxPatch((8, 8), 20, 10, boxstyle="round,pad=0,rounding_size=1", fc=CAJA, ec=CAJA2))
+            ax.add_patch(FancyBboxPatch((70, 8), 22, 10, boxstyle="round,pad=0,rounding_size=1", fc=CAJA, ec=CAJA2))
+            ax.add_patch(FancyBboxPatch((20, 32), 60, 28, boxstyle="round,pad=0,rounding_size=1", fc=CAJA, ec=CAJA2))
+            ax.add_patch(FancyBboxPatch((8, 78), 30, 12, boxstyle="round,pad=0,rounding_size=1", fc=CAJA, ec=CAJA2))
+            ax.add_patch(FancyBboxPatch((64, 78), 28, 12, boxstyle="round,pad=0,rounding_size=1", fc="#1baf7a", ec="#1baf7a"))
+            ruta = [(14, 13), (84, 13), (18, 84), (80, 84)]
+            tit = "Patrón en Z: página con poco texto"
+        xs, ys = zip(*ruta)
+        ax.plot(xs, ys, color=S[1], lw=2.2, alpha=.9)
+        for k, (x, y) in enumerate(ruta):
+            ax.add_patch(Circle((x, y), 3.2, fc=S[1], ec=SUP, lw=1.2, alpha=.95))
+            ax.text(x, y, str(k + 1), ha="center", va="center", fontsize=8, color=TINTA, fontweight="bold")
+        ax.set_title(tit, fontsize=11, color=TINTA)
+    fig.text(0.5, 0.01, "Recorridos típicos de la mirada, simplificados: los números indican el orden de las fijaciones.", ha="center", fontsize=9, color=TINTA2)
+    guardar(fig, "t11_patrones.svg")
+
+
+def t1_coste():
+    import numpy as np
+    fig, ax = plt.subplots(figsize=(8, 3.8))
+    fases = ["Investigación", "Esquemas en papel", "Prototipo\ninteractivo", "Desarrollo", "Producto\nlanzado"]
+    x = np.arange(len(fases)); y = np.array([1, 1.6, 4, 12, 40])
+    ax.plot(x, y, color=S[0], lw=2.2, marker="o", ms=8, mfc=SUP, mew=2)
+    ax.set_yscale("log"); ax.set_xticks(x); ax.set_xticklabels(fases, fontsize=9.5)
+    ax.set_yticks([1, 3, 10, 30]); ax.set_yticklabels(["bajo", "", "", "muy alto"], fontsize=9.5)
+    ax.set_ylabel("Coste relativo de un cambio", fontsize=10, color=TINTA2)
+    for s_ in ("top", "right"): ax.spines[s_].set_visible(False)
+    ax.grid(axis="y", color="#e8e7e3", lw=.8); ax.tick_params(colors=TINTA2)
+    ax.axvspan(-0.3, 1.3, color="#1baf7a", alpha=.12)
+    ax.text(0.5, 25, "La baja fidelidad\nvive aquí", ha="center", fontsize=10, color="#0b6b4a", fontweight="bold")
+    ax.text(4, 2, "Curva ilustrativa: la forma,\nno las cifras", ha="right", fontsize=8.5, color=TINTA2, style="italic")
+    guardar(fig, "t1_coste.svg")
+
+
+def t4_heart():
+    fig, ax = plt.subplots(figsize=(10, 3.4)); ax.set_xlim(0, 15); ax.set_ylim(0, 4.6); ax.axis("off")
+    cats = [("H", "Felicidad", "satisfacción,\nSUS, NPS"), ("E", "Implicación", "frecuencia\ne intensidad de uso"),
+            ("A", "Adopción", "personas nuevas\nque lo empiezan a usar"), ("R", "Retención", "personas que\nvuelven"),
+            ("T", "Éxito en la tarea", "tasa de éxito,\ntiempo, errores")]
+    for i, (l, t, d) in enumerate(cats):
+        x = 0.2 + i * 3.0
+        caja(ax, x, 0.4, 2.7, 3.6, None, fc=SUP, ec=S[i], lw=2)
+        ax.add_patch(Circle((x + 1.35, 3.3), 0.42, fc=S[i], ec="none"))
+        ax.text(x + 1.35, 3.3, l, ha="center", va="center", fontsize=14, fontweight="bold", color=TINTA)
+        ax.text(x + 1.35, 2.35, t, ha="center", va="center", fontsize=10.5, fontweight="bold", color=TINTA)
+        ax.text(x + 1.35, 1.3, d, ha="center", va="center", fontsize=8.5, color=TINTA2)
+    guardar(fig, "t4_heart.svg")
+
+
+def t6_crazy8():
+    fig, ax = plt.subplots(figsize=(9, 4.8)); ax.set_xlim(0, 16); ax.set_ylim(0, 8.6); ax.axis("off")
+    ax.text(0.1, 8.3, "Crazy 8s: ocho ideas en ocho minutos (un minuto por recuadro)", fontsize=11.5, fontweight="bold", color=TINTA)
+    for i in range(8):
+        f, c = divmod(i, 4); x = 0.1 + c * 4; y = 4.1 - f * 4
+        caja(ax, x, y, 3.8, 3.7, None, fc=SUP, ec=TINTA2, lw=1.3, r=0.05)
+        ax.text(x + 0.2, y + 3.4, str(i + 1), fontsize=10, color=TINTA2, fontweight="bold", va="center")
+        ax.plot([x + 0.5, x + 3.3], [y + 2.6, y + 2.6], color=GRIS, lw=3)
+        ax.add_patch(FancyBboxPatch((x + 0.5, y + 0.9), 2.8, 1.3, boxstyle="round,pad=0,rounding_size=0.05", fc=CAJA, ec="none"))
+        ax.text(x + 1.9, y + 0.45, "1 min", ha="center", fontsize=8.5, color=TINTA2)
+    guardar(fig, "t6_crazy8.svg")
+
 if __name__ == "__main__":
-    for f in (tema1, tema2, tema4, tema5, tema6, tema7, tema8, tema9, tema12, plantillas_pdf):
+    for f in (tema1, tema2, tema4, tema5, tema6, tema7, tema8, tema9, tema12, plantillas_pdf,
+              t1_coste, t2_formulario, t4_heart, t6_crazy8, t10_pago, t11_patrones):
         f()

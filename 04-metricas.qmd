@@ -171,6 +171,97 @@ if (isTRUE(all.equal(as.numeric(.result), 75))) {
 }
 ```
 
+![El marco HEART (Rodden, Hutchinson y Fu, 2010): cinco categorías para elegir las métricas de una experiencia.](figuras/t4_heart.svg){#fig-t4-heart fig-alt="Cinco tarjetas: H, felicidad (satisfacción, SUS, NPS); E, implicación (frecuencia e intensidad de uso); A, adopción (personas nuevas que lo empiezan a usar); R, retención (personas que vuelven); T, éxito en la tarea (tasa de éxito, tiempo, errores)."}
+
+## Laboratorio: la escala SUS {#lab-t4-sus}
+
+::: {.laboratorio}
+::: {.laboratorio-etiqueta}
+Laboratorio · cálculo en tu navegador
+:::
+
+Responde a los diez ítems de la *System Usability Scale* (Brooke, 1996) como si acabaras de usar el catálogo de tu biblioteca (1 = totalmente en desacuerdo, 5 = totalmente de acuerdo). Fíjate en que los ítems impares son positivos y los pares negativos: por eso se puntúan al revés.
+
+```{ojs}
+//| echo: false
+rango = window.Lab.rango
+items_sus = ["Creo que me gustaría usar este sistema con frecuencia.", "El sistema me pareció innecesariamente complejo.",
+  "Pensé que era fácil de usar.", "Creo que necesitaría ayuda de una persona técnica para poder usarlo.",
+  "Las funciones del sistema estaban bien integradas.", "Había demasiadas incoherencias en el sistema.",
+  "Imagino que la mayoría de la gente aprendería a usarlo muy rápido.", "El sistema me resultó muy engorroso de usar.",
+  "Me sentí muy seguro al usarlo.", "Tuve que aprender muchas cosas antes de poder manejarlo."]
+viewof respuestas = {
+  const caja = html`<div class="lab-sus"></div>`;
+  const r = items_sus.map((t, i) => { const c = rango(`${i + 1}. ${t}`, [1, 5], {step: 1, value: 3}); c.addEventListener("input", e => { e.stopPropagation(); caja.value = r.map(x => x.value); caja.dispatchEvent(new Event("input", {bubbles: true})); }); caja.appendChild(c); return c; });
+  caja.value = r.map(x => x.value); return caja;
+}
+```
+
+```{ojs}
+//| echo: false
+{
+  const puntos = respuestas.map((v, i) => i % 2 === 0 ? v - 1 : 5 - v);
+  const sus = 2.5 * puntos.reduce((a, b) => a + b, 0);
+  const banda = sus < 50 ? ["No aceptable", "lab-mal"] : sus < 70 ? ["Marginal", "lab-medio"] : ["Aceptable", "lab-bien"];
+  return html`<div role="status"><p style="font-size:1.25rem"><strong>SUS = ${sus.toFixed(1)}</strong> · <span class="${banda[1]}" style="font-weight:600">${banda[0]}</span></p>
+  <div style="position:relative;height:1.1rem;border-radius:4px;background:linear-gradient(90deg,#f6d3cd 0 50%,#fbe7b8 50% 70%,#d3efdc 70% 100%)">
+    <div style="position:absolute;left:calc(${sus}% - 2px);top:-4px;width:4px;height:1.6rem;background:currentColor"></div></div>
+  <p class="small">Cortes de aceptabilidad orientativos: menos de 50, no aceptable; 50-70, marginal; más de 70, aceptable (Bangor, Kortum y Miller). La media de referencia ronda 68. Con las funciones del libro: <code>puntuacion_sus()</code> y <code>aceptabilidad_sus()</code>.</p></div>`;
+}
+```
+:::
+
+## Laboratorio: cuánto dice una tasa de éxito con pocas personas {#lab-t4-intervalo}
+
+::: {.laboratorio}
+::: {.laboratorio-etiqueta}
+Laboratorio · cálculo en tu navegador
+:::
+
+En una prueba con pocas personas, la tasa de éxito observada es solo una estimación. Mueve los controles y mira cómo cambia el **intervalo de confianza del 95 %** (Wald ajustado, el recomendado para muestras pequeñas).
+
+```{ojs}
+//| echo: false
+viewof n_int = rango("Participantes", [3, 40], {step: 1, value: 8})
+viewof x_int = rango("Completaron la tarea", [0, 40], {step: 1, value: 6})
+```
+
+```{ojs}
+//| echo: false
+{
+  const n = n_int, x = Math.min(x_int, n_int), z = 1.959964;
+  const nt = n + z * z, pt = (x + z * z / 2) / nt, m = z * Math.sqrt(pt * (1 - pt) / nt);
+  const li = Math.max(0, pt - m), ls = Math.min(1, pt + m), p = x / n;
+  return html`<div role="status"><p><strong>${x} de ${n}</strong> (${Math.round(100 * p)} %) → el valor real está, con un 95 % de confianza, entre el <strong>${Math.round(100 * li)} %</strong> y el <strong>${Math.round(100 * ls)} %</strong>.</p>
+  <svg viewBox="0 0 400 46" width="100%" style="max-width:600px" role="img" aria-label="Intervalo de ${Math.round(100 * li)} a ${Math.round(100 * ls)} por ciento">
+    <line x1="10" x2="390" y1="22" y2="22" stroke="#d9d8d4" stroke-width="2"/>
+    ${[0, 25, 50, 75, 100].map(v => `<text x="${10 + 3.8 * v}" y="44" font-size="10" text-anchor="middle" fill="currentColor">${v} %</text>`).join("")}
+    <rect x="${10 + 380 * li}" y="14" width="${380 * (ls - li)}" height="16" rx="4" fill="#2a78d6" fill-opacity=".35"/>
+    <circle cx="${10 + 380 * p}" cy="22" r="6" fill="#eb6834"/></svg>
+  ${x_int > n_int ? html`<p class="small">Hay más éxitos que participantes: se usa ${n}.</p>` : ""}
+  <p class="small">Prueba 4 de 5 y después 40 de 50: la misma tasa, pero el intervalo se estrecha mucho.</p></div>`;
+}
+```
+:::
+
+## Actividades
+
+::: {.clasificar #ia-t4-heart titulo="¿Qué categoría de HEART mide?" categorias="Felicidad|Implicación|Adopción|Retención|Éxito en la tarea"}
+- Puntuación media en el cuestionario SUS → Felicidad
+- Número de búsquedas por persona y semana → Implicación
+- Estudiantes de primero que activan su cuenta en el primer mes → Adopción
+- Porcentaje que vuelve a usar la aplicación al mes siguiente → Retención
+- Porcentaje que consigue renovar un préstamo sin ayuda → Éxito en la tarea
+- Tiempo medio para reservar una sala de estudio → Éxito en la tarea
+:::
+
+::: {.clasificar #ia-t4-smart titulo="¿Es un objetivo SMART?" categorias="SMART|No SMART"}
+- «Mejorar la experiencia de usuario.» → No SMART // No es específico ni medible.
+- «Que el 80 % de las personas participantes renueve un préstamo en menos de un minuto en la prueba de diciembre.» → SMART
+- «Tener la mejor aplicación de bibliotecas del mundo.» → No SMART
+- «Reducir del 35 % al 20 % el abandono del formulario de registro antes de marzo.» → SMART
+:::
+
 ## Reto evaluable {#reto-t4}
 
 ::: {.callout-important appearance="simple" icon="false"}

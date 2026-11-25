@@ -45,7 +45,7 @@ ficha = f"""
 
 aviso = f"""
 ::: {{.callout-note title="Sobre esta versión en PDF"}}
-Esta es la versión para leer e imprimir. El código de R aparece sin ejecutar y las preguntas de autoevaluación se muestran sin corrección automática. Para ejecutar el código, hacer los ejercicios con corrección y responder a las preguntas, usa la versión web: <{WEB}>.
+Esta es la versión para leer e imprimir. El código de R aparece sin ejecutar, las preguntas de autoevaluación se muestran sin corrección automática y las actividades interactivas aparecen en papel, con su solución; los laboratorios solo funcionan en la web. Para ejecutar el código, hacer los ejercicios con corrección y responder a las preguntas, usa la versión web: <{WEB}>.
 :::
 
 """
@@ -79,7 +79,7 @@ cabecera = {
     "date-format": "D [de] MMMM [de] YYYY",
     "lang": "es",
     "engine": "markdown",
-    "filters": ["webex", "libro-pdf"],
+    "filters": ["webex", "interactivos", "libro-pdf"],
     "libro-pdf": {"web": WEB, "capitulos": {c: (cabecera_cap(c)[1] or "") for c in capitulos}},
     "format": {"typst": {
         "toc": True, "toc-depth": 1, "toc-title": "Índice",
@@ -105,7 +105,7 @@ if libro.get("doi"):
 if BUILD.exists():
     shutil.rmtree(BUILD)
 (BUILD / "_extensions").mkdir(parents=True)
-for ext in ("webex", "libro-pdf"):
+for ext in ("webex", "interactivos", "libro-pdf"):
     shutil.copytree(RAIZ / "_extensions" / ext, BUILD / "_extensions" / ext)
 if (RAIZ / "figuras").exists():
     shutil.copytree(RAIZ / "figuras", BUILD / "figuras")

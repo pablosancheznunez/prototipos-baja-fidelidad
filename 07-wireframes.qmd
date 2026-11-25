@@ -138,6 +138,167 @@ if (isTRUE(all.equal(as.numeric(.result), 73.75))) {
 }
 ```
 
+## Laboratorio: calcula tu rejilla {#lab-t7-rejilla}
+
+::: {.laboratorio}
+::: {.laboratorio-etiqueta}
+Laboratorio · cálculo en tu navegador
+:::
+
+Ajusta la rejilla y mira cuánto mide cada columna y cuántos caracteres caben por línea si el texto ocupa un número de columnas. Una línea cómoda de lectura tiene entre **45 y 75 caracteres**.
+
+```{ojs}
+//| echo: false
+rango = window.Lab.rango
+seleccion = window.Lab.seleccion
+viewof r_ancho = rango("Ancho de la pantalla (px)", [320, 1920], {step: 8, value: 1440})
+viewof r_cols = rango("Columnas", [2, 16], {step: 1, value: 12})
+viewof r_med = rango("Medianil (px)", [8, 48], {step: 4, value: 24})
+viewof r_mar = rango("Margen lateral (px)", [16, 200], {step: 8, value: 80})
+viewof r_span = rango("Columnas que ocupa el texto", [1, 16], {step: 1, value: 5})
+viewof r_tam = rango("Tamaño del texto (px)", [12, 24], {step: 1, value: 16})
+```
+
+```{ojs}
+//| echo: false
+{
+  const util = r_ancho - 2 * r_mar, col = (util - (r_cols - 1) * r_med) / r_cols;
+  const span = Math.min(r_span, r_cols), bloque = span * col + (span - 1) * r_med;
+  const cpl = Math.round(bloque / (r_tam * 0.5));
+  const ok = cpl >= 45 && cpl <= 75;
+  const esc = 600 / r_ancho;
+  const rects = Array.from({length: r_cols}, (_, i) => `<rect x="${(r_mar + i * (col + r_med)) * esc}" y="20" width="${Math.max(col, 0) * esc}" height="110" fill="${i < span ? "#2a78d6" : "#e87ba4"}" fill-opacity="${i < span ? .45 : .2}"/>`).join("");
+  const d = html`<div role="status"></div>`;
+  d.innerHTML = col <= 0 ? "<p>Con estos valores las columnas no caben: reduce el medianil, el margen o el número de columnas.</p>" :
+   `<p>Columna: <strong>${col.toFixed(1)} px</strong> · bloque de texto (${span} columnas): <strong>${bloque.toFixed(0)} px</strong> ·
+   unos <strong>${cpl} caracteres por línea</strong> <span class="${ok ? "lab-bien" : "lab-medio"}" style="font-weight:600">${ok ? "· cómodo" : cpl < 45 ? "· demasiado corto" : "· demasiado largo"}</span></p>
+   <svg viewBox="0 0 600 140" width="100%" style="max-width:700px" role="img" aria-label="Rejilla de ${r_cols} columnas; el texto ocupa ${span}">
+   <rect x="0.5" y="10.5" width="599" height="129" rx="6" fill="none" stroke="currentColor" stroke-opacity=".4"/>${rects}</svg>
+   <p class="small">Estimación con 0,5 em por carácter. Con las funciones del libro: <code>rejilla()</code>, <code>ancho_bloque()</code> y <code>caracteres_por_linea()</code>.</p>`;
+  return d;
+}
+```
+:::
+
+## Laboratorio: prueba de los cinco segundos {#lab-t7-cinco}
+
+::: {.laboratorio}
+::: {.laboratorio-etiqueta}
+Laboratorio · se ejecuta en tu navegador
+:::
+
+En una **prueba de los cinco segundos** se enseña una pantalla durante cinco segundos y después se pregunta qué se recuerda. Mide si la jerarquía visual comunica lo esencial. Pulsa **Empezar**, mira la pantalla y responde.
+
+```{ojs}
+//| echo: false
+viewof cinco = {
+  const caja = html`<div class="lab-cinco">
+    <button type="button" class="btn btn-primary btn-sm">Empezar</button>
+    <p class="lab-cuenta" role="status" aria-live="polite"></p>
+    <img alt="" style="display:none;max-width:100%;border:1px solid #ccc;border-radius:6px" src="figuras/t10_pago.svg">
+  </div>`;
+  const [b, cuenta, img] = [caja.querySelector("button"), caja.querySelector(".lab-cuenta"), caja.querySelector("img")];
+  caja.value = 0;
+  b.onclick = () => {
+    b.disabled = true; img.style.display = "block"; img.alt = "Pantalla de pago de una tienda en línea"; let t = 5;
+    cuenta.textContent = `Quedan ${t} segundos`;
+    const id = setInterval(() => { t--; cuenta.textContent = t ? `Quedan ${t} segundos` : "Tiempo";
+      if (!t) { clearInterval(id); img.style.display = "none"; caja.value++; caja.dispatchEvent(new Event("input", {bubbles: true})); b.disabled = false; b.textContent = "Volver a ver"; } }, 1000);
+  };
+  return caja;
+}
+```
+
+```{ojs}
+//| echo: false
+cinco === 0 ? html`<p class="small">Las preguntas aparecerán cuando termine el tiempo.</p>` : (() => {
+  const preguntas = [["¿Qué tipo de pantalla era?", ["Un formulario de registro", "*La pantalla de pago de una tienda", "Un buscador"]],
+    ["¿Cuánto había que pagar?", ["25,00 €", "*29,99 €", "4,99 €"]],
+    ["¿Recuerdas si había algo añadido además del producto?", ["No había nada más", "*Un seguro de envío marcado", "Un cupón de descuento"]]];
+  const d = html`<form class="lab-preguntas"></form>`;
+  preguntas.forEach(([q, ops], k) => {
+    const fs = html`<fieldset class="mb-2"><legend class="fs-6 fw-semibold">${q}</legend></fieldset>`;
+    ops.forEach((o, j) => { const id = `cinco-${k}-${j}`; fs.append(html`<div class="form-check"><input class="form-check-input" type="radio" name="q${k}" id="${id}" value="${o.startsWith("*") ? 1 : 0}"><label class="form-check-label" for="${id}">${o.replace("*", "")}</label></div>`); });
+    d.append(fs);
+  });
+  const res = html`<p role="status"></p>`, b = html`<button type="button" class="btn btn-primary btn-sm">Comprobar</button>`;
+  b.onclick = () => { const ok = [0, 1, 2].filter(k => d.querySelector(`input[name=q${k}]:checked`)?.value === "1").length;
+    res.textContent = `${ok} de 3. La tercera es la clave: un seguro premarcado que pocas personas recuerdan haber visto es justo lo que busca un patrón engañoso (tema 10).`; };
+  d.append(b, res); return d;
+})()
+```
+:::
+
+## Laboratorio: prueba de árbol (*tree testing*) {#lab-t7-arbol}
+
+::: {.laboratorio}
+::: {.laboratorio-etiqueta}
+Laboratorio · se ejecuta en tu navegador
+:::
+
+La **prueba de árbol** evalúa la arquitectura de información sin diseño visual: solo el menú. Tu tarea: **«Quieres saber hasta cuándo puedes quedarte un libro que tienes en préstamo»**. Navega por el menú y pulsa **Lo encontré aquí** cuando creas que has llegado.
+
+```{ojs}
+//| echo: false
+arbol = ({n: "Inicio", h: [
+  {n: "Catálogo", h: [{n: "Búsqueda simple"}, {n: "Búsqueda avanzada"}, {n: "Novedades"}]},
+  {n: "Servicios", h: [{n: "Préstamo", h: [{n: "Condiciones del préstamo"}, {n: "Préstamo interbibliotecario"}]}, {n: "Reserva de salas"}, {n: "Formación"}]},
+  {n: "Mi cuenta", h: [{n: "Mis préstamos", meta: true}, {n: "Mis reservas"}, {n: "Datos personales"}]},
+  {n: "La biblioteca", h: [{n: "Horarios"}, {n: "Sedes"}, {n: "Contacto"}]}]})
+viewof prueba_arbol = {
+  const caja = html`<div class="lab-arbol"><nav aria-label="Ruta" class="small mb-2"></nav><div class="lab-arbol-opciones d-flex flex-column gap-1 align-items-start"></div>
+    <div class="mt-2 d-flex gap-2"><button type="button" class="btn btn-outline-primary btn-sm lab-atras">Atrás</button><button type="button" class="btn btn-primary btn-sm lab-aqui">Lo encontré aquí</button><button type="button" class="btn btn-outline-primary btn-sm lab-reinicio">Empezar de nuevo</button></div>
+    <p role="status" class="mt-2 lab-arbol-res"></p></div>`;
+  let ruta = [arbol], clics = 0, atras = 0, primero = null;
+  const [nav, ops, res] = [caja.querySelector("nav"), caja.querySelector(".lab-arbol-opciones"), caja.querySelector(".lab-arbol-res")];
+  const pinta = () => {
+    nav.textContent = ruta.map(x => x.n).join(" › ");
+    ops.innerHTML = ""; const actual = ruta[ruta.length - 1];
+    (actual.h || []).forEach(h => { const b = html`<button type="button" class="btn btn-outline-secondary btn-sm">${h.n}${h.h ? " ›" : ""}</button>`;
+      b.onclick = () => { clics++; if (primero === null) primero = h.n; ruta.push(h); pinta(); }; ops.append(b); });
+    if (!actual.h) ops.append(html`<p class="small mb-0">(Página final del menú)</p>`);
+  };
+  caja.querySelector(".lab-atras").onclick = () => { if (ruta.length > 1) { ruta.pop(); atras++; pinta(); } };
+  caja.querySelector(".lab-reinicio").onclick = () => { ruta = [arbol]; clics = 0; atras = 0; primero = null; res.textContent = ""; pinta(); };
+  caja.querySelector(".lab-aqui").onclick = () => {
+    const ok = !!ruta[ruta.length - 1].meta;
+    res.textContent = ok ? `Éxito ${atras ? "indirecto" : "directo"}: ${clics} clics${atras ? `, ${atras} vueltas atrás` : ""}. Primer clic: «${primero}».`
+      : `No es aquí. En una prueba real contaría como fracaso. Primer clic: «${primero ?? "ninguno"}». Pista: ¿dónde están tus cosas?`;
+  };
+  pinta(); caja.value = null; return caja;
+}
+```
+
+En una prueba real se mide con 30 o más personas: **tasa de éxito**, **directividad** (sin volver atrás) y **primer clic**. Si muchas empiezan por «Servicios › Préstamo», quizá la etiqueta engaña o hace falta un enlace también allí.
+:::
+
+## Actividades
+
+::: {.clasificar #ia-t7-elementos titulo="¿Qué elemento del esquema es?" categorias="Navegación|Contenido|Llamada a la acción|Formulario|Información del sistema"}
+- Menú principal en la cabecera → Navegación
+- Migas de pan («Inicio › Catálogo › Ficha») → Navegación
+- Botón «Reservar» destacado → Llamada a la acción
+- Campos de nombre y correo → Formulario
+- Aviso «Tu sesión caducará en 2 minutos» → Información del sistema
+- Resumen y portada del libro → Contenido
+:::
+
+::: {.ordenar #ia-t7-jerarquia titulo="Ordena por peso visual (del que más debe destacar al que menos) en la ficha de un libro"}
+1. Título del libro
+2. Botón «Reservar»
+3. Disponibilidad (en estantería o prestado)
+4. Datos bibliográficos (autoría, editorial, año)
+5. Enlaces a libros relacionados
+:::
+
+::: {.callout-warning appearance="simple" icon="false"}
+## Errores frecuentes
+- **Texto de relleno en todo**: el «lorem ipsum» oculta si la jerarquía funciona con contenidos reales; usa textos realistas en títulos y botones.
+- **Ignorar la rejilla** y alinear a ojo.
+- **No anotar**: un esquema sin notas deja al equipo adivinando qué hace cada elemento.
+- **Diseñar solo para escritorio**: empieza por la pantalla más estrecha.
+:::
+
 ## Reto evaluable {#reto-t7}
 
 ::: {.callout-important appearance="simple" icon="false"}

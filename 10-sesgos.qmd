@@ -130,6 +130,36 @@ if (setequal(as.character(.result), c("Obstrucción", "Ocultación", "Acción fo
 }
 ```
 
+## Actividades
+
+::: {.zonas #ia-t10-pago titulo="Encuentra los patrones engañosos" imagen="figuras/t10_pago.svg" alt="Pantalla «Finalizar compra» de una tienda: dirección de envío, una casilla marcada para añadir un seguro de envío de 4,99 euros, un aviso amarillo de que la oferta termina en 04:59, un resumen del pedido con un total de 29,99 euros, un aviso rojo de que solo quedan 2 unidades, un botón verde «Pagar 29,99 €» y, debajo, un enlace pequeño «No, gracias, prefiero pagar más»."}
+Esta pantalla esconde **cinco** patrones engañosos. Señálalos y comprueba.
+
+- [5, 23, 52, 20] Dirección de envío | no | Información necesaria y editable.
+- [5, 47, 52, 8] Casilla «Añadir seguro de envío» | si | Casilla premarcada: añade un coste sin una decisión activa (*sneaking*).
+- [5, 59, 52, 8] Cuenta atrás de la oferta | si | Urgencia artificial si el contador se reinicia o no corresponde a una oferta real.
+- [62, 23, 33, 32] Resumen del pedido | si | Coste oculto: el total suma 4,99 € del seguro, que no aparece desglosado.
+- [62, 59, 33, 8] «¡Solo quedan 2 unidades!» | si | Escasez fabricada si no refleja el inventario real.
+- [30, 74, 40, 10] Botón «Pagar 29,99 €» | no | Acción principal clara.
+- [30, 88, 40, 6] Enlace «No, gracias, prefiero pagar más» | si | *Confirmshaming*: avergüenza a quien rechaza la oferta.
+:::
+
+::: {.clasificar #ia-t10-sesgos titulo="¿Qué sesgo cognitivo se aprovecha?" categorias="Anclaje|Efecto de los valores por defecto|Aversión a la pérdida|Prueba social|Efecto señuelo"}
+- Mostrar primero un precio tachado de 99 € junto al real de 49 € → Anclaje
+- Dejar marcada la suscripción al boletín → Efecto de los valores por defecto
+- «Si te vas ahora, perderás tus puntos» → Aversión a la pérdida
+- «1200 personas han reservado esta semana» → Prueba social
+- Ofrecer un plan intermedio poco atractivo para que el más caro parezca razonable → Efecto señuelo
+:::
+
+::: {.clasificar #ia-t10-gray titulo="¿Qué estrategia de Gray et al. (2018) es?" categorias="Insistencia|Obstrucción|Ocultación|Interferencia en la interfaz|Acción forzada"}
+- Una ventana pide activar las notificaciones cada vez que abres la aplicación → Insistencia
+- Darse de alta cuesta un clic; darse de baja exige llamar por teléfono → Obstrucción
+- Se añade un producto a la cesta sin que lo pidas → Ocultación
+- El botón «Aceptar todo» es grande y verde; «Rechazar», un enlace gris → Interferencia en la interfaz
+- Para descargar un documento te obligan a crear una cuenta → Acción forzada
+:::
+
 ## Reto evaluable {#reto-t10}
 
 ::: {.callout-important appearance="simple" icon="false"}
