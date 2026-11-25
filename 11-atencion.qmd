@@ -121,6 +121,35 @@ viewof c_n = rango("Personas simuladas", [1, 60], {step: 1, value: 20})
 ```
 :::
 
+## Caso práctico resuelto
+
+::: {.callout-note appearance="simple" icon="false"}
+## Notificaciones que respetan la atención
+Primera propuesta: notificar cada vez que se libera una sala. Resultado previsible: decenas de avisos al día, que los usuarios silencian.
+
+Rediseño centrado en el bienestar:
+
+- Solo notificaciones **solicitadas** («avísame si se libera una sala esta tarde para 4»).
+- Un **recordatorio** antes de la reserva, configurable.
+- Sin notificaciones promocionales ni de «racha de estudio».
+- Horario silencioso por defecto por la noche.
+:::
+
+## Ejercicios graduados
+
+**Básico.** Clasifica estas notificaciones en útiles o intrusivas: recordatorio de tu reserva; «Hace 3 días que no reservas»; aviso de que tu sala de espera está libre.
+
+::: {.webex-solution boton="Ver solución"}
+Útiles: el recordatorio y el aviso solicitado. Intrusiva: «Hace 3 días que no reservas», que busca la interacción, no ayudar.
+:::
+
+**Avanzado.** Propón una métrica que indique que la app respeta la atención de los usuarios.
+
+::: {.webex-solution boton="Ver solución"}
+Por ejemplo, la proporción de notificaciones que llevan a una acción útil (abrir la reserva, cancelar) frente a las ignoradas, o la tasa de usuarios que desactivan las notificaciones.
+:::
+
+
 ## Actividades
 
 ::: {.clasificar #ia-t11-mecanismos titulo="¿Captación o bienestar?" categorias="Mecanismo de captación|Diseño para el bienestar"}

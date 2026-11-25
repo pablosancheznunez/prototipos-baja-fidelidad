@@ -272,6 +272,35 @@ juntos = tarjetas.map((_, i) => tarjetas.map((_, j) => simulados.filter(p => p[i
 **Fíjate** en las tarjetas que dividen a los participantes («Mis listas de lectura», «Pagar una multa»): son las que piden una etiqueta más clara o estar en dos sitios.
 :::
 
+## Caso práctico resuelto
+
+::: {.callout-note appearance="simple" icon="false"}
+## De las entrevistas al concepto
+Se entrevista a ocho estudiantes sobre cómo buscan sitio para estudiar. Proceso de síntesis:
+
+1. **Transcribir citas** relevantes en notas (una idea por nota): «Voy a la biblioteca y doy vueltas buscando una sala libre», «En época de exámenes no hay nada a partir de las 10».
+2. **Mapa de afinidad:** agrupar las notas por temas emergentes: *incertidumbre sobre la disponibilidad*, *picos de demanda*, *trabajo en grupo*.
+3. **Insights:** «Los estudiantes pierden tiempo porque no saben qué salas están libres antes de llegar».
+4. **Concepto creativo:** «Saber antes de salir de casa dónde vas a estudiar».
+
+El concepto orienta todo el diseño posterior: la información de disponibilidad debe ser lo primero que se ve.
+:::
+
+## Ejercicios graduados
+
+**Básico.** Convierte esta observación en un *insight*: «Muchos estudiantes reservan salas y no aparecen».
+
+::: {.webex-solution boton="Ver solución"}
+Un *insight* explica el porqué: «Los estudiantes reservan por precaución en varias franjas porque temen quedarse sin sala, y no cancelan porque hacerlo es incómodo». Sugiere soluciones (cancelación fácil, recordatorios, liberación automática).
+:::
+
+**Avanzado.** Diseña un guion de entrevista de seis preguntas abiertas para entender cómo estudian en grupo.
+
+::: {.webex-solution boton="Ver solución"}
+Preguntas abiertas y sobre comportamientos concretos pasados («Cuéntame la última vez que…»), sin sugerir soluciones ni respuestas («¿Te gustaría una app que…?» es una pregunta sesgada).
+:::
+
+
 ## Actividades
 
 ::: {.zonas #ia-t2-heuristica titulo="Revisión heurística de un formulario" imagen="figuras/t2_formulario.svg" alt="Esquema de la pantalla «Renovar préstamos» de una biblioteca: cabecera con menú, lista de tres préstamos con casillas, un recuadro de novedades, dos campos de texto, dos botones azules iguales y un mensaje de error rojo; abajo a la derecha, un enlace de ayuda."}

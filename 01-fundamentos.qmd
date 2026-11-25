@@ -102,6 +102,34 @@ Elige una aplicación que uses a diario. Dibuja en papel, en cinco minutos, su p
 
 ![Coste relativo de cambiar una decisión de diseño según la fase. Cuanto antes se detecta un problema, más barato es corregirlo: por eso se prototipa en baja fidelidad.](figuras/t1_coste.svg){#fig-t1-coste fig-alt="Línea que sube de izquierda a derecha en escala logarítmica, por cinco fases: investigación, esquemas en papel, prototipo interactivo, desarrollo y producto lanzado. Una franja verde sobre las dos primeras fases dice: la baja fidelidad vive aquí. Nota: curva ilustrativa, la forma y no las cifras."}
 
+## Caso práctico resuelto
+
+::: {.callout-note appearance="simple" icon="false"}
+## De la idea al primer esquema en 30 minutos
+La biblioteca quiere una app, **ReservaSala**, para reservar salas de estudio. Antes de abrir ninguna herramienta:
+
+1. **Bocetar alternativas (10 min):** seis miniaturas de la pantalla principal (lista de salas, mapa, calendario, buscador por hora…). La cantidad importa más que la calidad.
+2. **Elegir y combinar (5 min):** la lista por franja horaria es la más rápida para quien ya sabe cuándo quiere estudiar; el mapa ayuda a quien no conoce el edificio. Se combina: lista con un botón «ver en el mapa».
+3. **Esquema de baja fidelidad (15 min):** cajas grises, texto real (no *lorem ipsum*) y ningún color. Lo importante es la jerarquía: franja horaria arriba, salas disponibles después, acción principal «Reservar» visible.
+
+**Por qué funciona:** se exploran varias ideas antes de comprometerse con una, y el esquema se discute por su estructura, no por su estética.
+:::
+
+## Ejercicios graduados
+
+**Básico.** Dibuja tres miniaturas distintas de la pantalla de confirmación de una reserva.
+
+::: {.webex-solution boton="Ver solución"}
+Deben diferenciarse en la estructura (por ejemplo: resumen con botón; tarjeta con código QR; pantalla con opción de añadir al calendario), no solo en detalles. Cada miniatura debe mostrar la información esencial: sala, fecha, hora y cómo cancelar.
+:::
+
+**Avanzado.** Explica, con el enfoque de Buxton, si en este punto del proyecto necesitas un boceto o un prototipo y por qué.
+
+::: {.webex-solution boton="Ver solución"}
+Al principio, para explorar alternativas, conviene el boceto: rápido, barato y ambiguo. Cuando ya hay una dirección clara y se quiere comprobar si funciona con usuarios, se pasa a un prototipo.
+:::
+
+
 ## Actividades
 
 ::: {.clasificar #ia-t1-fidelidad titulo="¿Baja o alta fidelidad?" categorias="Baja fidelidad|Alta fidelidad"}

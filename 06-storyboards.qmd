@@ -86,6 +86,37 @@ Escribe en cinco líneas un escenario para el proyecto de tu equipo: persona, si
 
 ![Plantilla de Crazy 8s, una técnica rápida para generar muchas ideas de pantalla antes de elegir una para el *storyboard*.](figuras/t6_crazy8.svg){#fig-t6-crazy8 fig-alt="Una hoja dividida en ocho recuadros numerados del 1 al 8, cada uno con un título esbozado, un rectángulo de contenido y la indicación «1 min»."}
 
+## Caso práctico resuelto
+
+::: {.callout-note appearance="simple" icon="false"}
+## Un *storyboard* de seis viñetas
+Para comunicar el concepto a la dirección de la biblioteca:
+
+1. Lucía en casa, agobiada: examen en tres días.
+2. Abre ReservaSala y ve las salas libres esta tarde.
+3. Reserva una sala para cuatro e invita a sus compañeros.
+4. Recibe un recordatorio 30 minutos antes.
+5. Llega y la sala está lista; marca su llegada con un código.
+6. El grupo estudia; la biblioteca registra menos salas vacías reservadas.
+
+Cada viñeta muestra **contexto**, **acción** y **emoción**. El *storyboard* no detalla la interfaz: cuenta por qué importa.
+:::
+
+## Ejercicios graduados
+
+**Básico.** Dibuja un *storyboard* de cuatro viñetas para el caso de un estudiante que no encuentra sala.
+
+::: {.webex-solution boton="Ver solución"}
+Debe mostrar el problema (la frustración), el momento en que usa la app, la solución propuesta (alternativas o lista de espera) y el resultado emocional.
+:::
+
+**Avanzado.** ¿Qué viñeta del ejemplo podría eliminarse sin perder el mensaje? Justifícalo.
+
+::: {.webex-solution boton="Ver solución"}
+Por ejemplo, la viñeta 5 si el foco es encontrar sala; pero si el objetivo de la biblioteca es reducir las reservas no presentadas, la confirmación de llegada es esencial. Depende del mensaje.
+:::
+
+
 ## Actividades
 
 ::: {.ordenar #ia-t6-historia titulo="Ordena las viñetas de este storyboard"}

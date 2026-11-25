@@ -130,6 +130,32 @@ if (setequal(as.character(.result), c("Obstrucción", "Ocultación", "Acción fo
 }
 ```
 
+## Caso práctico resuelto
+
+::: {.callout-note appearance="simple" icon="false"}
+## Detectar y corregir un patrón engañoso
+Propuesta de un compañero: al cancelar, mostrar «¿Seguro? Perderás tu prioridad para siempre» y un botón grande «Mantener reserva» y otro diminuto gris «Cancelar».
+
+Análisis: combina **culpa** (*confirmshaming*) e **interferencia en la interfaz** (jerarquía visual que empuja una opción). Además, la «pérdida de prioridad para siempre» es falsa.
+
+Alternativa ética: «¿Cancelar la reserva de la sala 2.3 para mañana a las 16:00? La sala quedará libre para otros estudiantes». Dos botones con el mismo peso: «Cancelar reserva» y «Volver». El objetivo de la biblioteca (que se cancele lo que no se usa) coincide con el del usuario.
+:::
+
+## Ejercicios graduados
+
+**Básico.** Identifica el sesgo cognitivo que explotaría mostrar «¡Solo queda 1 sala!» cuando no es cierto.
+
+::: {.webex-solution boton="Ver solución"}
+La escasez (y la aversión a la pérdida). Si es falso, es un patrón engañoso; si es verdad, informar de la disponibilidad real es legítimo.
+:::
+
+**Avanzado.** Propón una forma honesta de reducir las reservas no presentadas.
+
+::: {.webex-solution boton="Ver solución"}
+Recordatorios con cancelación de un toque, liberación automática si no se confirma la llegada en 15 minutos (anunciada con claridad) y estadísticas visibles del uso de las salas.
+:::
+
+
 ## Actividades
 
 ::: {.zonas #ia-t10-pago titulo="Encuentra los patrones engañosos" imagen="figuras/t10_pago.svg" alt="Pantalla «Finalizar compra» de una tienda: dirección de envío, una casilla marcada para añadir un seguro de envío de 4,99 euros, un aviso amarillo de que la oferta termina en 04:59, un resumen del pedido con un total de 29,99 euros, un aviso rojo de que solo quedan 2 unidades, un botón verde «Pagar 29,99 €» y, debajo, un enlace pequeño «No, gracias, prefiero pagar más»."}

@@ -163,6 +163,32 @@ if (isTRUE(all.equal(as.numeric(.result), tiempo_tipico(d$tiempo_s)))) {
 }
 ```
 
+## Caso práctico resuelto
+
+::: {.callout-note appearance="simple" icon="false"}
+## Una prueba con prototipo en papel
+Se recortan las pantallas en papel y se prueba con cinco estudiantes. Roles: **facilitador** (da la tarea y anima a pensar en voz alta), **«ordenador»** (cambia las pantallas sin hablar) y **observador** (anota).
+
+Tarea: «Reserva una sala para tu grupo de cuatro mañana de 16 a 18 h».
+
+Hallazgos: tres de cinco no vieron el filtro de capacidad; dos pensaron que el botón «Reservar» ya confirmaba la reserva. Cambios: mover el filtro junto a la franja y añadir una pantalla de confirmación con resumen. Coste del cambio: diez minutos de dibujo.
+:::
+
+## Ejercicios graduados
+
+**Básico.** Escribe dos tareas de prueba más, realistas y sin pistas sobre la interfaz.
+
+::: {.webex-solution boton="Ver solución"}
+Ejemplos: «Tu grupo ya no puede ir mañana: anula lo que hayas reservado»; «Necesitas un sitio silencioso para estudiar solo esta tarde». No deben mencionar nombres de botones ni secciones.
+:::
+
+**Avanzado.** ¿Por qué el «ordenador» no debe hablar durante la prueba?
+
+::: {.webex-solution boton="Ver solución"}
+Porque una explicación cambiaría el comportamiento del participante: se trata de ver qué entiende la interfaz por sí sola.
+:::
+
+
 ## Actividades
 
 ::: {.clasificar #ia-t9-roles titulo="¿Qué rol es?" categorias="Facilitación|Ordenador humano|Observación"}

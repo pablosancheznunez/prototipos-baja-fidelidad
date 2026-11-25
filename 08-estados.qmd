@@ -83,6 +83,38 @@ En un **prototipo navegable** digital, cada elemento interactivo se enlaza con l
 
 Elige un formulario de una web que uses (por ejemplo, la inscripción en una actividad). Dibuja su diagrama de estados: estados del botón de envío y de la pantalla, con los eventos y las condiciones. Busca al menos un caso que el formulario real no resuelva bien.
 
+## Caso práctico resuelto
+
+::: {.callout-note appearance="simple" icon="false"}
+## Todos los estados de una pantalla
+La lista de salas no tiene un solo aspecto. Estados que hay que esquematizar:
+
+| Estado | Qué ve el usuario |
+|---|---|
+| **Cargando** | Esqueleto de filas grises |
+| **Vacío** | «No hay salas libres en esta franja», con franjas alternativas |
+| **Error** | «No se pudo cargar la disponibilidad», con «Reintentar» |
+| **Parcial** | Pocas salas: se sugiere ampliar la franja |
+| **Ideal** | La lista completa |
+
+Olvidar estos estados es uno de los fallos más frecuentes: el equipo de desarrollo los resuelve improvisando.
+:::
+
+## Ejercicios graduados
+
+**Básico.** Escribe el texto del estado vacío para un usuario que filtra salas para diez personas.
+
+::: {.webex-solution boton="Ver solución"}
+Ejemplo: «No hay salas para 10 personas libres esta tarde. Las más grandes son para 8. ¿Quieres ver salas para 8 o probar otra franja?». Explica el motivo y ofrece salidas.
+:::
+
+**Avanzado.** Dibuja la transición entre el estado «Cargando» y el «Ideal» con un diagrama de estados.
+
+::: {.webex-solution boton="Ver solución"}
+Estados: Cargando → (éxito) Ideal / Parcial / Vacío; Cargando → (fallo) Error → (Reintentar) Cargando. Cada flecha indica el evento que provoca el cambio.
+:::
+
+
 ## Actividades
 
 ::: {.clasificar #ia-t8-estados titulo="¿En qué estado está la pantalla?" categorias="Vacío|Cargando|Error|Parcial|Completo"}

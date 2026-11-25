@@ -202,6 +202,37 @@ viewof cifras = {
 ```
 :::
 
+## Caso práctico resuelto
+
+::: {.callout-note appearance="simple" icon="false"}
+## Un flujo de reserva con caminos alternativos
+Flujo principal (*happy path*): abrir la app → elegir franja → ver salas libres → elegir sala → confirmar → recibir confirmación.
+
+Caminos alternativos que el esquema debe contemplar:
+
+- **No hay salas libres** en la franja: proponer franjas cercanas o lista de espera.
+- **Grupo grande**: filtrar por capacidad antes de mostrar salas.
+- **Sesión caducada** al confirmar: volver al paso de confirmación sin perder la selección.
+- **Cancelar** desde la confirmación o desde una notificación.
+
+Representarlo con un diagrama de flujo (rectángulos para pantallas, rombos para decisiones) revela pantallas que faltan antes de dibujarlas.
+:::
+
+## Ejercicios graduados
+
+**Básico.** Añade al flujo el caso «la sala reservada está ocupada al llegar».
+
+::: {.webex-solution boton="Ver solución"}
+Nueva rama tras «llegar a la sala»: decisión «¿Está libre?» → no → pantalla «Notificar incidencia» con opción de buscar otra sala disponible ahora y aviso al personal.
+:::
+
+**Avanzado.** Cuenta cuántas pantallas distintas necesita el flujo completo con sus alternativas.
+
+::: {.webex-solution boton="Ver solución"}
+Aproximadamente: inicio, selección de franja, lista de salas, detalle de sala, confirmación, error de disponibilidad, lista de espera, cancelación e incidencia. Lo importante es que cada decisión del diagrama tenga su pantalla de destino.
+:::
+
+
 ## Actividades
 
 ::: {.clasificar #ia-t5-ramas titulo="¿Flujo principal, alternativo o de error?" categorias="Principal|Alternativo|Error"}

@@ -80,6 +80,34 @@ El **brief de diseño** reúne en una página el enunciado del problema, las per
 
 En parejas, cada uno redacta el enunciado del problema a partir de los mismos tres hallazgos de investigación. Comparad los enunciados: ¿proponéis el mismo encuadre? ¿Alguno contiene una solución escondida? Reescribidlos hasta que ninguno la contenga.
 
+## Caso práctico resuelto
+
+::: {.callout-note appearance="simple" icon="false"}
+## Formular el problema de diseño
+A partir de la investigación:
+
+- **Persona:** Lucía, estudiante de tercer curso que prepara exámenes con dos compañeros.
+- **Declaración del problema (POV):** *Lucía necesita saber qué salas estarán libres para su grupo antes de ir a la biblioteca porque pierde hasta media hora buscando sitio en época de exámenes.*
+- **Pregunta «¿Cómo podríamos…?» (HMW):** *¿Cómo podríamos ayudar a los grupos a asegurar una sala adecuada sin desplazarse en vano?*
+
+Una buena pregunta HMW no es tan amplia que no oriente («¿cómo mejorar la biblioteca?») ni tan estrecha que imponga la solución («¿cómo hacer una app de reservas?»).
+:::
+
+## Ejercicios graduados
+
+**Básico.** Reescribe esta pregunta demasiado estrecha: «¿Cómo podríamos añadir un botón de reserva al mapa?».
+
+::: {.webex-solution boton="Ver solución"}
+Una versión con el nivel adecuado: «¿Cómo podríamos ayudar a los estudiantes a encontrar y asegurar un sitio para estudiar en el momento que lo necesitan?».
+:::
+
+**Avanzado.** Escribe la declaración del problema para una segunda persona: un doctorando que necesita una sala silenciosa varias horas.
+
+::: {.webex-solution boton="Ver solución"}
+Estructura: usuario + necesidad + motivo basado en la investigación. Por ejemplo: «Javier necesita una sala silenciosa durante bloques largos porque escribe su tesis y las interrupciones le hacen perder la concentración».
+:::
+
+
 ## Actividades
 
 ::: {.clasificar #ia-t3-enunciados titulo="¿Está bien formulado el problema?" categorias="Bien formulado|Mal formulado"}

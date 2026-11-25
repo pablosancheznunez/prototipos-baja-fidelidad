@@ -244,6 +244,38 @@ viewof x_int = rango("Completaron la tarea", [0, 40], {step: 1, value: 6})
 ```
 :::
 
+## Caso práctico resuelto
+
+::: {.callout-note appearance="simple" icon="false"}
+## Métricas con el marco HEART
+La biblioteca quiere saber si ReservaSala funciona. Con el marco **HEART** (Google):
+
+| Dimensión | Objetivo | Señal | Métrica |
+|---|---|---|---|
+| **Happiness** | Que la app guste | Valoración tras reservar | Satisfacción media (1-5) |
+| **Engagement** | Que se use a menudo | Reservas por usuario | Reservas por estudiante y mes |
+| **Adoption** | Que la usen estudiantes nuevos | Primera reserva | % de estudiantes que reservan al menos una vez |
+| **Retention** | Que vuelvan | Reservas en meses sucesivos | % de usuarios activos al mes siguiente |
+| **Task success** | Que reservar sea fácil | Reservas completadas | Tasa de finalización y tiempo medio de reserva |
+
+Además, una métrica propia del problema: **% de reservas no presentadas**, que debería bajar.
+:::
+
+## Ejercicios graduados
+
+**Básico.** Define un objetivo, una señal y una métrica de *task success* para la cancelación de reservas.
+
+::: {.webex-solution boton="Ver solución"}
+Objetivo: cancelar es rápido. Señal: cancelaciones completadas desde la notificación. Métrica: tiempo medio de cancelación y tasa de cancelaciones iniciadas que se completan.
+:::
+
+**Avanzado.** Explica por qué el número total de descargas no es una buena métrica de éxito.
+
+::: {.webex-solution boton="Ver solución"}
+Es una métrica de vanidad: crece siempre y no dice si la app resuelve el problema. Son mejores las métricas ligadas a objetivos (reservas completadas, no presentados, retención).
+:::
+
+
 ## Actividades
 
 ::: {.clasificar #ia-t4-heart titulo="¿Qué categoría de HEART mide?" categorias="Felicidad|Implicación|Adopción|Retención|Éxito en la tarea"}

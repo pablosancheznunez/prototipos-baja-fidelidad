@@ -209,6 +209,34 @@ viewof c_fondo = color("Color del fondo", {value: "#ffffff"})
 ```
 :::
 
+## Caso práctico resuelto
+
+::: {.callout-note appearance="simple" icon="false"}
+## Revisión de accesibilidad de un esquema
+Revisión del esquema de reserva con criterios WCAG antes de pasar a alta fidelidad:
+
+- **Información no solo por color:** las salas ocupadas no se distinguen solo en gris; llevan el texto «Ocupada».
+- **Objetivos táctiles** de al menos 44 × 44 px para los botones de franja.
+- **Orden de lectura y foco** anotados en el esquema: cabecera, filtros, lista, acción.
+- **Etiquetas** visibles en los campos (no solo marcadores de posición).
+- **Lenguaje claro** y alternativas: el mapa del edificio tiene una vista en lista equivalente para lectores de pantalla.
+:::
+
+## Ejercicios graduados
+
+**Básico.** Anota en un esquema el orden de foco para navegar con teclado la pantalla de confirmación.
+
+::: {.webex-solution boton="Ver solución"}
+Orden lógico: título (resumen de la reserva) → datos de la reserva → «Añadir al calendario» → «Cancelar reserva» → «Volver al inicio». El foco inicial debe ir al título para que el lector de pantalla anuncie el resultado.
+:::
+
+**Avanzado.** Propón cómo hacer accesible el mapa interactivo del edificio.
+
+::: {.webex-solution boton="Ver solución"}
+Ofrecer una alternativa equivalente (lista por plantas), etiquetas accesibles en cada sala del mapa, navegación con teclado y no depender del color para indicar disponibilidad.
+:::
+
+
 ## Actividades
 
 ::: {.clasificar #ia-t12-pour titulo="¿Qué principio de las WCAG se aplica?" categorias="Perceptible|Operable|Comprensible|Robusto"}

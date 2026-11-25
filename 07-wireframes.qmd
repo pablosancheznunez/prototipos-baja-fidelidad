@@ -272,6 +272,36 @@ viewof prueba_arbol = {
 En una prueba real se mide con 30 o más personas: **tasa de éxito**, **directividad** (sin volver atrás) y **primer clic**. Si muchas empiezan por «Servicios › Préstamo», quizá la etiqueta engaña o hace falta un enlace también allí.
 :::
 
+## Caso práctico resuelto
+
+::: {.callout-note appearance="simple" icon="false"}
+## Esquema de la lista de salas, revisado
+Primera versión: una lista con foto grande de cada sala. Problemas detectados en revisión: solo caben dos salas en pantalla y la información clave (hora libre, capacidad) queda abajo.
+
+Segunda versión:
+
+- Cabecera fija con la **franja horaria** seleccionada y un filtro de capacidad.
+- Cada sala como fila compacta: **nombre**, **capacidad**, **planta** y **horas libres**, con la acción «Reservar» a la derecha.
+- Foto solo en el detalle de la sala.
+
+Resultado: seis salas visibles por pantalla y la comparación es inmediata. Las anotaciones del esquema explican el comportamiento (qué pasa al pulsar, qué se ordena primero).
+:::
+
+## Ejercicios graduados
+
+**Básico.** Anota el esquema de la lista con cinco comentarios de comportamiento.
+
+::: {.webex-solution boton="Ver solución"}
+Ejemplos: orden por disponibilidad más cercana; la fila completa es pulsable; el filtro recuerda la última capacidad; las salas sin disponibilidad se muestran atenuadas al final; tirar hacia abajo actualiza.
+:::
+
+**Avanzado.** Dibuja la versión para escritorio de la misma pantalla aprovechando el ancho.
+
+::: {.webex-solution boton="Ver solución"}
+Por ejemplo: lista a la izquierda y mapa del edificio a la derecha, sincronizados (al pasar por una sala se resalta en el mapa). La jerarquía debe mantenerse.
+:::
+
+
 ## Actividades
 
 ::: {.clasificar #ia-t7-elementos titulo="¿Qué elemento del esquema es?" categorias="Navegación|Contenido|Llamada a la acción|Formulario|Información del sistema"}
