@@ -33,15 +33,15 @@ Rudd, J.; Stern, K.; Isensee, S. (1996). [Low vs. high-fidelity prototyping deba
 
 ### Lecturas complementarias {.unnumbered}
 
-- Houde, S.; Hill, C. (1997). [What do prototypes prototype?](https://doi.org/10.1016/B978-044481862-1.50082-0) En *Handbook of Human-Computer Interaction* (pp. 367-381). Elsevier. El modelo de los tres aspectos que puede explorar un prototipo.
-- Lim, Y.-K.; Stolterman, E.; Tenenberg, J. (2008). [The anatomy of prototypes](https://doi.org/10.1145/1375761.1375762). *ACM Transactions on Computer-Human Interaction*, 15(2), 1-27. Los prototipos como filtros que dejan ver unas cualidades del diseño y ocultan otras.
-- Walker, M.; Takayama, L.; Landay, J. A. (2002). [High-fidelity or low-fidelity, paper or computer?](https://doi.org/10.1177/154193120204600513) *Proceedings of the Human Factors and Ergonomics Society Annual Meeting*, 46(5), 661-665. Un experimento que compara qué problemas detecta cada tipo de prototipo.
+- @houde1997 — El modelo de los tres aspectos que puede explorar un prototipo.
+- @lim2008 — Los prototipos como filtros que dejan ver unas cualidades del diseño y ocultan otras.
+- @walker2002 — Un experimento que compara qué problemas detecta cada tipo de prototipo.
 
 ## 1. Qué es un prototipo
 
 Un **prototipo** es una representación de un diseño que se construye para aprender algo sobre él antes de construirlo de verdad. No es una versión pequeña del producto final: es una pregunta hecha objeto. Un prototipo bien planteado sabe qué quiere averiguar.
 
-Houde y Hill (1997) proponen pensar en **tres aspectos** que un prototipo puede explorar:
+@houde1997 proponen pensar en **tres aspectos** que un prototipo puede explorar:
 
 | Aspecto | Pregunta que responde | Ejemplo |
 |---|---|---|
@@ -63,20 +63,20 @@ La **fidelidad** es el grado en que un prototipo se parece al producto final. No
 
 Un esquema de página en escala de grises con textos reales tiene baja fidelidad visual pero alta fidelidad de datos. Esa mezcla es a menudo la mejor elección: con textos de relleno («lorem ipsum») no se puede comprobar si una persona entiende una etiqueta.
 
-![Las cinco dimensiones de fidelidad de Lim et al. (2008) en tres artefactos habituales. La fidelidad no es una sola escala: un esquema puede ser tosco en apariencia y fiel en estructura y datos.](figuras/tema1_fidelidad.svg){#fig-fidelidad fig-alt="Matriz con tres columnas (boceto en papel, esquema digital, prototipo de alta fidelidad) y cinco filas (apariencia, datos, funcionalidad, interactividad, estructura espacial). Cada celda indica el nivel de fidelidad con uno, dos o tres puntos. El boceto tiene un punto en casi todo; el esquema digital tiene tres puntos en estructura espacial y datos; el prototipo de alta fidelidad tiene tres en apariencia."}
+![Las cinco dimensiones de fidelidad de @lim2008 en tres artefactos habituales. La fidelidad no es una sola escala: un esquema puede ser tosco en apariencia y fiel en estructura y datos.](figuras/tema1_fidelidad.svg){#fig-fidelidad fig-alt="Matriz con tres columnas (boceto en papel, esquema digital, prototipo de alta fidelidad) y cinco filas (apariencia, datos, funcionalidad, interactividad, estructura espacial). Cada celda indica el nivel de fidelidad con uno, dos o tres puntos. El boceto tiene un punto en casi todo; el esquema digital tiene tres puntos en estructura espacial y datos; el prototipo de alta fidelidad tiene tres en apariencia."}
 
 ## 3. Para qué sirve la baja fidelidad
 
-Buxton (2007) distingue entre **bocetar** y **prototipar**. El boceto sirve para explorar y generar alternativas: es rápido, barato, desechable, abundante y ambiguo, y por eso invita a la discusión. El prototipo sirve para comprobar y refinar una idea concreta. Los esquemas y prototipos de baja fidelidad están a medio camino: conservan la rapidez del boceto y ya permiten probar.
+@buxton2007 distingue entre **bocetar** y **prototipar**. El boceto sirve para explorar y generar alternativas: es rápido, barato, desechable, abundante y ambiguo, y por eso invita a la discusión. El prototipo sirve para comprobar y refinar una idea concreta. Los esquemas y prototipos de baja fidelidad están a medio camino: conservan la rapidez del boceto y ya permiten probar.
 
 Sus ventajas principales son:
 
 - **Coste y velocidad.** Se hacen en minutos y se cambian en segundos. Se pueden explorar varias alternativas en lugar de defender la primera.
 - **Atención en lo importante.** Sin colores ni tipografías, la conversación con el equipo y con los usuarios se centra en la estructura, el contenido y el flujo, y no en si el azul es el adecuado.
 - **Críticas más sinceras.** Un diseño que parece terminado intimida: la gente opina menos sobre algo que parece costoso de cambiar.
-- **Detección temprana de problemas.** Varios estudios han comparado prototipos de baja y alta fidelidad y encontraron que detectan un número similar de problemas de usabilidad (Virzi et al., 1996; Walker et al., 2002).
+- **Detección temprana de problemas.** Varios estudios han comparado prototipos de baja y alta fidelidad y encontraron que detectan un número similar de problemas de usabilidad [@virzi1996; Walker et al., 2002).
 
-Y sus límites, que Rudd et al. (1996) resumen en su debate:
+Y sus límites, que @rudd1996 resumen en su debate:
 
 - No sirven para evaluar el aspecto visual, la legibilidad final ni los tiempos de respuesta.
 - Requieren un **facilitador** que «haga de ordenador», lo que puede introducir sesgos.
@@ -200,7 +200,7 @@ Responde a todas las preguntas y pulsa **Mostrar respuestas**: verás en verde l
 - La legibilidad final depende de decisiones visuales que la baja fidelidad deja fuera a propósito.
 - El papel es qué hace el producto en la vida de la persona: justo lo que cuenta un *storyboard*.
 - Los textos reales dan fidelidad de datos aunque el aspecto sea tosco.
-- Es la conclusión de Virzi et al. (1996) y Walker et al. (2002).
+- Es la conclusión de @virzi1996 y @walker2002.
 - La ambigüedad del boceto invita a discutir y a generar alternativas.
 - Es un ciclo: se repite en cada iteración.
 :::

@@ -31,13 +31,13 @@ Gray, C. M.; Kou, Y.; Battles, B.; Hoggatt, J.; Toombs, A. L. (2018). [The dark 
 
 ### Lecturas complementarias {.unnumbered}
 
-- Mathur, A.; Acar, G.; Friedman, M. J.; Lucherini, E.; Mayer, J.; Chetty, M.; Narayanan, A. (2019). [Dark patterns at scale: Findings from a crawl of 11K shopping websites](https://doi.org/10.1145/3359183). *Proceedings of the ACM on Human-Computer Interaction*, 3(CSCW), 1-32. Una medición sistemática en comercio electrónico.
-- Tversky, A.; Kahneman, D. (1974). [Judgment under uncertainty: Heuristics and biases](https://doi.org/10.1126/science.185.4157.1124). *Science*, 185(4157), 1124-1131. El artículo que fundó el estudio de los sesgos.
-- Comité Europeo de Protección de Datos (2023). [Directrices 03/2022 sobre patrones de diseño engañosos en interfaces de redes sociales](https://www.edpb.europa.eu/our-work-tools/our-documents/guidelines/guidelines-032022-deceptive-design-patterns-social-media_en). Cómo los patrones engañosos afectan al consentimiento.
+- @mathur2019 — Una medición sistemática en comercio electrónico.
+- @tversky1974 — El artículo que fundó el estudio de los sesgos.
+- @comiteeuropeodeprote2023 — Cómo los patrones engañosos afectan al consentimiento.
 
 ## 1. Sesgos cognitivos
 
-Tversky y Kahneman (1974) mostraron que, cuando decidimos con incertidumbre, usamos **heurísticos**: atajos mentales que suelen funcionar pero que producen errores sistemáticos, los **sesgos**. El diseño de interfaces influye en las decisiones aunque no lo pretenda. Algunos sesgos especialmente relevantes:
+@tversky1974 mostraron que, cuando decidimos con incertidumbre, usamos **heurísticos**: atajos mentales que suelen funcionar pero que producen errores sistemáticos, los **sesgos**. El diseño de interfaces influye en las decisiones aunque no lo pretenda. Algunos sesgos especialmente relevantes:
 
 | Sesgo | Qué ocurre | Ejemplo en una interfaz |
 |---|---|---|
@@ -57,7 +57,7 @@ Toda interfaz es una **arquitectura de la decisión**: alguna opción aparece pr
 
 El término ***dark patterns*** lo acuñó Harry Brignull en 2010; hoy él mismo y buena parte de la literatura prefieren hablar de **diseño engañoso** (*deceptive design*). Son soluciones de interfaz que engañan, presionan o dificultan decidir libremente.
 
-Gray et al. (2018) analizaron ejemplos recogidos por profesionales y propusieron cinco **estrategias**:
+@gray2018 analizaron ejemplos recogidos por profesionales y propusieron cinco **estrategias**:
 
 | Estrategia | Qué hace |
 |---|---|
@@ -67,7 +67,7 @@ Gray et al. (2018) analizaron ejemplos recogidos por profesionales y propusieron
 | **Interferencia en la interfaz** | Manipula la presentación para favorecer una opción |
 | **Acción forzada** | Exige hacer algo que no se busca para poder continuar |
 
-Mathur et al. (2019) rastrearon unas 11.000 webs de comercio y encontraron patrones de **urgencia** (contadores), **escasez** («quedan dos»), **prueba social**, **desvío** (*misdirection*), además de ocultación, obstrucción y acción forzada. Hallaron algunos de esos mensajes generados de forma engañosa, sin relación con datos reales.
+@mathur2019 rastrearon unas 11.000 webs de comercio y encontraron patrones de **urgencia** (contadores), **escasez** («quedan dos»), **prueba social**, **desvío** (*misdirection*), además de ocultación, obstrucción y acción forzada. Hallaron algunos de esos mensajes generados de forma engañosa, sin relación con datos reales.
 
 ## 4. Responsabilidad y marco legal
 
@@ -81,7 +81,7 @@ Una pregunta práctica para revisar un diseño: **¿la persona elegiría lo mism
 
 ## Práctica en R: dos taxonomías
 
-`patrones_enganosos` reúne las categorías de Gray et al. (2018) y Mathur et al. (2019), con un ejemplo inventado de cada una.
+`patrones_enganosos` reúne las categorías de @gray2018 y @mathur2019, con un ejemplo inventado de cada una.
 
 ```{webr}
 #| autorun: true
@@ -178,7 +178,7 @@ Esta pantalla esconde **cinco** patrones engañosos. Señálalos y comprueba.
 - Ofrecer un plan intermedio poco atractivo para que el más caro parezca razonable → Efecto señuelo
 :::
 
-::: {.clasificar #ia-t10-gray titulo="¿Qué estrategia de Gray et al. (2018) es?" categorias="Insistencia|Obstrucción|Ocultación|Interferencia en la interfaz|Acción forzada"}
+::: {.clasificar #ia-t10-gray titulo="¿Qué estrategia de @gray2018 es?" categorias="Insistencia|Obstrucción|Ocultación|Interferencia en la interfaz|Acción forzada"}
 - Una ventana pide activar las notificaciones cada vez que abres la aplicación → Insistencia
 - Darse de alta cuesta un clic; darse de baja exige llamar por teléfono → Obstrucción
 - Se añade un producto a la cesta sin que lo pidas → Ocultación
@@ -220,7 +220,7 @@ Responde a todas las preguntas y pulsa **Mostrar respuestas**: verás en verde l
 ::: {.webex-solution boton="Ver explicaciones"}
 - Tendemos a dejar lo que viene marcado.
 - Hacer difícil lo que interesa a la persona es obstrucción.
-- Es urgencia falsa, documentada por Mathur et al. (2019).
+- Es urgencia falsa, documentada por @mathur2019.
 - Más bien de la presión por métricas de negocio; por eso importa saber argumentar.
 - Es el art. 25 del Reglamento de Servicios Digitales.
 - La primera cifra sirve de ancla para valorar las demás.

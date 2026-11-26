@@ -31,9 +31,9 @@ Kalbach, J. (2021). *Mapping experiences: A complete guide to customer alignment
 
 ### Lecturas complementarias {.unnumbered}
 
-- Nielsen Norman Group. [User journeys vs. user flows](https://www.nngroup.com/articles/user-journeys-vs-user-flows/). Diferencia entre el viaje completo y el flujo de una tarea.
-- Nielsen Norman Group. [Wireflows: A UX deliverable for workflows and apps](https://www.nngroup.com/articles/wireflows/). Flujos dibujados con esquemas de página.
-- Nielsen Norman Group. [Task analysis: Support users in achieving their goals](https://www.nngroup.com/articles/task-analysis/). Cómo descomponer una tarea.
+- @nielsennormangroupsf — Diferencia entre el viaje completo y el flujo de una tarea.
+- @nielsennormangroupsfa — Flujos dibujados con esquemas de página.
+- @nielsennormangroupsfb
 
 ## 1. De la tarea al flujo
 

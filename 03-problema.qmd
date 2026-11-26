@@ -30,18 +30,18 @@ Dorst, K. (2011). [The core of 'design thinking' and its application](https://do
 
 ### Lecturas complementarias {.unnumbered}
 
-- Rittel, H. W. J.; Webber, M. M. (1973). [Dilemmas in a general theory of planning](https://doi.org/10.1007/BF01405730). *Policy Sciences*, 4(2), 155-169. El texto que introdujo los «problemas retorcidos» (*wicked problems*).
-- Goodwin, K. (2009). *Designing for the digital age*. Wiley. Capítulos sobre la definición de requisitos y objetivos (bibliografía complementaria de la asignatura).
+- @rittel1973 — El texto que introdujo los «problemas retorcidos» (*wicked problems*).
+- @goodwin2009 — Capítulos sobre la definición de requisitos y objetivos (bibliografía complementaria de la asignatura).
 
 ## 1. Por qué definir el problema
 
 Los equipos tienden a saltar a la solución: «hagamos una aplicación». Pero una solución solo es buena respecto a un problema, y la mayoría de los proyectos que fracasan resolvieron bien un problema equivocado. Definir el problema es convertir lo aprendido en la investigación (Tema 2) en un enunciado que todo el equipo comparta y que permita decidir qué entra y qué no.
 
-Rittel y Webber (1973) llamaron **problemas retorcidos** (*wicked problems*) a los que no tienen una formulación definitiva: entender el problema y diseñar la solución ocurren a la vez, y cada solución cambia el problema. Muchos problemas de diseño de interacción son así. Por eso el enunciado del problema es **provisional**: se revisa cuando la evidencia lo pide.
+@rittel1973 llamaron **problemas retorcidos** (*wicked problems*) a los que no tienen una formulación definitiva: entender el problema y diseñar la solución ocurren a la vez, y cada solución cambia el problema. Muchos problemas de diseño de interacción son así. Por eso el enunciado del problema es **provisional**: se revisa cuando la evidencia lo pide.
 
 ## 2. Encuadrar el problema
 
-Dorst (2011) describe el núcleo del pensamiento de diseño como la creación de **encuadres** (*frames*): maneras nuevas de mirar una situación que abren soluciones que antes no se veían. En lugar de preguntar «¿cómo hacemos más rápida la reserva de salas?», un encuadre distinto pregunta «¿cómo hacemos que la gente sepa qué salas están libres sin tener que reservar?». El encuadre no sale de la nada: nace de entender los valores y las prácticas de las personas implicadas.
+@dorst2011 describe el núcleo del pensamiento de diseño como la creación de **encuadres** (*frames*): maneras nuevas de mirar una situación que abren soluciones que antes no se veían. En lugar de preguntar «¿cómo hacemos más rápida la reserva de salas?», un encuadre distinto pregunta «¿cómo hacemos que la gente sepa qué salas están libres sin tener que reservar?». El encuadre no sale de la nada: nace de entender los valores y las prácticas de las personas implicadas.
 
 ## 3. El enunciado del problema
 

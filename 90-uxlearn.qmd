@@ -42,7 +42,7 @@ revisar_paleta(paleta_ejemplo)
 | `flujo_registro` | Usuarios en cada paso de un registro |
 | `hallazgos_heuristicos` | 6 problemas valorados por 3 evaluadores |
 | `heuristicas_nielsen` | Las diez heurísticas de Nielsen |
-| `patrones_enganosos` | Categorías de Gray et al. (2018) y Mathur et al. (2019) |
+| `patrones_enganosos` | Categorías de @gray2018 y @mathur2019 |
 | `paleta_ejemplo` | Nueve colores de un sistema de diseño |
 
 Prueba aquí cualquier función:
@@ -58,4 +58,4 @@ revisar_paleta(c(marca = "#000e78", aviso = "#c2410c", gris = "#6b7280"))
 - Brooke, J. (1996). SUS: A «quick and dirty» usability scale. En P. W. Jordan et al. (eds.), *Usability evaluation in industry* (pp. 189-194). Taylor & Francis.
 - Machado, G. M.; Oliveira, M. M.; Fernandes, L. A. F. (2009). [A physiologically-based model for simulation of color vision deficiency](https://doi.org/10.1109/TVCG.2009.113). *IEEE Transactions on Visualization and Computer Graphics*, 15(6), 1291-1298.
 - Sauro, J.; Lewis, J. R. (2016). *Quantifying the user experience* (2.ª ed.). Morgan Kaufmann.
-- W3C (2023). [Web Content Accessibility Guidelines (WCAG) 2.2](https://www.w3.org/TR/WCAG22/).
+- @w3c2023 — [Web Content Accessibility Guidelines (WCAG) 2.2](https://www.w3.org/TR/WCAG22/).

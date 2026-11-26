@@ -31,13 +31,13 @@ Rodden, K.; Hutchinson, H.; Fu, X. (2010). [Measuring the user experience on a l
 
 ### Lecturas complementarias {.unnumbered}
 
-- Bangor, A.; Kortum, P. T.; Miller, J. T. (2008). [An empirical evaluation of the System Usability Scale](https://doi.org/10.1080/10447310802205776). *International Journal of Human-Computer Interaction*, 24(6), 574-594. Cómo interpretar las puntuaciones SUS.
-- Doran, G. T. (1981). There's a S.M.A.R.T. way to write management's goals and objectives. *Management Review*, 70(11), 35-36. El origen del acrónimo SMART.
-- Sauro, J.; Lewis, J. R. (2016). *Quantifying the user experience: Practical statistics for user research* (2.ª ed.). Morgan Kaufmann. La referencia para calcular métricas con muestras pequeñas.
+- @bangor2008 — Cómo interpretar las puntuaciones SUS.
+- @doran1981 — El origen del acrónimo SMART.
+- @sauro2016 — La referencia para calcular métricas con muestras pequeñas.
 
 ## 1. Objetivos SMART
 
-Un objetivo vago («que la web sea más fácil de usar») no permite saber si se ha cumplido. El acrónimo **SMART**, propuesto por Doran (1981) para la gestión y adoptado en el diseño, pide que un objetivo sea:
+Un objetivo vago («que la web sea más fácil de usar») no permite saber si se ha cumplido. El acrónimo **SMART**, propuesto por @doran1981 para la gestión y adoptado en el diseño, pide que un objetivo sea:
 
 | Letra | Criterio | Pregunta de control |
 |---|---|---|
@@ -75,11 +75,11 @@ Para elegir, el marco propone un proceso de **objetivos, señales y métricas**:
 
 ## 4. Medir con pocas personas
 
-Las pruebas de prototipos se hacen con pocas personas, a menudo cinco. Con muestras así, una cifra sola engaña: «4 de 5 completaron la tarea» es un 80 %, pero el porcentaje real en la población podría estar bastante más abajo. Sauro y Lewis (2016) recomiendan:
+Las pruebas de prototipos se hacen con pocas personas, a menudo cinco. Con muestras así, una cifra sola engaña: «4 de 5 completaron la tarea» es un 80 %, pero el porcentaje real en la población podría estar bastante más abajo. @sauro2016 recomiendan:
 
 - **Tasa de éxito con intervalo de confianza** de Wald ajustado: indica entre qué valores está probablemente la tasa real.
 - **Media geométrica** para los tiempos: con pocas personas y alguna muy lenta, representa mejor el tiempo típico que la media aritmética.
-- **SUS** (*System Usability Scale*) para la satisfacción: diez afirmaciones con respuesta de 1 a 5 que dan una puntuación de 0 a 100. No es un porcentaje. Bangor et al. (2008) consideran «aceptable» una puntuación desde 70, «marginal» entre 50 y 70, y «no aceptable» por debajo de 50.
+- **SUS** (*System Usability Scale*) para la satisfacción: diez afirmaciones con respuesta de 1 a 5 que dan una puntuación de 0 a 100. No es un porcentaje. @bangor2008 consideran «aceptable» una puntuación desde 70, «marginal» entre 50 y 70, y «no aceptable» por debajo de 50.
 
 ![Intervalo de confianza al 95 % de una tasa de éxito del 80 % según el número de participantes (Wald ajustado). Con 5 personas, la tasa real podría estar entre el 36 % y el 98 %.](figuras/tema4_intervalos.svg){#fig-intervalos fig-alt="Gráfico de puntos con barras de error. En el eje horizontal, el número de participantes: 5, 10, 20, 40 y 80. Para todos el punto está en el 80 %, pero la barra de error se estrecha: con 5 va del 36 % al 98 %; con 80, del 70 % al 87 %."}
 
@@ -317,7 +317,7 @@ Responde a todas las preguntas y pulsa **Mostrar respuestas**: verás en verde l
 2. En el marco HEART, la letra T corresponde a {{< mcq "tiempo" "*éxito en la tarea (task success)" "tráfico" >}}
 3. «Trabajar en los esquemas» es un hito verificable. {{< torf false >}}
 4. Una puntuación SUS de 75 significa que el 75 % de los participantes está satisfecho. {{< torf false >}}
-5. Según Bangor et al. (2008), una puntuación SUS de 62,5 es {{< mcq "no aceptable" "*marginal" "aceptable" >}}
+5. Según @bangor2008, una puntuación SUS de 62,5 es {{< mcq "no aceptable" "*marginal" "aceptable" >}}
 6. Con tiempos de 32, 41, 38, 45 y 120 segundos, ¿qué resumen representa mejor el tiempo típico?
 
 {{< longmcq "La media aritmética (55 s)" "*La media geométrica (49 s)" "El máximo (120 s)" >}}

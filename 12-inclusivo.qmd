@@ -31,9 +31,9 @@ Burnett, M.; Stumpf, S.; Macbeth, J.; Makri, S.; Beckwith, L.; Kwan, I.; Peters,
 
 ### Lecturas complementarias {.unnumbered}
 
-- W3C (2023). [Pautas de Accesibilidad para el Contenido Web (WCAG) 2.2](https://www.w3.org/TR/WCAG22/). La norma de referencia de la accesibilidad web.
-- Microsoft. [Inclusive Design](https://inclusive.microsoft.design/). El kit que popularizó el espectro de personas.
-- University of Cambridge. [Inclusive Design Toolkit](https://www.inclusivedesigntoolkit.com/). Métodos y herramientas para estimar la exclusión.
+- @w3c2023 — La norma de referencia de la accesibilidad web.
+- @microsoftsf — El kit que popularizó el espectro de personas.
+- @universityofcambridgsf — Métodos y herramientas para estimar la exclusión.
 
 ## 1. Equidad, inclusión y accesibilidad
 
@@ -45,13 +45,13 @@ El kit de diseño inclusivo de Microsoft propone el **espectro de personas**: un
 
 ## 2. Perspectiva de género
 
-Burnett et al. (2016) desarrollaron **GenderMag**, un método de inspección (parecido a la revisión heurística del Tema 2) que usa personajes para detectar sesgos de género en el software. Se basa en cinco **facetas** cognitivas en las que la investigación ha encontrado diferencias estadísticas entre grupos de género: la **motivación** para usar la tecnología, el **estilo de procesar la información** (completo o selectivo), la **autoeficacia** con el ordenador, la **actitud ante el riesgo** y el **estilo de aprendizaje** (por proceso o probando). El objetivo no es diseñar «para mujeres» y «para hombres», sino que el software funcione bien para todo el espectro de estas facetas.
+@burnett2016 desarrollaron **GenderMag**, un método de inspección (parecido a la revisión heurística del Tema 2) que usa personajes para detectar sesgos de género en el software. Se basa en cinco **facetas** cognitivas en las que la investigación ha encontrado diferencias estadísticas entre grupos de género: la **motivación** para usar la tecnología, el **estilo de procesar la información** (completo o selectivo), la **autoeficacia** con el ordenador, la **actitud ante el riesgo** y el **estilo de aprendizaje** (por proceso o probando). El objetivo no es diseñar «para mujeres» y «para hombres», sino que el software funcione bien para todo el espectro de estas facetas.
 
 En las decisiones de baja fidelidad, la perspectiva de género aparece también en los **formularios** (pedir el género solo si hace falta, con opciones inclusivas y no obligatorio), las **imágenes y los ejemplos** (quién aparece y haciendo qué) y el **lenguaje**.
 
 ## 3. Diversidad funcional: accesibilidad desde la baja fidelidad
 
-Las **WCAG 2.2** (W3C, 2023) organizan los requisitos en cuatro principios: el contenido debe ser **perceptible**, **operable**, **comprensible** y **robusto**. Cada criterio tiene un nivel de conformidad (A, AA, AAA); la normativa europea y española exige el nivel **AA**:
+Las **WCAG 2.2** [@w3c2023] organizan los requisitos en cuatro principios: el contenido debe ser **perceptible**, **operable**, **comprensible** y **robusto**. Cada criterio tiene un nivel de conformidad (A, AA, AAA); la normativa europea y española exige el nivel **AA**:
 
 - El **Real Decreto 1112/2018** obliga a los sitios web y aplicaciones del sector público.
 - La **Directiva (UE) 2019/882** (Acta Europea de Accesibilidad), transpuesta en España por la Ley 11/2023, se aplica desde el 28 de junio de 2025 a productos y servicios como el comercio electrónico, la banca o los libros electrónicos.

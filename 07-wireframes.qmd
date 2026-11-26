@@ -32,13 +32,13 @@ Garrett, J. J. (2011). *The elements of user experience: User-centered design fo
 
 ### Lecturas complementarias {.unnumbered}
 
-- Krug, S. (2006). *Don't make me think!*. New Riders. Por qué las convenciones y la jerarquía visual hacen que una página se entienda de un vistazo.
-- Nielsen Norman Group. [F-shaped pattern for reading web content](https://www.nngroup.com/articles/f-shaped-pattern-reading-web-content/). Cómo recorren la vista las páginas con mucho texto.
-- Nielsen Norman Group. [Using grids in interface designs](https://www.nngroup.com/articles/using-grids-in-interface-designs/). Rejillas de columnas en interfaces.
+- @krug2006 — Por qué las convenciones y la jerarquía visual hacen que una página se entienda de un vistazo.
+- @nielsennormangroupsfd — Cómo recorren la vista las páginas con mucho texto.
+- @nielsennormangroupsfe — Rejillas de columnas en interfaces.
 
 ## 1. Qué es un esquema de página
 
-Un **esquema de página** (*wireframe*) representa la estructura de una pantalla: qué elementos contiene, dónde están y qué importancia tienen. Deja fuera el estilo visual (color, tipografía definitiva, imágenes) para que la discusión se centre en el contenido y la organización. En el modelo de Garrett (2011), el esquema corresponde al **plano del esqueleto**: el que concreta la estructura antes de llegar a la superficie visual.
+Un **esquema de página** (*wireframe*) representa la estructura de una pantalla: qué elementos contiene, dónde están y qué importancia tienen. Deja fuera el estilo visual (color, tipografía definitiva, imágenes) para que la discusión se centre en el contenido y la organización. En el modelo de @garrett2011, el esquema corresponde al **plano del esqueleto**: el que concreta la estructura antes de llegar a la superficie visual.
 
 Un buen esquema responde a tres preguntas: **qué** hay en la pantalla, **qué es lo más importante** y **qué puede hacer** la persona desde ella.
 

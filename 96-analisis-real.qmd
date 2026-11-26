@@ -1,0 +1,83 @@
+---
+engine: markdown
+---
+
+# Análisis de servicios reales {#sec-analisis-real}
+
+Los casos del apéndice anterior son inventados. Aquí trabajarás con **servicios públicos reales**, aplicando las técnicas del libro como ingeniería inversa: a partir de lo que ves, reconstruye el flujo, la arquitectura y los esquemas que hay detrás. Cada ejercicio dura entre una y dos horas y puede entregarse como práctica.
+
+::: {.callout-important}
+## Normas para trabajar con servicios reales
+- **Analiza, no juzgues de antemano.** El objetivo es entender las decisiones de diseño y sus consecuencias, no buscar culpables. Los servicios cambian: anota la fecha de tu análisis.
+- **No entregues capturas de pantalla de terceros.** Redibuja lo que necesites en baja fidelidad (cajas, textos clave): es mejor ejercicio y evita problemas de derechos.
+- **No introduzcas datos personales reales** ni completes trámites. Detente antes del paso que enviaría información.
+- **Comprueba si el servicio ya publica su documentación de diseño**: muchos organismos públicos lo hacen, y es una fuente excelente para contrastar tu análisis.
+:::
+
+## Ejercicio 1 · El flujo de una descarga de datos abiertos
+
+**Servicio:** [datos.gob.es](https://datos.gob.es/), el catálogo nacional de datos abiertos. **Temas:** 5 (flujos) y 4 (métricas).
+
+**Tarea.** Encuentra un conjunto de datos sobre la calidad del aire de una ciudad española y descarga un fichero CSV. Anota cada pantalla y cada decisión.
+
+1. Cronometra la tarea y cuenta los pasos (clics y pantallas).
+2. Dibuja el **flujo de usuario** con la notación del Tema 5: pantallas, decisiones y puntos de salida.
+3. Señala dónde podrías haberte perdido y qué te ayudó a orientarte (filtros, migas de pan, buscador).
+4. Propón **una** métrica de la tarea (tasa de éxito, tiempo, número de pasos) y cómo la mediría el equipo del servicio.
+
+**Entrega:** diagrama del flujo, tabla de pasos con tiempos y la propuesta de métrica.
+
+## Ejercicio 2 · Reconstruir el mapa de un sitio
+
+**Servicio:** [Europeana](https://www.europeana.eu/es), la plataforma del patrimonio cultural europeo. **Tema:** 5 (arquitectura de la información).
+
+**Tarea.** Sin buscar ningún documento interno, reconstruye el **mapa del sitio** de los dos primeros niveles a partir de la navegación principal, el pie de página y las páginas de entrada.
+
+1. Dibuja el árbol con la notación del Tema 5.
+2. Marca con otro color las secciones a las que solo se llega desde el buscador.
+3. Clasifica las etiquetas de navegación: ¿organizan por tipo de contenido, por tema, por público o por tarea?
+4. Diseña un **estudio de clasificación de tarjetas** (*card sorting*) de 15 tarjetas para comprobar si esas etiquetas encajan con el modelo mental de un estudiante de grado.
+
+**Entrega:** mapa del sitio, clasificación de etiquetas y las 15 tarjetas del estudio.
+
+## Ejercicio 3 · De una página real a su esquema
+
+**Servicio:** la ficha de una obra en la colección del [Museo Nacional del Prado](https://www.museodelprado.es/coleccion). **Temas:** 7 (esquemas) y 8 (estados).
+
+**Tarea.** Elige una obra y dibuja el **esquema de página** de su ficha: solo cajas grises, etiquetas y los textos clave.
+
+1. Numera los bloques por orden de prioridad visual (qué ves primero, segundo, tercero).
+2. Compara ese orden con las tareas probables de tres perfiles: turista que planea la visita, estudiante de historia del arte y docente que prepara una clase.
+3. Dibuja dos **estados** de la ficha que no veas en pantalla: la vista en móvil y la ficha de una obra sin imagen disponible.
+4. Propón un cambio de jerarquía para uno de los perfiles y justifica qué gana y qué pierde el resto.
+
+**Entrega:** esquema actual, dos estados y la propuesta.
+
+## Ejercicio 4 · Evaluación heurística de un servicio de una pregunta por página
+
+**Servicio:** cualquier trámite de [GOV.UK](https://www.gov.uk/), el portal del Gobierno británico, por ejemplo [Check if you need a UK visa](https://www.gov.uk/check-uk-visa). **Temas:** 2 (heurísticas) y 6 (*storyboards*).
+
+**Tarea.** GOV.UK usa el patrón «una cosa por página». Recorre el servicio con dos perfiles inventados y aplica las diez heurísticas de Nielsen.
+
+1. Para cada pantalla, anota qué heurísticas se cumplen de forma visible (estado del sistema, prevención de errores, lenguaje del usuario…).
+2. Dibuja un ***storyboard*** de seis viñetas con el contexto de uso de uno de los perfiles.
+3. Compara el patrón «una cosa por página» con un formulario largo en una sola pantalla: ¿qué ventajas tiene para la accesibilidad y para el móvil? ¿Y qué coste?
+4. Contrasta tus conclusiones con la guía publicada por el propio equipo: [Question pages](https://design-system.service.gov.uk/patterns/question-pages/).
+
+**Entrega:** tabla de heurísticas, *storyboard* y la comparación de patrones.
+
+## Rúbrica
+
+| Criterio | Insuficiente (0-4) | Suficiente (5-6) | Notable (7-8) | Sobresaliente (9-10) |
+|---|---|---|---|---|
+| **Evidencia** | Opiniones sin pasos ni datos | Describe lo que hizo | Registra pasos, tiempos y pantallas redibujadas | Registro completo y reproducible por otra persona |
+| **Análisis** | Lista de gustos | Identifica aspectos con nombre | Relaciona cada hallazgo con un principio del libro | Distingue hallazgos por gravedad y frecuencia |
+| **Propuesta** | Sin propuesta | Propone cambios genéricos | Propuesta concreta en baja fidelidad | Propuesta concreta con forma de comprobar si mejora |
+| **Comunicación** | Desordenado | Se entiende | Estructurado y breve | Un tercero podría actuar con el informe |
+
+: Rúbrica común para los ejercicios de análisis {#tbl-rubrica-analisis}
+
+::: {.callout-tip}
+## Para el proyecto final
+Si eliges uno de estos servicios como punto de partida de tu proyecto, el análisis te sirve como **investigación de soluciones existentes** (Tema 2). Cita la fecha en que lo hiciste.
+:::

@@ -31,8 +31,8 @@ Truong, K. N.; Hayes, G. R.; Abowd, G. D. (2006). [Storyboarding: An empirical d
 
 ### Lecturas complementarias {.unnumbered}
 
-- Buxton, W. (2007). *Sketching user experiences*. Elsevier. Capítulos sobre los bocetos en secuencia y los guiones visuales.
-- Nielsen Norman Group. [Storyboards help visualize UX ideas](https://www.nngroup.com/articles/storyboards-visualize-ideas/). Guía práctica con ejemplos.
+- @buxton2007 — Capítulos sobre los bocetos en secuencia y los guiones visuales.
+- @nielsennormangroupsfc
 
 ## 1. Qué es un *storyboard*
 

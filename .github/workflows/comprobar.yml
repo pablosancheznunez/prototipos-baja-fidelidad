@@ -43,18 +43,18 @@ jobs:
         run: python herramientas/pruebas/ejercicios.py . 60 00-r-en-el-libro.qmd 02-investigacion.qmd 04-metricas.qmd 05-flujos.qmd 07-wireframes.qmd 09-prototipos-papel.qmd 10-sesgos.qmd 12-inclusivo.qmd
 
       - name: Preguntas de autoevaluación
-        run: python herramientas/pruebas/autoevaluacion.py _book index.html 00-r-en-el-libro.html 01-fundamentos.html 02-investigacion.html 03-problema.html 04-metricas.html 05-flujos.html 06-storyboards.html 07-wireframes.html 08-estados.html 09-prototipos-papel.html 10-sesgos.html 11-atencion.html 12-inclusivo.html 93-galeria.html 94-patrones.html 95-casos.html 90-uxlearn.html 91-guia-docente.html 92-glosario.html
+        run: python herramientas/pruebas/autoevaluacion.py _book index.html 00-r-en-el-libro.html 01-fundamentos.html 02-investigacion.html 03-problema.html 04-metricas.html 05-flujos.html 06-storyboards.html 07-wireframes.html 08-estados.html 09-prototipos-papel.html 10-sesgos.html 11-atencion.html 12-inclusivo.html 93-galeria.html 94-patrones.html 95-casos.html 96-analisis-real.html 90-uxlearn.html 91-guia-docente.html 92-glosario.html
 
       - name: Accesibilidad (axe-core, WCAG 2.1 AA)
         env:
           AXE_JS: node_modules/axe-core/axe.min.js
-        run: python herramientas/pruebas/accesibilidad.py _book index.html 00-r-en-el-libro.html 01-fundamentos.html 02-investigacion.html 03-problema.html 04-metricas.html 05-flujos.html 06-storyboards.html 07-wireframes.html 08-estados.html 09-prototipos-papel.html 10-sesgos.html 11-atencion.html 12-inclusivo.html 93-galeria.html 94-patrones.html 95-casos.html 90-uxlearn.html 91-guia-docente.html 92-glosario.html
+        run: python herramientas/pruebas/accesibilidad.py _book index.html 00-r-en-el-libro.html 01-fundamentos.html 02-investigacion.html 03-problema.html 04-metricas.html 05-flujos.html 06-storyboards.html 07-wireframes.html 08-estados.html 09-prototipos-papel.html 10-sesgos.html 11-atencion.html 12-inclusivo.html 93-galeria.html 94-patrones.html 95-casos.html 96-analisis-real.html 90-uxlearn.html 91-guia-docente.html 92-glosario.html
 
       - name: Accesibilidad en modo oscuro
         env:
           AXE_JS: node_modules/axe-core/axe.min.js
           MODO: oscuro
-        run: python herramientas/pruebas/accesibilidad.py _book index.html 00-r-en-el-libro.html 01-fundamentos.html 02-investigacion.html 03-problema.html 04-metricas.html 05-flujos.html 06-storyboards.html 07-wireframes.html 08-estados.html 09-prototipos-papel.html 10-sesgos.html 11-atencion.html 12-inclusivo.html 93-galeria.html 94-patrones.html 95-casos.html 90-uxlearn.html 91-guia-docente.html 92-glosario.html
+        run: python herramientas/pruebas/accesibilidad.py _book index.html 00-r-en-el-libro.html 01-fundamentos.html 02-investigacion.html 03-problema.html 04-metricas.html 05-flujos.html 06-storyboards.html 07-wireframes.html 08-estados.html 09-prototipos-papel.html 10-sesgos.html 11-atencion.html 12-inclusivo.html 93-galeria.html 94-patrones.html 95-casos.html 96-analisis-real.html 90-uxlearn.html 91-guia-docente.html 92-glosario.html
 
       - uses: actions/upload-artifact@v4
         if: always()

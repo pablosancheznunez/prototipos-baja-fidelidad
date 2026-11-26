@@ -30,8 +30,8 @@ Harel, D. (1987). [Statecharts: A visual formalism for complex systems](https://
 
 ### Lecturas complementarias {.unnumbered}
 
-- Cooper, A. (2014). *About face: The essentials of interaction design*. Wiley. Capítulos sobre el comportamiento de los controles y la retroalimentación.
-- Nielsen Norman Group. [Wireflows](https://www.nngroup.com/articles/wireflows/). Representar estados y transiciones con esquemas.
+- @cooper2014 — Capítulos sobre el comportamiento de los controles y la retroalimentación.
+- @nielsennormangroupsff — Representar estados y transiciones con esquemas.
 
 ## 1. Una pantalla no es una imagen fija
 
@@ -115,7 +115,7 @@ El mensaje dice **qué ha pasado** en lenguaje de la persona, **conserva** sus f
 
 ## 4. Diagramas de estados
 
-Harel (1987) propuso los ***statecharts***, una notación para describir sistemas que cambian de estado según los eventos. En diseño de interacción se usa una versión simplificada: cada estado es una caja con nombre, cada transición es una flecha con el **evento** que la provoca y, si hace falta, la **condición**. Sirve para comprobar que no falta ningún caso: ¿qué pasa si se pulsa «Reservar» dos veces?, ¿y si se pierde la conexión mientras se carga?
+@harel1987 propuso los ***statecharts***, una notación para describir sistemas que cambian de estado según los eventos. En diseño de interacción se usa una versión simplificada: cada estado es una caja con nombre, cada transición es una flecha con el **evento** que la provoca y, si hace falta, la **condición**. Sirve para comprobar que no falta ningún caso: ¿qué pasa si se pulsa «Reservar» dos veces?, ¿y si se pierde la conexión mientras se carga?
 
 ![Diagrama de estados del botón «Reservar»: de reposo a cargando al pulsar; de cargando a confirmado si la reserva funciona, o a error si la sala se ha ocupado; el error vuelve a reposo cuando se elige otra sala. Mientras carga, el botón no admite otra pulsación.](figuras/tema8_estados.svg){#fig-estados fig-alt="Cinco cajas redondeadas unidas por flechas rotuladas. Reposo pasa a Cargando con el evento pulsar. Cargando pasa a Confirmado con reserva correcta y a Error con sala ocupada. Error vuelve a Reposo con elegir otra sala. Una flecha que sale y vuelve a Cargando indica que una segunda pulsación se ignora. Reposo pasa a Desactivado si no hay sala elegida."}
 

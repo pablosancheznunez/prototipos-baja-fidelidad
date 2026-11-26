@@ -31,20 +31,20 @@ Nielsen, J.; Molich, R. (1990). [Heuristic evaluation of user interfaces](https:
 
 ### Lecturas complementarias {.unnumbered}
 
-- Nielsen, J. (1994). [Enhancing the explanatory power of usability heuristics](https://doi.org/10.1145/191666.191729). En *CHI '94* (pp. 152-158). ACM. El origen de las diez heurísticas que se usan hoy.
-- Rohrer, C. (2022). [When to use which user-experience research methods](https://www.nngroup.com/articles/which-ux-research-methods/). Nielsen Norman Group. El mapa de métodos que usa este tema.
-- Sharp, H.; Rogers, Y.; Preece, J. (2023). *Interaction design: Beyond human-computer interaction*. Wiley. Capítulos sobre recogida y análisis de datos.
+- @nielsen1994 — El origen de las diez heurísticas que se usan hoy.
+- @rohrer2022 — El mapa de métodos que usa este tema.
+- @sharp2023 — Capítulos sobre recogida y análisis de datos.
 
 ## 1. Por qué investigar antes de dibujar
 
 Un esquema de página resuelve un problema; si el problema está mal entendido, el mejor esquema no sirve. La investigación con usuarios reduce la incertidumbre sobre **quién** usará el producto, **qué** intenta conseguir, **en qué contexto** y **qué le impide** conseguirlo hoy. No se trata de preguntar a la gente qué quiere, sino de entender lo que hace y por qué.
 
-Rohrer (2022) ordena los métodos en dos ejes que ayudan a elegir:
+@rohrer2022 ordena los métodos en dos ejes que ayudan a elegir:
 
 - **Actitudinal o comportamental**: lo que las personas *dicen* (opiniones, intenciones) frente a lo que *hacen* (conducta observada). Ambas cosas difieren a menudo.
 - **Cualitativo o cuantitativo**: entender el *porqué* y el *cómo* con pocas personas, frente a medir el *cuánto* con muchas.
 
-![Mapa simplificado de métodos de investigación según Rohrer (2022). La pregunta de investigación decide el cuadrante.](figuras/tema2_metodos.svg){#fig-metodos fig-alt="Plano con un eje horizontal que va de cualitativo a cuantitativo y un eje vertical que va de comportamental (abajo) a actitudinal (arriba). Arriba a la izquierda, entrevistas y grupos de discusión; arriba a la derecha, encuestas; abajo a la izquierda, observación contextual y pruebas de usabilidad; abajo a la derecha, analítica web y pruebas A/B. La revisión heurística y el análisis de la competencia aparecen aparte, como métodos de inspección sin usuarios."}
+![Mapa simplificado de métodos de investigación según @rohrer2022. La pregunta de investigación decide el cuadrante.](figuras/tema2_metodos.svg){#fig-metodos fig-alt="Plano con un eje horizontal que va de cualitativo a cuantitativo y un eje vertical que va de comportamental (abajo) a actitudinal (arriba). Arriba a la izquierda, entrevistas y grupos de discusión; arriba a la derecha, encuestas; abajo a la izquierda, observación contextual y pruebas de usabilidad; abajo a la derecha, analítica web y pruebas A/B. La revisión heurística y el análisis de la competencia aparecen aparte, como métodos de inspección sin usuarios."}
 
 ## 2. Métodos cualitativos
 
@@ -68,12 +68,12 @@ Consiste en revisar de forma sistemática productos que resuelven el mismo probl
 
 ## 5. Revisión heurística
 
-Nielsen y Molich (1990) propusieron que varios evaluadores revisen una interfaz con una lista breve de principios, las **heurísticas**, y anoten los problemas. Es un método de **inspección**: no participan usuarios, así que es rápido y barato, pero no sustituye a las pruebas con personas. Sus hallazgos más importantes:
+@nielsen1990 propusieron que varios evaluadores revisen una interfaz con una lista breve de principios, las **heurísticas**, y anoten los problemas. Es un método de **inspección**: no participan usuarios, así que es rápido y barato, pero no sustituye a las pruebas con personas. Sus hallazgos más importantes:
 
 - Un evaluador solo encuentra una parte de los problemas; con **tres a cinco** evaluadores independientes se detecta la mayoría.
 - Cada evaluador revisa por separado y después se juntan los resultados.
 
-Cada problema se valora con una escala de **severidad** de 0 a 4: 0, no es un problema; 1, cosmético; 2, menor; 3, importante; 4, catástrofe que hay que resolver antes de lanzar. Las diez heurísticas de Nielsen (1994) son:
+Cada problema se valora con una escala de **severidad** de 0 a 4: 0, no es un problema; 1, cosmético; 2, menor; 3, importante; 4, catástrofe que hay que resolver antes de lanzar. Las diez heurísticas de @nielsen1994 son:
 
 | N.º | Heurística |
 |---|---|

@@ -30,14 +30,14 @@ Williams, J. (2018). [*Stand out of our light: Freedom and resistance in the att
 
 ### Lecturas complementarias {.unnumbered}
 
-- Mathur, A. et al. (2019). [Dark patterns at scale](https://doi.org/10.1145/3359183). *Proceedings of the ACM on Human-Computer Interaction*, 3(CSCW). Urgencia y escasez como técnicas para captar la atención y precipitar decisiones.
-- Center for Humane Technology. [Recursos para tecnología humana](https://www.humanetech.com/). Materiales sobre diseño que respeta la atención.
+- @mathur2019a — Urgencia y escasez como técnicas para captar la atención y precipitar decisiones.
+- @centerforhumanetechnsf — Materiales sobre diseño que respeta la atención.
 
 ## 1. La atención como recurso escaso
 
 Herbert Simon advirtió en 1971 que la abundancia de información crea pobreza de atención: cuanta más información compite por nosotros, más valiosa se vuelve la atención que podemos darle. Muchos servicios digitales gratuitos se financian con publicidad, y la publicidad se vende por la atención que se consigue: cuanto más tiempo y más a menudo se usa el servicio, más ingresos. Ese es el núcleo de la **economía de la atención**.
 
-Williams (2018), que trabajó en publicidad en Google antes de dedicarse a la filosofía, sostiene que el problema no es solo de productividad. Las tecnologías optimizadas para captar la atención pueden apartar a las personas de sus propios objetivos, de lo que ellas mismas querrían hacer con su tiempo.
+@williams2018, que trabajó en publicidad en Google antes de dedicarse a la filosofía, sostiene que el problema no es solo de productividad. Las tecnologías optimizadas para captar la atención pueden apartar a las personas de sus propios objetivos, de lo que ellas mismas querrían hacer con su tiempo.
 
 ## 2. Las métricas que dirigen el diseño
 

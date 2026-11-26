@@ -64,10 +64,10 @@ Afirmación comprobable sobre el efecto de un cambio de diseño, con la señal q
 Lo que entra y, sobre todo, lo que no entra en un proyecto. → [Tema 3](03-problema.qmd)
 
 ### Problema retorcido {#gl-retorcido}
-*Wicked problem*. Problema sin formulación definitiva en el que entenderlo y resolverlo ocurren a la vez (Rittel y Webber, 1973). → [Tema 3](03-problema.qmd)
+*Wicked problem*. Problema sin formulación definitiva en el que entenderlo y resolverlo ocurren a la vez [@rittel1973]. → [Tema 3](03-problema.qmd)
 
 ### Encuadre {#gl-encuadre}
-Manera de mirar una situación que abre soluciones nuevas; según Dorst (2011), el núcleo del pensamiento de diseño. → [Tema 3](03-problema.qmd)
+Manera de mirar una situación que abre soluciones nuevas; según @dorst2011, el núcleo del pensamiento de diseño. → [Tema 3](03-problema.qmd)
 
 ### *Brief* de diseño {#gl-brief}
 Documento breve que reúne el problema, las personas usuarias, las hipótesis, el alcance, las restricciones y los criterios de éxito. → [Tema 3](03-problema.qmd)
@@ -81,7 +81,7 @@ Objetivo específico, medible, alcanzable, relevante y con plazo. → [Tema 4](0
 Punto del proyecto definido por un resultado comprobable. → [Tema 4](04-metricas.qmd)
 
 ### Marco HEART {#gl-heart}
-Agrupación de métricas de experiencia en satisfacción, implicación, adopción, retención y éxito en la tarea (Rodden et al., 2010). → [Tema 4](04-metricas.qmd)
+Agrupación de métricas de experiencia en satisfacción, implicación, adopción, retención y éxito en la tarea [@rodden2010]. → [Tema 4](04-metricas.qmd)
 
 ### Tasa de éxito {#gl-tasa-exito}
 Proporción de participantes que completan una tarea. → [Tema 4](04-metricas.qmd)
@@ -164,7 +164,7 @@ Cada situación distinta en la que puede estar un componente o una pantalla. →
 Paso de un estado a otro, provocado por un evento. → [Tema 8](08-estados.qmd)
 
 ### Diagrama de estados {#gl-diagrama-estados}
-Representación de los estados de un sistema y de las transiciones entre ellos, basada en los *statecharts* de Harel (1987). → [Tema 8](08-estados.qmd)
+Representación de los estados de un sistema y de las transiciones entre ellos, basada en los *statecharts* de @harel1987. → [Tema 8](08-estados.qmd)
 
 ### Estado vacío {#gl-vacio}
 Estado de una pantalla cuando no hay contenido que mostrar. → [Tema 8](08-estados.qmd)
@@ -201,7 +201,7 @@ Sesión en la que personas representativas realizan tareas con un producto o pro
 Error sistemático en el juicio que se produce al usar atajos mentales. → [Tema 10](10-sesgos.qmd)
 
 ### Heurístico {#gl-heuristico}
-Atajo mental para decidir con incertidumbre (Tversky y Kahneman, 1974). No confundir con las heurísticas de usabilidad. → [Tema 10](10-sesgos.qmd)
+Atajo mental para decidir con incertidumbre [@tversky1974]. No confundir con las heurísticas de usabilidad. → [Tema 10](10-sesgos.qmd)
 
 ### Efecto de anclaje {#gl-anclaje}
 Tendencia a que la primera cifra vista condicione la valoración de las siguientes. → [Tema 10](10-sesgos.qmd)
@@ -253,7 +253,7 @@ Pautas de Accesibilidad para el Contenido Web del W3C; la versión actual es la 
 Idea de que una limitación puede ser permanente, temporal o situacional. → [Tema 12](12-inclusivo.qmd)
 
 ### GenderMag {#gl-gendermag}
-Método de inspección que detecta sesgos de género con personajes que varían en cinco facetas cognitivas (Burnett et al., 2016). → [Tema 12](12-inclusivo.qmd)
+Método de inspección que detecta sesgos de género con personajes que varían en cinco facetas cognitivas [@burnett2016]. → [Tema 12](12-inclusivo.qmd)
 
 ### Contraste {#gl-contraste}
 Relación entre la luminancia de dos colores, de 1:1 a 21:1. → [Tema 12](12-inclusivo.qmd)

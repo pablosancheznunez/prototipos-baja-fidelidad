@@ -58,6 +58,7 @@ book:
   - 93-galeria.qmd
   - 94-patrones.qmd
   - 95-casos.qmd
+  - 96-analisis-real.qmd
   - 90-uxlearn.qmd
   - 91-guia-docente.qmd
   - 92-glosario.qmd
@@ -68,6 +69,10 @@ filters:
 - webex
 - interactivos
 - glosario.lua
+bibliography: referencias.bib
+csl: apa.csl
+link-citations: true
+citations-hover: true
 format:
   live-html:
     theme:
